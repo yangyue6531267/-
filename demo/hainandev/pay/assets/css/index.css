@@ -1,0 +1,414 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #1D5F5C;
+    /* background-image: linear-gradient(to right, #00A190, #1D5F5C);
+  background-image: -webkit-linear-gradient(to right, #434646, #0D0806);
+  background-image: -o-linear-linear-gradient(to right, #434646, #0D0806);
+  background-image: -moz-linear-gradient(to right, #434646, #0D0806); */
+    width: 1280px;
+    height: 720px;
+    color: #FFFFFF;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none
+}
+
+.container {
+    width: 1280px;
+    height: 720px;
+    background: url('../images/background.png');
+    background-size: cover;
+    position: fixed;
+}
+
+.container_title {
+    width: 1280px;
+    text-align: center;
+    /* position: relative;
+  top: 97px; */
+    margin-top: 97px;
+    font-size: 42px;
+    -webkit-text-stroke: 1px #B2FFFF;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #1E9D5E, #42C0DE);
+    -webkit-background-clip: text;
+}
+
+.container_text {
+    width: 1280px;
+    margin-top: 49px;
+    text-align: center;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.container_packet {
+    width: 1280px;
+    margin-top: 69px;
+    padding-left: 141.5px;
+}
+
+.container_packet>li {
+    width: 227px;
+    height: 266px;
+    float: left;
+    margin-right: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container_packet>li>.title {
+    width: 227px;
+    font-size: 35px;
+    font-weight: Medium;
+    font-family: PingFang HK;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.container_packet>li>.price {
+    width: 227px;
+    font-size: 30px;
+    font-weight: Bold;
+    font-family: Helvetica Neue;
+    color: #E59A40;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.container_packet>li>.originai {
+    width: 227px;
+    font-size: 25px;
+    font-weight: Medium;
+    font-family: PingFang HK;
+    text-align: center;
+    margin-top: 14px;
+    display: block;
+    display: none;
+}
+
+.container_packet>li>.order {
+    width: 137px;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.21);
+    font-size: 19px;
+    color: #FFFFFF;
+    font-weight: Medium;
+    font-family: PingFang HK;
+    text-align: center;
+    line-height: 55px;
+    margin: 37px auto;
+}
+
+.container_packet>.active {
+    background: #EBD1AE;
+    opacity: 1;
+}
+
+.container_packet>.active>.title {
+    color: #000000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.container_packet>.active>.price {
+    color: #000000;
+}
+
+.container_packet>.active>.originai {
+    color: #000000;
+}
+
+.container_packet>.active>.order {
+    border: 2px solid #FFFFFF;
+    background-color: #0098BC;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, .5);
+}
+
+.background {
+    display: none;
+    width: 1280px;
+    height: 720px;
+    background-color: rgba(0, 0, 0, .75);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.pay {
+    display: none;
+    width: 831px;
+    height: 486px;
+    background-color: #114845;
+    margin: 117px auto;
+}
+
+.pay_title {
+    width: 831px;
+    padding: 14px 0 0 29px;
+    overflow: hidden;
+}
+
+.pay_title_img {
+    width: 99px;
+    height: 75px;
+    background: url('../images/pay.png');
+    background-size: cover;
+    float: left;
+}
+
+.pay_title_text {
+    font-size: 35px;
+    line-height: 86px;
+    font-weight: Bold;
+    color: #FFFFFF;
+    margin-left: 12px;
+    letter-spacing: 5.5px;
+    float: left;
+}
+
+.pay_content {
+    width: 831px;
+    height: 316px;
+    margin-top: 16px;
+    margin-left: 29px;
+}
+
+.pay_content>li {
+    width: 244px;
+    height: 316px;
+    /* float: left; */
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+}
+
+.pay_content>li>.title {
+    width: 244px;
+    font-size: 35px;
+    font-weight: Medium;
+    font-family: PingFang HK;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 28px;
+}
+
+.pay_content>li>.price {
+    width: 244px;
+    font-size: 30px;
+    font-weight: Bold;
+    font-family: Helvetica Neue;
+    color: #E59A40;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.pay_content>li>.originai {
+    width: 177px;
+    font-size: 22px;
+    font-weight: Regular;
+    font-family: Helvetica Neue;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 21px auto 0;
+    letter-spacing: 2px;
+}
+
+.pay_content>li>.order {
+    width: 137px;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.21);
+    font-size: 19px;
+    color: #FFFFFF;
+    font-weight: Medium;
+    font-family: PingFang HK;
+    text-align: center;
+    line-height: 55px;
+    margin: 14px auto;
+}
+
+.pay_content>.active {
+    background: #EBD1AE;
+    opacity: 1;
+}
+
+.pay_content>.active>.title {
+    color: #000000;
+}
+
+.pay_content>.active>.price {
+    color: #000000;
+}
+
+.pay_content>.active>.originai {
+    color: #000000;
+}
+
+.pay_content>.active>.order {
+    border: 2px solid #FFFFFF;
+    background-color: #0098BC;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, .5);
+}
+
+.code {
+    display: none;
+    width: 831px;
+    height: 486px;
+    background-color: #114845;
+    margin: 117px auto;
+}
+
+.code_title {
+    width: 831px;
+    padding: 0 0 0 30px;
+    overflow: hidden;
+}
+
+.code_title_img {
+    width: 99px;
+    height: 93px;
+    background: url('../images/code.png');
+    background-size: cover;
+    float: left;
+}
+
+.code_title_text {
+    font-size: 35px;
+    line-height: 110px;
+    font-weight: Bold;
+    color: #FFFFFF;
+    margin-left: 12px;
+    letter-spacing: 5.5px;
+    float: left;
+}
+
+.code_content {
+    width: 831px;
+}
+
+.code_content_left {
+    width: 270px;
+    height: 270px;
+    background-color: rgba(0, 0, 0, .35);
+    float: left;
+    margin: 30px 0 0 78px;
+    position: relative;
+}
+
+.code_content_left>.QR {
+    width: 229px;
+    height: 229px;
+    background-color: #FFFFFF;
+    margin: 21px;
+}
+
+.code_content_left>.gun {
+    width: 23px;
+    height: 70px;
+    background: url('../images/1.png');
+    background-size: cover;
+    position: absolute;
+    right: -23px;
+    top: 100px;
+}
+
+.code_content_right {
+    float: left;
+}
+
+.code_content_right>.alipay {
+    width: 335px;
+    height: 122px;
+    background: url('../images/alipay.png');
+    background-size: cover;
+    margin: 65px 0 0 80px;
+}
+
+.code_content_right>.sweep {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    background-color: #1E82D2;
+    position: relative;
+    bottom: 90px;
+    left: 39px;
+    text-align: center;
+}
+
+.code_content_right>.sweep>.sweep_img {
+    width: 77px;
+    height: 74px;
+    background: url('../images/sweep.png');
+    background-size: cover;
+    margin: 30px 39px 0;
+}
+
+.code_content_right>.sweep>.sweep_text {
+    font-size: 25px;
+    font-weight: Regular;
+    font-family: Helvetica Neue;
+    margin-top: 5px;
+}
+
+.code_content_right>.tips {
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: Regular;
+    font-family: Helvetica Neue;
+    position: relative;
+    bottom: 76px;
+    left: 88px;
+}
+
+
+#descriptionBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    /* background-color: hsla(0, 0%, 0%, .5); */
+    background-image: url('./../images/pay-success-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 9;
+    color: #fff;
+    visibility: hidden;
+}
+
+#descriptionBox .scrollBox {
+    font-size: 50px;
+    margin: 166px 0 0 243px;
+}
+
+#descriptionBox .topBox {
+    margin: 100px 0 0 243px;
+    width: 134px;
+    background: #0098BC;
+    -webkit-box-shadow: 0 10px 20px hsla(0, 0%, 0%, .5);
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, .5);
+    border: 2px solid #fff;
+    font-size: 22px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    z-index: 999;
+    color: #ffffff;
+}
+
+#descriptionBox .contentBox {
+    margin: 10px 0 0 243px;
+    width: 730px;
+    font-size: 30px;
+}

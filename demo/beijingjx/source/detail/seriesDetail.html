@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="page-view-size" content="1280*720">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="./detail.css?v=1">
+  <!-- <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/tripledes.js"></script> -->
+  <title>电视剧首页</title>
+</head>
+
+<body>
+  <div class="seriesDetail" id="seriesDetail">
+    <div class="loading">
+      <div class="imgLoading"></div>
+    </div>
+    <div class="scroll-box">
+
+      <div class="topContent">
+        <div class="imgBig"></div>
+        <div class="introduction">
+          <p class="name"></p>
+          <p class="info"></p>
+          <p class="description"></p>
+        </div>
+
+        <div class="btnBox">
+          <div class="collect"><span></span>收藏</div>
+          <div class="descript"><span></span>介绍</div>
+          <div class="order"><span></span>订购</div>
+        </div>
+        <!-- 电视剧 -->
+
+        <!-- 综艺 -->
+
+      </div>
+
+      <div class="assetList">
+        <h2>猜你喜欢</h2>
+        <ul></ul>
+      </div>
+    </div>
+
+    <div class="descriptionBox">
+      <div class="scrollBox">
+        <div class="topBox"></div>
+        <div class="contentBox">
+          <div class="wordScroll"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player-ui">
+    <div id="allTime" class="all-time">5 S后返回</div>
+    <div class="pause" id="pause"></div>
+    <div class="footer-player" id="footerPlayer">
+      <div class="curr-time" id="currTime">00:00</div>
+      <div class="progress-bar">
+        <div class="curr-box" id="currBox">0:00</div>
+        <div class="curr-bar" id="currBar"></div>
+      </div>
+      <div class="total-time" id="totalTime">00:00</div>
+    </div>
+  </div>
+
+  <div class="tips" style="display:none">
+    <div class="text">您还不是会员，请返回页面订购！</div>
+  </div>
+  <script src="../public/js/jquery.min.js"></script>
+  <script src="../public/js/jquery.cookie.js"></script>
+  <script src="../public/js/js.cookie.js"></script>
+  <script src="../public/js/interface.js"></script>
+  <script src='../public/js/common.js'></script>
+  <script src="../public/js/3des.js"></script>
+  <script src="../public/js/client.js"></script>
+  <script src='../public/js/logApi.js'></script>
+  <script src='./seriesDetail.js'></script>
+</body>
+
+</html>

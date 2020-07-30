@@ -1,0 +1,327 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #a8977c;
+}
+
+.indexPage {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background-color: #a8977c;
+  background-repeat: no-repeat;
+}
+
+.scroll-box {
+  padding-top: 80px;
+  padding-left: 85px;
+  height: 663px;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+}
+
+.logo {
+  width: 142px;
+  height: 31px;
+  position: absolute;
+  top: 25px;
+  left: 230px;
+  background: url("../public/images/logo.png") no-repeat;
+}
+
+.logo2 {
+  width: 142px;
+  height: 31px;
+  position: absolute;
+  top: 25px;
+  left: 85px;
+  background: url("../public/images/dianxing.png") no-repeat;
+}
+.topNav {
+  height: 47px;
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 3px;
+  margin-right: 85px;
+}
+
+.topNav .bar {
+  float: right;
+  display: inline-block;
+}
+
+.bar li {
+  display:inline-block;
+  height: 39px;
+  padding: 0 10px;
+  margin-right: 2px;
+  line-height: 39px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #786753;
+}
+
+.nav li {
+  float: left;
+  line-height: 39px;
+  text-align: center;
+  width: auto;
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.bar li span {
+  display: inline-block;
+  position: relative;
+  top:2px;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  background: url("../public/images/icon.png") no-repeat;
+}
+
+.bar .sousuo {
+  background-position: -22px -0px;
+}
+
+.bar .lishi {
+  background-position: -44px 0px;
+}
+
+.bar .collecttion {
+  background-position: -66px 0px;
+}
+
+.topCommend {
+  margin-top: 30px
+}
+
+.topCommend:after,
+.special-subject:after,
+.assetList1:after,
+.assetList2:after,
+.assetList3:after {
+  display: block;
+  content: "";
+  clear: both
+}
+
+.topCommend .bigCommend {
+  width: 544px;
+  height: 310px;
+  float: left;
+  top: 0px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+.topCommend ul {
+  float: right;
+  width: 545px;
+  margin-right: 80px;
+}
+
+.topCommend ul li {
+  width: 255px;
+  height: 140px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+}
+
+.topCommend ul li:first-child {
+  margin-right: 25px;
+  margin-bottom: 27px;
+}
+
+.topCommend ul li:nth-child(3) {
+  margin-right: 25px;
+}
+
+
+
+.special-subject {
+  margin-top: 30px;
+}
+
+.special-subject ul .specialLi {
+  float: left;
+  margin-right: 42px;
+  width: 246px;
+  height: 100px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.special-subject ul .tagName {
+  float: left;
+  margin-right: 45px;
+  margin-bottom: 40px;
+  width: 145px;
+  text-align: center;
+  font-size: 23px;
+  height: 55px;
+  line-height: 55px;
+  background-color: #af9773;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+.assetList1 li,
+.assetList2 li,
+.assetList3 li {
+  position: relative;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 160px;
+  height: 233px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.assetList1 li .imgbox,
+.assetList2 li .imgbox,
+.assetList3 li .imgbox {
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.score {
+    position: absolute;
+    z-index: 99;
+    width: 60px;
+    height: 60px;
+    line-height: 40px;
+    top: -4px;
+    right: -4px;
+    color: #df9720;
+    background: url("../public/images/jiaobiao.png");
+}
+
+.score span {
+  padding-left: 30px;
+}
+
+
+.word {
+  position: absolute;
+  display: inline-block;
+  z-index: 99;
+  width: 100%;
+  height: 26px;
+  line-height: 26px;
+  bottom: 0;
+  padding-top: 5px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: hsla(0, 0%, 0%, .5);
+  
+}
+
+.wordColumn {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.word div {
+  display: inline;
+}
+
+.nav li.active {
+  background-color: #a26564;
+  border: 4px solid #fff;
+  margin: -3px;
+}
+
+.nav li.select {
+  background-color: #a26564;
+  border: 2px solid #a26564;
+  margin: -1px;
+}
+
+.topCommend .bigCommend.active {
+  border: 5px solid #fff;
+  border-radius: 20px;
+  overflow:hidden;
+  /* -webkit-transform: scale(1.05); */
+  /* transform: scale(1.05); */
+}
+.topCommend .bigCommend.active img {
+  border-radius: 15px;
+}
+
+.topCommend ul li.active {
+  border: 5px solid #fff;
+  border-radius: 15px;
+  overflow:hidden;
+  /* -webkit-transform: scale(1.05); */
+  /* transform: scale(1.05); */
+}
+.topCommend ul li.active img {
+  border-radius: 10px;
+}
+.special-subject .specialLi.active {
+      /* -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, .55); */
+      /* box-shadow: 0 10px 10px rgba(0, 0, 0, .55); */
+      border: 4px solid #fff;
+}
+
+.special-subject .tagName.active {
+      border: 4px solid #fff;
+      background-color: #a26564;
+      /* -webkit-transform: scale(1.1); */
+      /* transform: scale(1.1); */
+}
+
+.assetList1 li.active {
+      margin: -4px 34px 34px -4px;
+      border: 4px solid #fff;
+      /* -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0,.5); */
+      /* box-shadow: 0 10px 10px rgba(0, 0, 0, .5); */
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+}
+
+.bar li.active {
+  background-color: #a36363;
+}

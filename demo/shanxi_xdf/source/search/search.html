@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="page-view-size" content="1280*720" />
+  <title>搜索页</title>
+  <script>
+    document.write('<link rel="stylesheet" href="../public/css/common.css?' + Math.random() + '">')
+    document.write('<link rel="stylesheet" href="./search.css?' + Math.random() + '">')
+  </script>
+</head>
+
+<body onload="init()">
+  <div id="contentBox" class='contentBox'>
+    <!-- 键盘 -->
+    <div class="keyboard">
+      <!-- <div class="sanjiaoxingP302" id="sanjiaoxing2"></div> -->
+      <div class="keyboard-header">搜索</div>
+      <!-- <div class="keyboard-connent"> -->
+      <div class="keycode-input" id="keycode-input"></div>
+      <div class="keycode-devare" id="key-item-1">删除</div>
+      <ul class="keycode-connect" id="keycode-connect">
+      </ul>
+      <!-- </div> -->
+      <div class="keyboard-footer">
+        <div>输入拼音首字母搜索新东方精品课程，订阅享受新东方精品课程</div>
+      </div>
+    </div>
+    <!-- 内容数据 -->
+    <div class="search-connent">
+      <div class="top-c" id="top-c">暂无搜索数据，去看看其他课程吧</div>
+      <ul class="middle-box" id="search-connent">
+      </ul>
+    </div>
+    <div class="search-scroll" id="search-scroll">
+      <div class="search-bar" id="search-bar" style="top: 0px;"></div>
+    </div>
+    <div class="search-num" id="search-num"></div>
+  </div>
+</body>
+<script>
+  document.write('<script src="../public/js/js.cookie.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../public/js/util.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../public/js/ajax.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../public/js/interface.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../search/index.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../search/content_Search.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="../public/js/logApi.js?' + Math.random() + '"><\/script>')
+</script>
+
+</html>

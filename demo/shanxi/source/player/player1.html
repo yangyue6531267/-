@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> 优酷专区播放器</title>
+  <meta name="page-view-size" content="1280*720">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="./player.css" />
+</head>
+
+<body bgcolor="transparent">
+  <div id="blackBg" style="display: block;"></div>
+  <!-- S pagebg -->
+  <div class="pagebg">
+    <div class="pic">
+      <img style="display: none;" src=" " />
+      <!--加载播放视频开始-->
+      <!--<iframe id="smallvodFull" name="if_smallscreen" style="position: absolute;background: transparent; top: 0px;left: 0px; display: block;" width="100%" height="100%" frameborder="0" src="" allowtransparency="true"></iframe>-->
+      <!--加载播放视频结束-->
+    </div>
+  </div>
+  <!-- <div style="position:absolute;left:1100px;width:142px;top:20px;"><img src='../public/images/logo.png'></div> -->
+  <!-- E pagebg -->
+  <!-- S content -->
+  <div class="wrapper">
+    <div id="test1"
+      style="left: 20px; top: 20px; width: 800px; height: 300px; position: absolute; color: #ff0000; word-break:break-all;">
+    </div>
+
+    <!--快进、快退、暂停-->
+    <div style="display: none;" id="fast_stop">
+      <!--S 快进快退 -->
+      <div class="yq-tvTxt" id="viode_name">优酷专区资产名</div>
+      <div class="yq-screenIcon" style="display: block;" id="center">
+        <div class="txt" style="display: none;" id="multiple_img"></div>
+        <div class="icon"><img style="display: block;" id="center_img" src="../public/image_video/yq-icon-osdStop.png"
+            height="81" width="69" style="left: 5px;" alt=""></div>
+      </div>
+      <!--E 快进快退 -->
+      <div class="cs-osdBox">
+        <div class="cs-osdicon"><img id="bar_img" src="../public/image_video/yq-icon-suspended.png" height="64" width="62"
+            alt=""></div>
+        <div class="cs-osdTime" id="playtime">00:00:00</div>
+        <div class="cs-osdTime" style="left:1125px" id="endtime">00:00:00</div>
+        <div class="cs-osd-volume">
+          <!--
+			        progress起始值为width:**px; 最大值为**px;
+			        point起始值为left:**px; 最大值为**px;
+			    -->
+          <div class="bar">
+            <div class="progress" id="mediaBar" style="width:1px;"></div>
+            <!--最大858-->
+          </div>
+          <div class="point" id="mediaPoint" style="left:-17px;"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--退出-->
+    <div style="display: none;" id="quit">
+      <!-- S 遮罩 -->
+      <div class="yq-mask"></div>
+      <!-- E 遮罩 -->
+      <div class="yq-osdTitle" style="top:200px;font-size: 36px;">你确定退出观看</div>
+      <!-- 单集退出-->
+      <div class="yq-btnlist" style="top:301px;display: block;" id="stateOne">
+        <!--<div class="item" id="nav1_0"><div class="txt" id="nav1_0_txt">收藏</div></div>-->
+        <div class="item" id="nav1_1">
+          <div class="txt">确定</div>
+        </div>
+        <div class="item" style="left:340px" id="nav1_2">
+          <div class="txt">取消</div>
+        </div>
+      </div>
+
+      <!--多集退出-->
+      <div class="yq-btnlist" style="top:301px;display: none;" id="stateTwo">
+        <!-- 焦点样式class="item item_focus"-->
+        <div class="item" id="nav1_3">
+          <div class="txt">上一集</div>
+        </div>
+        <div class="item" style="left:170px" id="nav1_4">
+          <div class="txt">确定</div>
+        </div>
+        <div class="item" style="left:340px" id="nav1_5">
+          <div class="txt">下一集</div>
+        </div>
+      </div>
+    </div>
+
+    <!--声音-->
+    <div style="display: none;" id="voice">
+      <!-- 静音 -->
+      <div class="yq-volum"><img id="mute" style="display: none;" src="../public/image_video/yq-icon-volum.png" height="80"
+          width="74" alt=""></div>
+      <!-- 音量 -->
+      <div class="yq-volumeBox" id="volbox">
+        <div class="icon"><img src="../public/image_video/yq-icon-add.png" height="58" width="58" alt=""></div>
+        <div class="volumebar"><span id="volbar" style="height:90px"></span></div>
+        <!--最大155-->
+        <div class="icon" style="top:223px"><img src="../public/image_video/yq-icon-jian.png" height="40" width="58" alt="">
+        </div>
+      </div>
+    </div>
+
+
+    <div id="isEnd" style="display: none;">
+      <!-- S 遮罩 -->
+      <div class="yq-mask"></div>
+      <!-- E 遮罩 -->
+      <div class="yq-osdTitle" style="top:217px" id="osdTitle"></div>
+      <div class="yq-osdTitle" style="top:287px">播放完毕</div>
+      <div class="yq-osdTitle02" id="osdTitle2"></div>
+      <div class="yq-btnlist" style="top:370px;">
+        <!-- 焦点样式class="item item_focus"-->
+        <div class="item" id="nav1_7">
+          <div class="txt">上一集</div>
+        </div>
+        <div class="item" id="nav1_8" style="left:170px">
+          <div class="txt">返回</div>
+        </div>
+        <div class="item" id="nav1_9" style="left:340px">
+          <div class="txt">下一集</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="bottomBox" id="bottomBox" style="display:none">
+    <div class="tips">
+      <div class="txt">订购后即享会员特权： <span>超万部专属片库、高清画质、流畅播放。</span></div>
+    </div>
+    <div class="time">
+      <!-- <div class="icon"><img src="../public/images/icon_time.png" alt=""></div> -->
+      <div class="txt">10:00</div>
+    </div>
+  </div>
+  <iframe id="smallvodFull" name="if_smallscreen"
+    style="position: absolute; top: 0px;left: 0px; display: block;visibility: hidden;" width="1280" height="720" src=""
+    frameborder="no" scrolling="no"></iframe>
+  <script src="../public/js/jquery.min.js"></script>
+  <script src="../public/js/jquery.cookie.js"></script>
+  <script src="../public/js/crypto-js.js"></script>
+  <script src="../public/js/common.js?v=2"></script>
+  <script src="../public/js/logApi.js"></script>
+  <script src="./player.js?v=2"></script>
+</body>
+</html>

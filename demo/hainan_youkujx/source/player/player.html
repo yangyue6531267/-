@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> 优酷专区播放器</title>
+  <meta name="page-view-size" content="1280*720">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="./player.css" />
+</head>
+
+<body bgcolor="transparent">
+  <div class="player-ui">
+    <!-- 优酷专区资产名 -->
+    <div class="yq-tvTxt" id="viode_name"></div>
+
+    <!--退出-->
+    <div style="display: none;" id="quit">
+      <!-- S 遮罩 -->
+      <div class="yq-mask"></div>
+      <!-- E 遮罩 -->
+      <div class="yq-osdTitle" style="top:200px;font-size: 36px;">你确定退出观看</div>
+      <!-- 单集退出-->
+      <div class="yq-btnlist" style="top:301px;display: block;" id="stateOne">
+        <!--<div class="item" id="nav1_0"><div class="txt" id="nav1_0_txt">收藏</div></div>-->
+        <div class="item" id="nav1_1">
+          <div class="txt">确定</div>
+        </div>
+        <div class="item" style="left:340px" id="nav1_2">
+          <div class="txt">取消</div>
+        </div>
+      </div>
+    </div>
+    <!-- 试看结束弹框 -->
+    <div id="cardFee">
+      <div class="yq-mask"></div>
+      <div class="yq-card">
+        <div class="yq-text">试看结束，请购买会员包后观看完整视频</div>
+        <div class="yq-ok" id="yqOk">确定</div>
+        <div class="yq-cancel" id="yqCancel">取消</div>
+      </div>
+    </div>
+
+
+    <!-- <div id="allTime" class="all-time">5 S后返回</div> -->
+    <!-- 暂停按钮 -->
+    <div class="pause" id="pause"></div>
+    <!-- 加载中按钮  -->
+    <div class="video-loading" id="playLoading"></div>
+
+    <div class="no-fee" id="noFee">
+      <div>试看 <span id="feeMin"> 10分钟</span>，开通会员观看完整版视频</div>
+    </div>
+    <!-- 进度条按钮 -->
+    <div class="footer-player" id="footerPlayer">
+      <div class="curr-time" id="currTime">00:00:00</div>
+      <div class="progress-bar">
+        <div class="curr-box" id="currBox"></div>
+        <div class="curr-bar" id="currBar"></div>
+      </div>
+      <div class="total-time" id="totalTime">00:00:00</div>
+    </div>
+  </div>
+  <div class="black-list" id="blacklist">检测到你的账号异常，请联系客服！</div>
+  <script>
+    document.write('<script src="../public/js/jquery.min.js?adv=' + Math.random() + '"><\/script>')
+    document.write('<script src="../public/js/jquery.cookie.js?adv=' + Math.random() + '"><\/script>')
+    document.write('<script src="../public/js/common.js?adv=' + Math.random() + '"><\/script>')
+    document.write('<script src="../public/js/logApi.js?adv=' + Math.random() + '"><\/script>')
+    document.write('<script src="../public/js/client.js?adv=' + Math.random() + '"><\/script>')
+    document.write('<script src="./player.js?adv=' + Math.random() + '"><\/script>')
+  </script>
+</body>
+
+</html>

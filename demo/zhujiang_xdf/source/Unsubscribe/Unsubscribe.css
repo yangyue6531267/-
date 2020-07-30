@@ -1,0 +1,96 @@
+*{padding: 0px;margin: 0px}
+/* html{position: relative;color: white}
+body{overflow: hidden;
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    background-color: #1D5F5C;
+    background: no-repeat;
+} */
+html,body {
+    width: 1280px;
+    /* height: 800px; */
+    /* min-height: 100%; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #1D5F5C;
+    
+    position: absolute;
+    color: white
+}
+
+/* .Unsubscribe{
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    background-color: #00A190;
+} */
+
+.U_top{
+    position: absolute;
+    top: 237px;
+    left: 330px;
+}
+
+.U_top img{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.U_top .U-text{
+    float: left;
+    width: 700px;
+    margin-top:-10px; 
+}
+.U_top .U-text p{
+    font-size: 30px;
+    margin-left:25px; 
+}
+.U_top .U-text p:nth-child(2){
+    margin-top:30px; 
+}
+
+.U-center{
+    position: absolute;
+    top: 400px;
+    left: 350px;
+    width: 600px;
+}
+
+.input{
+    width: 168px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.31);
+    text-align: center;
+    line-height: 60px;
+    font-size: 19px;
+    float: left;
+    margin-left:96px;
+}
+
+.input.active{
+    background: #0098BCFF;
+    border: 3px solid white;
+}
+
+.U-inout{
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 161, 144, 1);
+    display: none
+}
+.center{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%); */
+    position: absolute;
+    left: 25%;
+    top: 50%;
+}
+
+

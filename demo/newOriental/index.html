@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="page-view-size" content="1280*720" />
+ <title>新东方教育专区</title>
+ <style>
+   /** 通用css ***/
+   *{padding: 0px;margin: 0px}
+   html{background-color: #FFFFFF;}
+   /** 导航css ***/
+   body{overflow: hidden;position: absolute;width: 1280px;height: 720px;background-color:#1D5F5C;}
+   body .contentBoxP30{top:5px;}
+   body .contentBox30{top:18px;}
+   .contentBox{position: absolute;left: 60px;top:  15px;width: auto;height: auto;}
+   .nav{position: absolute;top:0;height: 130px;width: 1160px;}
+   .nav-menu{position: absolute;top: 0;height: 65px;width: 980px;}
+   .nav-menu .menu-li{position: absolute;top: 0;color: #FFFFFF;width: 160px;height: 46px;font-size: 20px;background-color:#779F9D;}
+   .nav-menu .menu-li-1{left: 0;}
+   .nav-menu .menu-li-2{left: 166px;}
+   .nav-menu .menu-li-3{left: 332px;}
+   .nav-menu .menu-li .hover{border:2px solid #ffffff;background: #0098BC;box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);}
+   .menu-search-hover{position: absolute;left: 0;border:2px solid #ffffff;background-color: #0098BC;box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);visibility: hidden;}
+   .menu-history-hover{position: absolute;left: 0;border:2px solid #ffffff;background-color: #0098BC;box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);visibility: hidden;}
+   .menu-collect-hover{position: absolute;left: 0;border:2px solid #ffffff;background-color: #0098BC;box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);visibility: hidden;}
+   .nav-menu .menu-index{position: absolute;top: 0;color: #FFFFFF;width: 156px;height: 46px;line-height: 46px;font-size: 20px;text-align: left; text-indent:15px;border: 2px solid transparent;background: transparent} 
+   .nav-menu .menu-indexP30{width: 160px !important;} 
+   .menu-search span{
+     position: absolute;
+     top: 14px;
+     right: 16px;
+     background-image: url('./source/public/images/index/sousuo.png');
+     width: 20px;
+     height: 20px;
+   }
+   .menu-collect span{
+     position: absolute;
+     top: 14px;
+     right: 16px;
+     background-image: url('./source/public/images/index/shouc.png');
+     width: 20px;
+     height: 20px;
+   }
+   .menu-history span{
+     position: absolute;
+     top: 14px;
+     right: 16px;
+     background-image: url('./source/public/images/index/jilu.png');
+     width: 20px;
+     height: 20px;
+   }
+   .nav-logo{position: absolute;top: 35px;left: 980px;height: 71px;width: 179px;background-image: url('./source/public/images/index/logo.png')}
+   .nav-new-year{position: absolute;top: 9px;left: 806px;height: 132px;width: 135px;background-image: url('./source/public/images/index/new-year.png');background-repeat: no-repeat; background-size: 100% 100%;}
+   .nav-new-yearP30{position: absolute;top: 25px;left: 800px;height: 80px;width: 160px;background-image: url('./source/public/images/index/new-year.png');background-repeat: no-repeat; background-size: 100% 100%;}
+   /* #navNewYear{display: none;} */
+   .nav-column{position: absolute;top:50px;left: 0;height: 80px;width: 980px;}
+   .nav-item{position: absolute;display: inline-block;height: 50px;color: #FFFFFF;line-height: 50px;font-size: 25px;margin-top: 10px;text-shadow: 0 0px 6px transparent;text-align: center;white-space: nowrap;}
+   .nav-item0{width: 55px;left: 36px;}
+   .nav-item1{width: 105px;left: 153px;}
+   .nav-item2{width: 175px;left: 344px;}
+   .nav-item3{width: 105px;left: 548px;}
+   .nav-column .hover-sign{
+    position: absolute;
+    top: 58px;
+    height: 5px;
+    background: #ffffff;
+    box-shadow: 0 0px 6px #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display:none;
+  }
+  .nav-column .hover{
+    display: inline-block;
+  }
+  .nav-column .hover-sign span{
+    display: block;
+    content: '';
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+    left: 45%;
+    top: -3px;
+    border-radius: 70%;
+   }
+   /** 推荐css ***/   
+   .recommend-item-0{position: absolute;top: 126px;height: 320px;width: 1160px;}
+   .recommend-item-1{position: absolute;top: 468px;height: 193px;width: 1160px;}
+   .recommend-item-0 .recommend-child-0{position: absolute;top:0px;height: 320px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-child-1{position: absolute;top:0px;left:294px;height: 150px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-child-2{position: absolute;top:170px;left:294px;height: 150px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-child-3{position: absolute;top:0px;left:589px;height: 320px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-child-4{position: absolute;top:0px;left:883px;height: 150px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-child-5{position: absolute;top:170px;left:883px;height: 150px;width: 276px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-child-0{position: absolute;top:0px;height: 193px;width: 375px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-child-1{position: absolute;top:0px;left:392px;height: 193px;width: 375px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-child-2{position: absolute;top:0px;left:784px;height: 193px;width: 375px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   .recommend-item-1 .hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   /** 少儿课堂css ***/
+   .recommend-item-1 .recommend-kid-0{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-kid-1{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;left:392px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-kid-2{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;left:784px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-kid-3{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-kid-4{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;left:392px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-kid-5{position: absolute;width: 375px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;left:784px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-kid-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   .recommend-item-1 .recommend-kid-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   /* 小初高课堂css */
+   .recommend-item-1 .recommend-advanced-0{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-1{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;left:295px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-2{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;left:590px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-3{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 0px;left:885px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-4{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-5{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;left:295px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-6{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;left:590px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-advanced-7{position: absolute;width: 277.5px;height: 88px;text-align: center;line-height: 88px;color: #ffffff;font-size: 25px;top: 106px;left:885px;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-advanced-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   .recommend-item-1 .recommend-advanced-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   /* 成教课堂 */
+   .recommend-item-1 .recommend-education-0{position: absolute;width: 178.3px;height: 193px;top: 0px;text-align: center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-education-1{position: absolute;width: 178.3px;height: 193px;top: 0px;left:196.3px;text-align: center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-education-2{position: absolute;width: 178.3px;height: 193px;top: 0px;left:392.6px;text-align: center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-education-3{position: absolute;width: 178.3px;height: 193px;top: 0px;left:588.9px;text-align: center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-education-4{position: absolute;width: 178.3px;height: 193px;top: 0px;left:785.2px;text-align:center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-1 .recommend-education-5{position: absolute;width: 178.3px;height: 193px;top: 0px;left:981.5px;text-align: center;font-size: 26px;color: #ffffff;border: 2px solid transparent;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0);}
+   .recommend-item-0 .recommend-education-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+   .recommend-item-1 .recommend-education-hover{border: 3px solid #ffffff;box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);}
+#test33{
+  font-size: 30px;
+  color: red;
+  z-index: 99;
+  position: absolute;
+  left: 45%;
+  top: 40px
+}
+.mask{
+  width: 1280px;
+  height: 720px;
+  background-color: rgba(0,0,0,.5);
+  position: relative;
+  z-index: 99;
+}
+.mask img{
+  position: absolute;
+  width: 882px;
+  height: 453px;
+  top: 131px;
+  left: 197px;
+}
+.mask .imgBtn{
+  position: absolute;
+  top: 468px;
+  left: 523px;
+  font-size:20px;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  background-image: url('./source/public/images/maskBtn.png');
+  width: 260px;
+  height: 140px;
+  text-align: center;
+  line-height: 99px;
+  z-index: 100;
+}
+#mask{
+  display: none;
+}
+
+ </style>
+</head>
+
+<body onload="init()">
+  <div class="mask" id="mask">
+    <div class="imgBtn">秒杀</div>
+    <img src="./source/public/images/st.png" alt="">
+  </div>
+  <div id="contentBox" class='contentBox'>
+    <!-- 头部栏目 -->
+    <div class="nav">
+      <!-- 功能按钮 -->
+      <div class="nav-menu">
+          <div class="menu-li menu-li-1">
+            <div class="menu-index menu-search" id="menu-index0">内容搜索 <span></span></div>
+          </div>
+          <div class="menu-li menu-li-2">
+            <div class="menu-index menu-history" id="menu-index1">观看记录 <span></span></div>
+          </div>
+          <div class="menu-li menu-li-3">
+            <div class="menu-index menu-collect" id="menu-index2">我的收藏 <span></span></div>
+          </div>
+        </div>
+      <!-- 栏目名称 -->
+      <div class="nav-column" id="nav-column"></div>
+      <!-- 专区logo -->
+      <div class="nav-new-year"  id="navNewYear"></div>
+      <div class="nav-logo"></div>
+    </div>
+    <!-- 推荐位数据 -->
+    <div class="recommend" id="recommend">
+
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="./source/video/js/getUrl.js"></script>
+<script type="text/javascript" src="./source/public/js/js.cookie.js"></script>
+<script type="text/javascript" src="./source/public/js/util.js"></script>
+<script type="text/javascript" src="./source/public/js/ajax.js"></script>
+<script type="text/javascript" src="./source/public/js/interface.js" ></script>
+<script type="text/javascript" src="./source/public/js/logApi.js"></script>
+<script type="text/javascript" src="./source/video/js/PlayUtil.js"></script>
+<script type="text/javascript" src="./source/index/index.js"></script>
+
+<script type="text/javascript" src="./source/index/nav.js"></script>
+<script type="text/javascript" src="./source/index/Education_Recommend.js"></script>
+<script type="text/javascript" src="./source/index/Education_Children_Classroom.js"></script>
+<script type="text/javascript" src="./source/index/Education_primaryAdvanced_Classroom.js"></script>
+<script type="text/javascript" src="./source/index/Education_AdultEducation_Classroom.js"></script>
+</html>

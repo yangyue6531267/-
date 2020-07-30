@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>跳转页</title>
+  <meta name="page-view-size" content="1280*720">
+  <style>
+    @media (min-width: 1000px) {
+      body {
+        width: 1280px;
+        height: 720px;
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        width: 1280px;
+        height: 720px;
+        background-color: #4D828E;
+        z-index: 9999;
+        visibility: visible;
+      }
+
+      .imgLoading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 300px;
+        background: url('./source/public/images/load.png');
+        line-height: 0;
+        font-size: 0;
+        text-align: center;
+        animation-name: load;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: load;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 800px) {
+      body {
+        width: 644px;
+        height: 534px;
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        width: 644px;
+        /* height: 534px; */
+        background-color: #4D828E;
+        z-index: 9999;
+        visibility: visible;
+      }
+
+      .imgLoading {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 200px;
+        background: url('./source/public/images/load.png') no-repeat;
+        line-height: 0;
+        font-size: 0;
+        text-align: center;
+        animation-name: load;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: load;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    @-webkit-keyframes load {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes load {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <div class="imgLoading"></div>
+  </div>
+  <div id='advert' class='advert'>
+    <div id="allTime" class="all-time">5 S后返回</div>
+    <div id="upgrade" class="upgrade">
+      <div class="login-name">全新升级</div>
+      <div class="login-text">亲爱的用户，您终于来啦！</div>
+      <div class="login-footer">检测到有最新版本</div>
+      <div class="login-footer">升级可以获得最好的体验</div>
+      <div class="buttom-footer hover" id='footerBar'>升级</div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  document.write('<script src="./source/public/js/jquery.min.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/jquery.cookie.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/crypto-js.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/common.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/client.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/logApi.js?adv='+Math.random()+'"><\/script>')
+</script>
+<script>
+  var deviceWidth = window.screen.width * 1;
+  if (deviceWidth < 1280) {
+    var meta = '<meta name="page-view-size" content="644*534">'
+  } else {
+    var
+      meta = '<meta name="page-view-size" content="1280*720">'
+  }
+  $("head").prepend(meta)
+</script>
+<script>
+//
+var uploadUrl = 'http://112.17.251.186';//自升级地址
+
+//
+var page = 0//用于轮询调用播放
+var currCode = ''//当前版本号
+var uploadCode = ''//最新版本号
+var accountInfo = {}
+var deviceInfo = {}
+var appPackage = 'yanhua.tv.jx.bjyd'
+var apkParams = {
+  downloadProgress: -1
+}//最新apk版本信息
+
+//获取信息
+window.onload = function () {
+    submitPrompt('deviceInfo', { return: 'getDeviceInfo' });
+}
+
+var topContent = {
+  up: function () {
+  },
+  down: function () {
+  },
+  left: function () {
+  },
+  right: function () {
+  },
+  enter: function () {
+    downloadApk()
+  },
+  back: function () {
+    cancelDownload()
+    console.log("升级弹框中退出升级退出app")
+    backApp()
+  },
+}
+
+// 获取账号鉴权信息
+function getAccountInfo(res) {
+  console.log(JSON.stringify(res))
+  accountInfo = res
+  setStorage('AccountInfo', JSON.stringify(res))
+  console.log('AccountInfo---' + getStorage('AccountInfo'))
+  initApk();
+}
+4
+//	获取设备基本参数
+function getDeviceInfo(res) {
+  console.log('deviceInfo---------------------' + JSON.stringify(res))
+  deviceInfo = res
+  setStorage('deviceInfo', JSON.stringify(res))
+  console.log('deviceInfo' + getStorage('deviceInfo'))
+  submitPrompt('accountInfo', { return: 'getAccountInfo' })
+  //版本信息埋点
+  try {
+    var params = {
+      type: 87,
+      content: {
+        appName: deviceInfo.softVName,
+        appVersionCode: deviceInfo.softVCode,
+        varsionTime: ''
+      }
+    }
+    adStat(params)
+  } catch (error) {
+    console.log(error)
+  }
+
+  //检测升级，认证apk
+  setStorage('deviceInfo', JSON.stringify(res))
+  console.log('deviceInfo----' + getStorage('deviceInfo'))
+}
+
+/**
+ * 未来认证ottlogin SDK对接
+ * 
+*/
+// 用户鉴权/apk认证
+function initApk() {
+  submitPrompt('auth', { jsonParam: '', return: 'initApkCallBack' })
+}
+//用户鉴权apk认证回调
+function initApkCallBack(res) {
+  console.log('initApkCallBack-------' + JSON.stringify(res))
+//无需判断自升级--所以赋此值
+   var code = 1;
+ //无需判断自升级--所以赋此值
+  if (code == 1) { //检测升级时应为res.code == 1
+    //检测apk升级
+    var url = uploadUrl + ':8082/acds/dic?appDeviceId=' + deviceInfo.eth0_mac + '&s=1&v=1';
+    console.log('getUploadStatus---' + url);
+    // submitPrompt('getHttp', { httpUrl: encodeURIComponent(url), return: 'getUploadStatus' });
+    //认证成功日志
+    try{
+      var params = {
+        type: 10,
+        content: {
+          type: 0,
+          varsionType: deviceInfo.softVName,
+          varsionCode: deviceInfo.softVCode
+        }
+      }
+      adStat(params)
+    }catch(e){
+
+    }
+    window.location.href = "source/index/home.html"
+  } else {
+    //认证失败需退出应用，不允许继续播放媒体
+    toast('认证失败----' + JSON.stringify(res) + '---mac:' + deviceInfo.eth0_mac + '-----------3秒后退出')
+    var params = {
+      type: 10,
+      content: {
+        type: 1,
+        errorCode: ''
+      }
+    }
+    adStat(params);
+    setTimeout(function () {
+      console.log("认证失败需退出应用app")
+      backApp()
+    }, 3000)
+  }
+}
+
+
+
+
+//获取设备基本参数
+// var deviceInfo = // {"androidV":"4.4.2","brand":"Skyworth",
+// "eth0_mac":"3050fd59c8d9",
+// "hardware":"amlogic","incremental":"3.0.0",
+// "manufacturer":"Skyworth","model":"CM201-1-CW3_HI",
+// "product":"p201_iptv","softVCode":"1",
+// "softVName":"1.0.006",
+// "stbId":"005103FF0001004019153050FD59C8D9", 
+  //  "stbId":"0032030000010040190258B42DCF510A"
+// "wifi_mac":"b447f5618f64"}"
+
+
+//盒子获取参数
+// var accountInfo = {"cityCode":"08980",
+// "cpCode":"ICNTV","mobileNo":"18217896035","provinceNo":"22",
+// "userAuthUrl":"http://bngt.itv.cmvideo.cn:8095/scspProxy",
+// "userName":"0102327570788553510",
+// "userToken":"9977759376bb06cc5699fd30cde867c122vv"}"
+
+
+/**
+未来升级SDK对接
+*/
+var apkParams = {
+}
+//升级检测
+function getUploadStatus() {
+  var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+   var url = uploadUrl + ':8081/auth/aua?s=1&v=1&operator=&firm=&modelCode=&appDeviceId=' + deviceInfo.eth0_mac + '&appPackage=' + appPackage + '&appVer=' + currCode
+    // var url = uploadUrl + ':8081/auth/aua?s=1&v=1&operator=&firm=&modelCode=&appDeviceId=' + deviceInfo.eth0_mac + '&appPackage=' + 'yanhua.xdftv.web' + '&appVer=1'
+
+    console.log('uploadStatus---' + url);
+    submitPrompt('getHttp', { httpUrl: encodeURIComponent(url), return: 'uploadStatus' });
+}
+function uploadStatus(res) {
+  console.log('uploadStatus-----' + JSON.stringify(res));
+    if (res.code == 200) {
+      apkParams = res.data[0]
+      try {
+        var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+        var uploadCode = String(apkParams.appVer).replace(/[^\-?\d]/g, '') * 1;
+        console.log('uploadCode-------' + currCode + '-------------' + uploadCode)
+        if (currCode < uploadCode) {
+          //升级
+          // loading('hidden');
+          //升级ui
+          getId('upgrade').style.display = 'block';
+          areaObj = topContent;
+        } else {
+          nextRouter();
+        }
+      } catch (e) {
+        console.log(e);
+        nextRouter();
+      }
+    } else {
+      nextRouter();
+    }
+}
+//下载apk
+function downloadApk() {
+  console.log('下载apk');
+    // var deviceInfo = getStorage('deviceInfo') && JSON.parse(getStorage('deviceInfo'));
+    submitPrompt('download', { url: apkParams.fileUrl, fileMd5: deviceInfo.signMD5, return: 'downloadApkCallkacb' });
+  }
+function downloadApkCallkacb(res) {
+    console.log('downloadApkCallkacb-----' + JSON.stringify(res));
+    if (res.code === 400) {
+      toast('升级失败，3秒后自动退出');
+      setTimeout(function () {
+        console.log("升级失败，3秒后自动退出app")
+        backApp();
+      }, 3000)
+      return
+    }
+    apkParams.fileSavePath = res.fileSavePath;//存储路径
+    apkParams.downloadProgress = res.downloadProgress; //默认0 具体下载进度值
+    var code = 0;
+  //  var deviceInfo = getStorage('deviceInfo') && JSON.parse(getStorage('deviceInfo'));
+    removeClass(getId('footerBar'), 'hover');
+    getId('footerBar').innerHTML = '<span id="percentageBar"></span>';
+    getId('percentageBar').style.width = res.downloadProgress + '%';
+    console.log('downloading----' + res.tag)
+
+    if (res.downloadProgress == 100) {
+      getId('footerBar').innerHTML = '<span id="percentageBar">安装中..</span>';
+      getId('percentageBar').style.width = 100 + '%';
+      installApp();
+      return
+    }
+    if (res.tag = 'downloadFinish') {
+      //开始下载
+    } else if (res.tag = 'downloading') {
+      //正在下载
+    } else if (res.tag = 'downloadFinish') {
+      getId('percentageBar').style.width = 100 + '%';
+      // toast('下载成功');
+      getId('footerBar').innerHTML = '<span id="percentageBar">安装中..</span>';
+      installApp();
+      code = 1;
+      //升级日志
+    } else if (res.tag = 'downloadFail') {
+      toast('下载失败');
+      code = 2;
+    }
+}
+
+//安装apk
+function installApp() {
+    console.log('installApp');
+    submitPrompt('installApp', {
+      package: 'yanhua.xdftv.web',
+      apkPath: apkParams.fileSavePath,
+      installType: 1,
+      return: 'installAppCallBack'
+    });
+
+    //20秒后未安装成功，提示失败
+    setTimeout(function () {
+      toast('升级失败,3秒后自动退出');
+      setTimeout(function () {
+        console.log("20秒后未安装成功,退出app")
+        backApp();
+      }, 3000)
+    }, 17000)
+    var deviceInfo = getStorage('deviceInfo') && JSON.parse(getStorage('deviceInfo'));
+  }
+function installAppCallBack(res) {
+  console.log('安装apk接口回调-----' + JSON.stringify(res))
+  var code = 5
+    if (res.code == 200) {
+
+    } else {
+      setTimeout(function () {
+        toast('升级失败，3秒后自动退出');
+        backApp();
+      }, 3000)
+      return
+      console.log('安装失败');
+    }
+    //升级日志
+      try {
+        var currTime = (new Date()).valueOf()
+        var params = {
+          type: 80,
+          content: {
+            upgradeStatus: code,//开始下载 1 下载成功 2 下载失败 3 开始安装 4 安装成功 5 安装失败 
+            oldVersion: currCode,//原版本号 
+            newVersion: uploadCode, //新版本号 
+            downloadedId: md5(deviceInfo.eth0_mac + currTime),//mac+operatetime md5 规则生成 
+            installId: md5(deviceInfo.eth0_mac + currTime),//mac+ operatetime md5规则生成
+          }
+        }
+        adStat(params)
+      } catch (error) {
+      }
+  }
+
+//取消下载apk
+function cancelDownload() {
+  // var parames = {
+  //   appUpgradeAddress: '',//APP 升级服务器地址 
+  //   appKey: '',//应用标识 
+  //   channelCode: '',// 	应用渠道号 
+  //   versionCode: '',//	APP 版本号 
+  //   data: '',// 	存储升级信息 
+  // }
+  // parames = JSON.stringify(parames)
+  // submitPrompt('cancelDownload', { url: apkParams.packageAddr })
+  var parames = {
+      url: apkParams.packageAddr
+    }
+    parames = JSON.stringify(parames);
+    submitPrompt('cancelDownload', { url: apkParams.packageAddr });
+}
+
+//外链跳转专题页面
+function nextRouter() {
+  if (getParam('specialId')) {
+    var specialUrl = baseUrl + 'p=yhSpecialDetail&k=1&v=1&specialId=' + getParam("specialId") + '&c=13';
+    Cookies.set('detailUrl', specialUrl, { path: '/' })
+    window.location.replace = './source/special/index.html'
+    try {
+      bi.start('0202')
+    } catch (error) {
+
+    }
+  } else {
+    try {
+      bi.start()
+    } catch (error) {
+      console.log('埋点错误', error)
+    }
+    // 首页页面访问埋点
+    console.log('bi 首页页面访问埋点')
+    window.location.replace('./source/index/home.html')
+  }
+  
+}
+
+onKeyPress = function (keyCode) {
+  switch (keyCode) {
+    case "up": //上边
+      areaObj.up();
+      break;
+    case "down": //下边
+      areaObj.down();
+      break;
+    case "left": //左边
+      areaObj.left();
+      break;
+    case "right": //右边
+      areaObj.right();
+      break;
+    case "back":
+      areaObj.back();
+      break;
+    case "enter":
+      areaObj.enter();
+      break;
+    case "home":
+      areaObj.home();
+      break;
+    case "menu":
+  }
+};
+//事件绑定
+document.onkeydown = grepEvent
+
+</script>
+
+</html>

@@ -1,0 +1,376 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#mine {
+  width: 1280px;
+  height: 720px;
+  background: #e8dfc3;
+  overflow: hidden;
+}
+
+.mine_content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mine_content .mine_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all .5s ease;
+}
+
+.nothing {
+  height: 258px;
+  line-height: 258px;
+  text-align: center;
+  font-size: 54px;
+  color: #434343;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.mine_header {
+  height: 72px;
+}
+
+.mine_header .mine_header_title {
+  float: left;
+  height: 100%;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.mine_header .mine_header_title > span {
+  display: inline-block;
+  width: 72px;
+  line-height: 72px;
+  height: 100%;
+  color: rgba(89, 86, 76, 0.2);
+  font-size: 72px;
+}
+
+.mine_header .mine_header_logo {
+  float: right;
+  margin-right: 60px;
+  margin-top: 28px;
+}
+
+.video_watchMore {
+  position: relative;
+  width: 178px;
+  height: 256px;
+  line-height: 256px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ef8060;
+}
+
+.mine_tabbar {
+  width: 1200px;
+  margin: 53px auto 0;
+  height: 223px;
+}
+
+.mine_tabbar > div {
+  float: left;
+}
+
+.mine_tabbar .mine_order_img {
+  position: relative;
+  margin-right: 20px;
+}
+
+.mine_tabbar .mine_order {
+  width: 600px;
+  height: 219px;
+  background-image: url("../public/images/mine/1.png");
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1000;
+}
+
+.mine_tabbar .mine_Lottery {
+  width: 570px;
+  height: 174px;
+  margin-top: 15px;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.mine_tabbar .mine_Lottery .lott_bg {
+  width: 100%;
+  height: 100%;
+  background: #dbd1bc;
+  border-radius: 15px;
+}
+
+.mine_tabbar .mine_Lottery .l_bg {
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 446px;
+  height: 174px;
+  border-radius: 15px;
+  background: #f7e9cb;
+}
+
+.mine_tabbar .mine_Lottery .s_bg {
+  position: absolute;
+  left: 23px;
+  top: -7px;
+  width: 427px;
+  height: 157px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.mine_tabbar .mine_Lottery .mine_present {
+  width: 105px;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  z-index: 10;
+  background: #dbd1bc;
+  text-align: center;
+}
+
+.mine_tabbar .mine_Lottery .mine_present .present_img {
+  width: 101px;
+  height: 98px;
+  background-image: url("../public/images/mine/pre.png");
+  margin: 19px auto 0;
+}
+
+.mine_tabbar .mine_Lottery .mine_present > span {
+  display: inline-block;
+  height: 33px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 33px;
+  color: #8f7233;
+}
+
+#history {
+  width: 1280px;
+  height: 720px;
+  background: #e6ddc3;
+  overflow: hidden;
+}
+
+.history_header {
+  margin-left: 60px;
+}
+
+.history_header > span {
+  width: 69px;
+  height: 70px;
+  display: inline-block;
+  font-size: 70px;
+  line-height: 60px;
+  opacity: 0.1;
+}
+
+.history_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all .5s ease;
+}
+
+.history_content {
+  margin-top: 36px;
+  height: 614px;
+  position: relative;
+}
+
+.history_none {
+  height: 258px;
+  line-height: 258px;
+  text-align: center;
+  font-size: 54px;
+  color: #434343;
+}
+
+.yh_list {
+  width: 1220px;
+  height: 400px;
+}
+
+.yh_list .item_day {
+  position: relative;
+  margin-left: 60px;
+}
+
+.yh_list .item_day .arc {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ef8060;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.yh_list .item_day .date {
+  height: 42px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 42px;
+  color: #ef8060;
+  opacity: 0.6;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.yh_list .yh_list_wrapper {
+  position: relative;
+  height: 85%;
+  overflow: hidden;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller {
+  position: absolute;
+  padding-left: 50px;
+  padding-top: 10px;
+  left: 0;
+  top: 20px;
+  width: 10000px;
+  transition: all .5s ease;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item {
+  float: left;
+  width: 178px;
+  margin-right: 15px;
+  border: 1px solid transparent;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item .video_info {
+  position: relative;
+  width: 176px;
+  height: 258px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item .video_info .video_score {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(343deg, #dda956 0%, #ebdabd 100%);
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  font-size: 14px;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item .video_info .video_img {
+  width: 100%;
+  height: 100%;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item .video_info .video_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item .video_name {
+  margin-top: 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item.hover .info_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 178px;
+  height: 258px;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item.hover .video_img {
+  border-radius: 15px;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item.hover .video_info {
+  border: 3px solid rgba(67, 154, 150, 0.6) !important;
+  background: rgba(0, 170, 170, 0.8) !important;
+  box-shadow: 0px 15px 10px rgba(67, 154, 150, 0.6) !important;
+  transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  -moz-transform: scale(1.09);
+  -webkit-transform: scale(1.09);
+  -o-transform: scale(1.09);
+  position: relative;
+  top: -4px;
+}
+
+.yh_list .yh_list_wrapper .yh_list_scroller .yh_list_item.hover .video_watchMore {
+  border: 3px solid rgba(67, 154, 150, 0.6) !important;
+  box-shadow: 0px 15px 10px rgba(67, 154, 150, 0.6) !important;
+}
+
+.mine_Lottery.btnhover {
+  border-radius: 10px;
+  background-color: #439a96 !important;
+  box-shadow: 0px 0px 15px #439a96 !important;
+  transform: scale(1.07);
+  -ms-transform: scale(1.07);
+  -moz-transform: scale(1.07);
+  -webkit-transform: scale(1.07);
+  -o-transform: scale(1.07);
+}
+
+.mine_order_img.btnhover .mine_order {
+  transform: scale(1.07);
+  -ms-transform: scale(1.07);
+  -moz-transform: scale(1.07);
+  -webkit-transform: scale(1.07);
+  -o-transform: scale(1.07);
+}
+
+.mine_order_img.btnhover::after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 6px;
+  width: 570px;
+  z-index: 0;
+  height: 190px;
+  border-radius: 19px;
+  background-color: #439a96 !important;
+  box-shadow: 0px 0px 15px #439a96 !important;
+  transform: scale(1.07);
+  -ms-transform: scale(1.07);
+  -moz-transform: scale(1.07);
+  -webkit-transform: scale(1.07);
+  -o-transform: scale(1.07);
+}

@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#order {
+  width: 1280px;
+  height: 720px;
+  background: #e6ddc3;
+}
+
+#order > div {
+  float: left;
+}
+
+.order_left {
+  width: 359px;
+  height: 100%;
+  border-right: 1px solid rgba(29, 29, 29, 0.1);
+  position: relative;
+}
+
+.order_left .order_menu {
+  width: 244px;
+  height: 431px;
+  position: absolute;
+  top: 147px;
+  left: 94px;
+  background: rgba(17, 93, 90, 0.36);
+  border-radius: 15px;
+}
+
+.order_left .order_menu .order_wrapper {
+  position: absolute;
+  top: 178px;
+  height: 253px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.order_left .order_menu .order_wrapper .order_menu_list {
+  position: absolute;
+  transition: all .2s ease;
+  top: 0;
+  left: 0;
+}
+
+.order_left .order_menu .order_wrapper .order_menu_list .order_menu_item {
+  width: 243px;
+  height: 68px;
+  text-align: center;
+  line-height: 68px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.order_right {
+  width: 920px;
+  height: 100%;
+}
+
+.order_right .order_right_header {
+  margin: 50px 0 0 0;
+  position: relative;
+  height: 75px;
+}
+
+.order_right .order_right_header > div {
+  float: left;
+}
+
+.order_right .order_right_header .order_header_title {
+  width: 378px;
+  height: 75px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 75px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.order_right .order_right_header .order_bargain {
+  position: absolute;
+  top: -20px;
+  left: 298px;
+  width: 103px;
+  height: 30px;
+  line-height: 30px;
+  color: #1d1d1d;
+  text-align: center;
+  background: #ffda0b;
+  border-radius: 15px 15px 15px 0px;
+}
+
+.order_right .order_right_header .order_header_major {
+  margin-top: 40px;
+  height: 28px;
+  margin-left: 20px;
+}
+
+.order_right .order_right_header .order_header_major img {
+  vertical-align: top;
+}
+
+.order_right .order_right_header .dominator {
+  margin-top: 40px;
+  height: 28px;
+  margin-left: 55px;
+}
+
+.order_right .order_right_header .dominator img {
+  vertical-align: top;
+}
+
+.order_right .order_right_msg {
+  margin-left: 50px;
+  width: 711px;
+  height: 70px;
+  font-size: 20px;
+  line-height: 70px;
+  color: black;
+}
+
+.order_right .order_type {
+  margin-top: 23px;
+  margin-left: 50px;
+  width: 855px;
+  height: 111px;
+  background: rgba(17, 93, 90, 0.36);
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.order_right .order_type .order_type_list {
+  height: 100%;
+  position: relative;
+}
+
+.order_right .order_type .order_type_list .order_list_wraper {
+  position: absolute;
+  top: -6px;
+  left: -14px;
+}
+
+.order_right .order_type .order_type_list .order_list_wraper .order_list_item {
+  position: relative;
+  width: 286px;
+  height: 122px;
+  text-align: center;
+  line-height: 122px;
+  border-radius: 15px;
+  float: left;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.order_right .order_type .order_type_list .order_list_wraper .order_list_item del {
+  height: 28px;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 20px;
+  right: 57px;
+}
+
+.order_right .order_type .order_type_list .order_list_wraper .order_list_item .order_item_sign {
+  display: inline-block;
+  width: 70px;
+  height: 23px;
+  background-image: url("../public/images/order/1.png");
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -20px;
+}
+
+.order_right .order_rule {
+  width: 580px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  margin-left: 59px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.order_right .order_rule .order_rule_title {
+  margin: 20px 0 0 40px;
+  width: 100px;
+  height: 36px;
+  font-size: 20px;
+  line-height: 36px;
+  color: black;
+  font-weight: bold;
+}
+
+.order_right .order_rule .order_rule_list {
+  padding: 0;
+  margin: 5px 0 0 50px;
+  list-style-type: none;
+}
+
+.order_right .order_rule .order_rule_list li {
+  margin-top: 10px;
+}
+
+.order_right .order_rule .order_btnbox {
+  overflow: hidden;
+  margin: 26px 15px 0 0px;
+}
+
+.order_right .order_rule .order_btnbox .order_btn {
+  width: 231px;
+  height: 60px;
+  background-image: url("../public/images/order/2.png");
+  float: right;
+}
+
+.order_left::after {
+  content: '';
+  display: block;
+  width: 4px;
+  margin-left: 10px;
+  height: 72px;
+  background: #070707;
+  opacity: 1;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.order_left::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translate(0, -50%);
+  border: 5px solid #070707;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+#order .order_menu_item.hover {
+  background: rgba(75, 163, 159, 0.82);
+  border-color: #66ede7;
+  box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+}
+
+#order .order_list_item.hover {
+  background: rgba(75, 163, 159, 0.7);
+  border: 1px solid rgba(102, 237, 231, 0.5);
+  box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+}
+
+#order .order_gap {
+  width: 1px;
+  height: 100px;
+  border: 1px solid white;
+  opacity: 0.3;
+  float: left;
+  margin-top: 11px;
+}
+
+#order .order_btn.hover {
+  background: url("../public/images/order/1992.png") no-repeat;
+  background-size: contain;
+}

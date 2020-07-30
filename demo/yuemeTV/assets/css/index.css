@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-family: Arial;
+    background: transparent;
+    color: #ffffff;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none
+}
+
+input,
+button {
+    background: none;
+    outline: none;
+    border: 0px;
+}
+
+.detail {
+    position: absolute;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    background-image: -webkit-linear-gradient(45deg, #3D5E85, #73998F);
+    background-image: linear-gradient(45deg, #3D5E85, #73998F);
+    opacity: 95%;
+}
+
+.detail-box {
+    position: relative;
+    width: 620px;
+    height: 440px;
+    margin: 100px auto 0 auto;
+    border-radius: 15px;
+    background-image: -webkit-linear-gradient(0deg, #598AC3, #ACE6D6);
+    background-image: linear-gradient(0deg, #598AC3, #ACE6D6);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 40px 80px;
+}
+
+.detail-header {
+    position: absolute;
+    top: 40px;
+    left: 330px;
+    font-size: 38px;
+}
+
+.detail-title {
+    position: absolute;
+    top: 105px;
+    left: 330px;
+}
+
+.detail-text {
+    position: absolute;
+    top: 146px;
+    width: 405px;
+    height: 200px;
+    left: 330px;
+}
+
+.detail-text {
+    position: absolute;
+    top: 146px;
+    width: 405px;
+    height: 200px;
+    left: 330px;
+}
+
+.detail-button {
+    position: absolute;
+    top: 376px;
+    width: 160px;
+    line-height: 60px;
+    height: 60px;
+    left: 340px;
+    background-color: #8BB7D3;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.detail-checkbox {
+    position: absolute;
+    top: 396px;
+    left: 560px;
+    width: 200px;
+    height: 40px;
+}
+
+.detail-checkbox span {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: #507188;
+    border-radius: 13px;
+}
+
+.detail-checkbox div {
+    display: inline-block;
+    margin-left: 35px;
+}
+
+.detail-box .detail-checkbox .hover {
+    background-image: url('./../images/checkbox-hover.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: 0px solid #fff;
+    /* transition: none;
+    -webkit-transition: none;
+    transform: none;
+    -webkit-transform: none; */
+}
+
+.detail-box .detail-checkbox .hover-check {
+    background-image: url('./../images/checkbox-hover-check.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 0px solid #fff;
+    background-color: transparent;
+    /* transition: none; */
+    /* -webkit-transition: none;
+    transform: none;
+    -webkit-transform: none; */
+}
+
+.detail-box .detail-checkbox .check {
+    border: 2px solid #fff;
+    background-image: url('./../images/checkbox-check.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 0px solid #fff;
+    background-color: transparent;
+    /* transition: none;
+    -webkit-transition: none;
+    transform: none;
+    -webkit-transform: none; */
+}
+
+
+.detail-box .hover {
+    background: #0098BC;
+    border: 2px solid #fff;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.detail .qrCode {
+    position: absolute;
+    top: 105px;
+    left: 50px;
+    height: 330px;
+    width: 230px;
+    border-radius: 15px;
+    background-color: #DE4C4C;
+    background-color: #DE4C4C;
+    border: 2px solid #fff;
+}
+
+.detail .pay-img {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 77px;
+    left: 77px;
+    background-color: #ffffff;
+    background-image: url('./../images/alipay.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.detail .qrCode .code-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 190px;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.detail .qrCode .qrCode-imge {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+.detail .qrCode-text {
+    font-size: 20px;
+    position: absolute;
+    top: 235px;
+    text-align: center;
+    width: 230px;
+}
+
+.detail .qrCode-text1 {
+    font-size: 20px;
+    position: absolute;
+    top: 275px;
+    text-align: center;
+    width: 230px;
+}

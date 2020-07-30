@@ -1,0 +1,624 @@
+html *,
+a img {
+    outline: none;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1280px;
+    height: 720px;
+    font-size: 20px;
+    color: #ffffff;
+    background: none;
+    background-color: transparent;
+    font-family: "Microsoft YaHei";
+}
+
+li {
+    list-style: none;
+}
+
+/*视频加载框*/
+#video_loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -45px 0px 0px -45px;
+    width: 90px;
+    height: 90px;
+}
+
+/*阴影层*/
+#top_shade,
+#bottom_shade {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1280px;
+    height: 87px;
+    background: url('player/top_shade.png?t=1490432646000') repeat-x;
+}
+
+/*#bottom_shade {*/
+/*height     : 85px;*/
+/*top        : 635px;*/
+/*background : url('player/bottom_shade.png?t=1490432646000');*/
+/*}*/
+/*顶部提示条*/
+#topinfo {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 67px;
+    transition: all 300ms ease-in-out 0s;
+    -webkit-transition: all 300ms ease-in-out 0s;
+}
+
+#topinfo.hide {
+    top: -67px;
+}
+
+#top_tip {
+    position: absolute;
+    /* left: 48px; */
+    width: 100%;
+    height: 85px;
+    line-height: 85px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    background: #000;
+    -moz-opacity: 0.8;
+    opacity: 0.85;
+    filter: alpha(opacity=80);
+}
+
+#top_vod_name {
+    font-size: 33px;
+}
+
+#top_vod_subset {
+    font-size: 24px;
+}
+
+/*菜单提示*/
+.menu_tip {
+    position: absolute;
+    left: 1032px;
+    top: 90px;
+    letter-spacing: 1px;
+    color: #c3c3c1;
+}
+
+.menu_tip span {
+    color: #f1f1ef;
+}
+
+/*标识：正常播放*/
+#play_ico {
+    transition: opacity 300ms ease-in-out 0s;
+    -webkit-transition: opacity 300ms ease-in-out 0s;
+}
+
+.play_ico_bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1280px;
+    height: 720px;
+    display: none;
+    background: url("player/matte_bg.png?t=1490432646000");
+}
+
+#bottom_name {
+    position: absolute;
+    left: 116px;
+    width: 400px;
+    height: 28px;
+    line-height: 28px;
+    color: #fefefe;
+}
+
+.play_ico {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -65px 0px 0px -65px;
+    width: 130px;
+    height: 130px;
+    opacity: 0;
+    background: url('player/pause_play.png?t=1490432646000') 0px 0px no-repeat;
+}
+
+/*标识：暂停*/
+.pause_ico {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -65px 0px 0px -65px;
+    width: 130px;
+    height: 130px;
+    background: url('player/pause_play.png?t=1490432646000') -130px 0px no-repeat;
+}
+
+/*进度条*/
+#progress_box {
+    position: absolute;
+    top: 600px;
+    width: 100%;
+}
+
+#progress_box.hide {
+    top: 720px;
+}
+
+#bottom_shade {
+    height: 120px;
+    top: 0px;
+    background: url('player/bottom_shade.png?t=1490432646000');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#progressBg {
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    width: 1010px;
+    height: 85px;
+}
+
+#timeBar {
+    position: absolute;
+    left: 132px;
+    top: 48px;
+    width: 1010px;
+    border-radius: 4px;
+    height: 8px;
+    background-color: #fff;
+}
+
+#timeProgress {
+    position: absolute;
+    left: 132px;
+    top: 48px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #3096ec;
+}
+
+#timeSelect {
+    position: absolute;
+    left: 132px;
+    top: 48px;
+    width: 1px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #97c8ff;
+}
+
+#iconProgress {
+    position: absolute;
+    left: 128px;
+    top: 44px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    /*background: url('player/playpos.png?t=1490432646000') no-repeat;*/
+    background: #fff;
+}
+
+/*#timeTip, #timeSelect, #timeProgress, #iconProgress {
+    -webkit-transition-duration : 300ms;
+    transition-duration         : 300ms;
+}*/
+/*H:i:s*/
+.curTime {
+    position: absolute;
+    left: 20px;
+    top: 39px;
+    width: 128px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*i:s*/
+.curTime1 {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 128px;
+    height: 26px;
+    font-size: 20px;
+    color: #efefef;
+}
+
+#curhour {
+    font-size: 20px;
+}
+
+#curmin,
+#cursecond {
+    font-size: 20px;
+}
+
+#totalTime {
+    position: absolute;
+    left: 1130px;
+    top: 39px;
+    width: 128px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*消息提示框*/
+#msg_box1 {
+    position: absolute;
+    left: 418px;
+    top: 182px;
+    width: 444px;
+    height: 334px;
+}
+
+.msg_box_bg1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 444px;
+    height: 334px;
+    background-color: #1f4680;
+}
+
+#msg_title {
+    position: absolute;
+    left: 40px;
+    top: 22px;
+    color: #d1d7e5;
+    font-size: 28px;
+}
+
+#msg_title span {
+    font-size: 22px;
+}
+
+.msg_box_line {
+    position: absolute;
+    left: 34px;
+    top: 65px;
+    width: 376px;
+    height: 3px;
+    background-color: #7493bf;
+}
+
+#msg_text {
+    position: absolute;
+    left: 44px;
+    top: 106px;
+    width: 360px;
+    height: 100px;
+    line-height: 30px;
+    font-size: 24px;
+    color: #c5d2e2;
+}
+
+.msg_confirm_btn {
+    position: absolute;
+    left: 158px;
+    top: 260px;
+    width: 128px;
+    height: 47px;
+    line-height: 46px;
+    font-size: 24px;
+    background: url('player/order_f.png?t=1490432646000') no-repeat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* 提示框是否订购*/
+#msg_box_dj {
+    position: absolute;
+    left: 400px;
+    top: 207px;
+    width: 480px;
+    height: 284px;
+}
+
+/*退出消息提示框*/
+#msg_box_quit {
+    position: absolute;
+    left: 400px;
+    top: 207px;
+    width: 480px;
+    height: 284px;
+}
+
+#msg_box_quit1 {
+    position: absolute;
+    left: 400px;
+    top: 207px;
+    width: 480px;
+    height: 284px;
+}
+
+.msg_box_bg_quit {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 480px;
+    height: 220px;
+    background: url("player/alert_bg.png?t=1490432646000") no-repeat;
+}
+
+#msg_title_quit {
+    position: absolute;
+    left: 40px;
+    top: 22px;
+    color: #d1d7e5;
+    font-size: 28px;
+}
+
+#msg_title_quit span {
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+#msg_text_quit {
+    position: absolute;
+    left: 0px;
+    top: 55px;
+    width: 480px;
+    height: 100px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+}
+
+#msg_text_quit1 {
+
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+}
+
+.btn_quit0,
+.btn_quit1,
+.btn_quit_dj0,
+.btn_quit_dj1 {
+    position: absolute;
+    left: 46px;
+    top: 130px;
+    width: 166px;
+    height: 64px;
+    line-height: 46px;
+    font-size: 24px;
+    background: url("alert_btn.png?t=1490432646000") no-repeat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.btn_quit1,
+.btn_quit_dj1 {
+    left: 266px;
+}
+
+.btn_quit0.focus,
+.btn_quit1.focus,
+.btn_quit_dj0.focus,
+.btn_quit_dj1.focus {
+    background: url("alert_btn_f.png?t=1490432646000") no-repeat;
+}
+
+/*即将播放下一集*/
+#soonplay_box {
+    position: absolute;
+    left: 945px;
+    top: 620px;
+    width: 280px;
+    height: 50px;
+    background: url('player/soonplay_bg.png?t=1490432646000') no-repeat;
+    text-align: center
+}
+
+#soonplay_box span {
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 278px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    /* letter-spacing: 2px; */
+    text-align: center;
+    color: #efefef;
+}
+
+/*退出播放*/
+#break_play {
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    width: 406px;
+    height: 78px;
+    line-height: 78px;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: -203px;
+    /*background     : #1a1a1a;*/
+    border-radius: 10px;
+    background: url('player/quit_play_bg.png?t=1490432646000') no-repeat;
+}
+
+/******音量控制条******/
+#volume_box {
+    position: absolute;
+    /*left: 1195px;*/
+    top: 200px;
+    right: 20px;
+    width: 54px;
+    height: 322px;
+    background: url('player/volume_bg.png?t=1490432646000') no-repeat;
+}
+
+.volume {
+    position: absolute;
+    left: 16px;
+    top: 285px;
+    width: 22px;
+    height: 24px;
+    background: url('player/level.png') 0px 0px no-repeat;
+}
+
+.volume.level0 {
+    background: url('player/level.png?t=1490432646000') 0px 0px no-repeat;
+}
+
+.volume.level1 {
+    background: url('player/level.png?t=1490432646000') -22px 0px no-repeat;
+}
+
+.volume.level2 {
+    background: url('player/level.png?t=1490432646000') -44px 0px no-repeat;
+}
+
+.volume.level3 {
+    background: url('player/level.png?t=1490432646000') -66px 0px no-repeat;
+}
+
+.v_matte {
+    background: url("player/v_matte.png?t=1490432646000");
+    display: none;
+    width: 6px;
+    height: 230px;
+    position: absolute;
+    left: 24px;
+    top: 42px;
+}
+
+.volume_active {
+    width: 6px;
+    height: 10px;
+    border-radius: 3px;
+    background: #234c6f;
+    position: absolute;
+    left: 24px;
+    bottom: 50px;
+}
+
+.volume_text {
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    width: 54px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*操作提示*/
+.operation_tips {
+    position: absolute;
+    left: 60px;
+    top: 656px;
+    width: 1160px;
+    height: 30px;
+    background-color: #171717;
+}
+
+.operation_tips img {
+    position: absolute;
+    left: 46px;
+    top: 5px;
+}
+
+
+/*水印*/
+#logo {
+    position: absolute;
+    left: 1128px;
+    top: 25px;
+    width: 120px;
+    height: 25px;
+    background: url("player/logo.png?t=1490432646000");
+    z-index: 100;
+}
+
+/*暂停*/
+#open_pause {
+    position: absolute;
+    left: 600px;
+    top: 300px;
+    width: 130px;
+    height: 130px;
+    z-index: 1001;
+    border-radius: 14px;
+    background: url("player/alert_bg.png") no-repeat;
+    text-align: center;
+    line-height: 150px;
+
+}
+
+#open_pause img {
+    z-index: 1002;
+    width: 130px;
+    height: 130px;
+
+}
+
+/*---静音--*/
+.normalplay {
+    position: absolute;
+    left: 200px;
+    top: 20px;
+    width: 130px;
+    height: 60px;
+    z-index: 1001;
+
+    background: url("player/jybt.png") no-repeat;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+.normalplay img {
+    z-index: 1002;
+    width: 130px;
+    height: 60px;
+
+}
+
+/*消息提示框*/
+#msg_box {
+    position: absolute;
+    left: 13%;
+    top: 20%;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: 0.85;
+    filter: alpha(opacity=80);
+}
+
+.msg_box_bg {
+
+    width: 350px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+
+    background-color: #000;
+    border-radius: 12px;
+}

@@ -1,0 +1,159 @@
+body .seriesDetail .topContent {
+    height: 507px;
+}
+
+.index-single {
+    width: 1160px;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    top: 410px;
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(left, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: -o-linear-gradient(right, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: -moz-linear-gradient(right, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+}
+
+.index-total .scrollLeft,
+.index-single .scrollLeft {
+    height: 50px;
+    position: relative;
+    width: 1000000px;
+    left: 470px;
+}
+
+.index-total {
+    width: 1160px;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    top: 475px;
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(left, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: -o-linear-gradient(right, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: -moz-linear-gradient(right, (to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+
+}
+
+.index-single .buttomNum {
+    width: 220px;
+    height: 46px;
+    font-size: 18px;
+    float: left;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 46px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid transparent;
+    overflow: hidden;
+    margin-right: 100px;
+    white-space: nowrap;
+    border-radius: 15px;
+    text-overflow: ellipsis;
+}
+
+.index-total .topNum {
+    width: 101px;
+    height: 46px;
+    font-size: 18px;
+    float: left;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 46px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    border-radius: 15px;
+}
+
+.point {
+    width: 80px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+    left: 540px;
+    top: 390px;
+    border-radius: 4px;
+}
+
+.point span {
+    position: absolute;
+    left: 40%;
+    top: 7px;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+body .index-single .select {
+    background: #99ABB4;
+}
+
+.index-total .select {
+    width: 101px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    left: 526px;
+    background: #99ABB4;
+    border-radius: 15px;
+}
+
+
+.index-total .active {
+    background: #0098BC;
+    border: 2px solid #ffffff;
+}
+
+body .index-single .active {
+    background: #0098BC;
+    border: 2px solid #ffffff;
+
+}
+
+/* 
+.subjects {
+    position: absolute;
+    top: 575px;
+    width: 1200px;
+    height: 263px;
+    padding-left: 79px;
+}
+
+.subjects .subjects-list li {
+    float: left;
+    margin-right: 43px;
+}
+
+.subjects .subjects-list li div {
+    width: 544px;
+    height: 243px;
+    background-size: 100% 100%;
+    background-color: #8399A4;
+    border-radius: 15px;
+}
+
+.subjects .subjects-list li p {
+    display: inline-block;
+    width: 544px;
+    height: 20px;
+    overflow: hidden;
+} */
+
+body .recommend {
+    top: 870px;
+}
+
+body #assetList {
+    top: 1249px;
+}

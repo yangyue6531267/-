@@ -1,0 +1,16 @@
+﻿
+一：3v3---3v3
+rx-tx
+tx-rx
+GND-GND
+
+二：setprop persist. sys. loglevel 0 
+
+     logcat -v time -f /mnt/sda/sda1/test.log & 开始抓包
+
+     sync 结束
+
+三：sqlite3 /data/data/com.android.providers.settings/databases/settings.db
+
+	select * from secure;
+

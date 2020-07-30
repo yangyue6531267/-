@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1280*720">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>云南项目首页</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			outline: none;
+		}
+
+		ul,
+		li {
+			list-style: none
+		}
+
+		img {
+			border: none;
+			padding: 0;
+			border: 0;
+			margin: 0;
+			clear: both;
+		}
+
+		body {
+			font-family: "Microsoft YaHei,Arial";
+			color: #fff;
+			width: 1280px;
+			height: 720px;
+			background: no-repeat;
+		}
+
+		.scroll-lei {
+			position: absolute;
+			left: 20px;
+			top: 260px;
+		}
+
+		.scroll-lei li {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: rgba(145, 145, 145, 0.8);
+			margin-bottom: 24px;
+		}
+
+		.scroll-lei li.changeColor {
+			background: #FFFFFF;
+			border: 1px solid #707070;
+		}
+
+		.app {
+			padding-left: 60px;
+			padding-top: 10px;
+		}
+
+		.liveRecommendTop {
+			position: relative;
+			display: flex;
+			margin-top: 40px;
+		}
+
+		.lt_2 {
+			width: 455px;
+			height: 295px;
+			margin-left: -5px;
+			margin-top: -4px;
+			margin-right: 30px;
+			position: absolute;
+		}
+
+		.lt_1_1 {
+			height: 250px;
+			width: 1170px;
+		}
+
+		.lt_1_1 div {
+			float: left;
+			box-sizing: border-box;
+			border: 1px solid #C1C1C1;
+			border-radius: 15px;
+			position: relative;
+		}
+
+		.lt_1_1 div img {
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+		}
+
+		.lt_1_1 div:nth-child(1) {
+			width: 452px;
+			height: 130px;
+			display: inline-block;
+			margin-right: 20px;
+			margin-top: 310px;
+		}
+
+		.lt_1_1 div:nth-child(2) {
+			width: 216px;
+			height: 438px;
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		.lt_1_1 div:nth-child(3) {
+			width: 452px;
+			height: 130px;
+			display: inline-block;
+			position: relative;
+		}
+
+		.lt_1_1 div:nth-child(4) {
+			margin-top: 20px;
+			width: 450px;
+			height: 286px;
+			display: inline-block;
+			position: relative;
+		}
+
+		.lt_1_1 div.hover {
+			border: 4px solid #fff;
+			box-shadow: 0 0 20px #fff;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.lt_2.hover {
+			border-radius: 20px;
+			border: 4px solid #ffffff;
+		}
+
+		.lt_1_2 div {
+			display: inline-block;
+			width: 162px;
+			height: 55px;
+			margin-right: 30px;
+			background-color: #4d5e71;
+			border: 1px #707070 solid;
+			border-radius: 18px;
+			color: #ffffff;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+		}
+
+		.jiaobiaoZT {
+			width: 48px;
+			height: 22px;
+			background: url(./index/images/zhuanti.png);
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+
+		.jiaobiao {
+			width: 48px;
+			height: 22px;
+			background: url(./index/images/jingxuan.png);
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+
+		.marqueeS {
+			position: fixed;
+			left: 80px;
+			top: 665px;
+			max-width: 600px;
+			height: 80px;
+			flex-direction: column;
+			overflow: hidden;
+			z-index: 9999999
+		}
+
+		.scrollText {
+			position: relative;
+			left: 0px;
+			height: 41px;
+			max-width: 576px;
+			line-height: 41px;
+			color: #1F436E;
+			font-size: 20px;
+			background-color: #ffffff;
+			border-radius: 15px;
+			margin-bottom: 4px;
+			font-family: "Helvetica Neue", "Regular", Arial, Helvetica, sans-serif;
+			font-weight: 500;
+			padding: 0px 24px 0px 24px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.scrollText span {
+			max-width: 576px;
+			height: 41px;
+			letter-spacing: 2px;
+		}
+
+		.tips {
+			width: 10px;
+			height: 10px;
+			background-color: #FFFFFF;
+			border-radius: 50%;
+			margin-left: 30px;
+		}
+
+		.yy-confirm {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 1280px;
+			height: 720px;
+			z-index: 999;
+		}
+
+		.yy-confirm .bg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #000;
+			opacity: 0.3;
+			z-index: 99999;
+		}
+
+		.yy-confirm .yy-container {
+			position: absolute;
+			display: inline-block;
+			top: 160px;
+			left: 360px;
+			max-width: 1280px;
+			z-index: 999;
+			width: 600px;
+			border: 1px solid white;
+		}
+
+		.yy-confirm .yy-container .header {
+			height: 50px;
+			padding-left: 30px;
+			line-height: 50px;
+			background-color: rgba(8, 83, 88, 0.9);
+			border-bottom: 1px rgba(8, 83, 88, 0.9) solid;
+			color: #fff;
+			text-align: left;
+			box-sizing: border-box;
+		}
+
+		.yy-btn {
+			text-decoration: none !important;
+			border-radius: 14px;
+			text-align: center;
+			width: 30%;
+			height: 50px;
+			line-height: 50px;
+			border: 2px white solid;
+			background: #152F3A;
+			float: left;
+			margin-left: 80px;
+			color: #ffffff;
+			display: inline-block;
+		}
+
+		.yy-btn.select-on {
+			background-color: #E78B41;
+			color: #fff;
+		}
+
+		.yy-close-btn {
+			cursor: pointer;
+			float: right;
+		}
+
+		.yy-confirm .yy-container .yy-footer {
+			background: rgba(20, 118, 127, 0.9);
+			height: 100px;
+			box-sizing: border-box;
+			justify-content: space-around;
+			align-items: flex-start;
+			display: block;
+			content: '';
+			clear: both;
+		}
+
+		.alertMsg div:nth-child(1) {
+			word-wrap: break-word;
+			word-break: normal;
+			margin-top: 50px;
+		}
+
+		.header i {
+			position: relative;
+			font-size: 25px;
+			margin-right: 10px;
+		}
+
+		.header span {
+			position: relative;
+			top: -2px;
+			display: inline-block;
+		}
+
+		.make-sure i {
+			position: relative;
+			font-size: 29px;
+			top: 4px;
+		}
+
+		.cancel i {
+			position: relative;
+			font-size: 24px;
+			top: 4px;
+			margin-left: 3px;
+		}
+
+		.alertMsg {
+			background: rgba(20, 118, 127, 0.9);
+			height: 170px;
+			text-align: center;
+			padding: 20px 60px;
+			font-family: '微软雅黑', Helvetica, sans-serif;
+			font-size: 25px;
+			letter-spacing: 3px;
+		}
+
+		.alertImg {
+			width: 100px;
+			height: 100px;
+		}
+
+		.imgword h2 {
+			position: relative;
+			top: -115px;
+		}
+
+		.imgword img {
+			width: 100px;
+			height: 100px;
+			border-radius: 13px;
+		}
+
+		.yh-control-change div {
+			width: 0;
+			height: 0;
+			border: 5px solid red;
+			border-color: white transparent transparent transparent;
+			margin-left: 44%;
+		}
+
+		.yh-control-change {
+			margin-top: -13px;
+			border-top: 3px solid white;
+			width: 50px;
+			position: relative;
+			left: 50px;
+			top: 15px;
+		}
+
+		.common_right_news li {
+			border-radius: 15px;
+		}
+
+		.liveHot img {
+			border-radius: 15px;
+		}
+
+		.top {
+			width: 430px;
+			height: 48px;
+			border-radius: 15px;
+			background: rgba(255, 255, 255, 0.4);
+			display: -webkit-flex;
+			display: flex;
+			margin-top: 25px;
+			margin-bottom: 30px;
+		}
+
+		.top li {
+			float: left;
+			width: 143px;
+			height: 54px;
+			text-align: center;
+			line-height: 48px;
+			font-size: 20px
+		}
+
+		.top li.change {
+			border-radius: 15px;
+			background: orange;
+			background-size: 100% 100%;
+			margin-top: -7px;
+			margin-left: -3px;
+			margin-right: -3px;
+			text-align: center;
+			line-height: 57px;
+			border: 3px solid white;
+		}
+
+		.yh-scroll {
+			padding-left: 11px;
+			height: 47px;
+			white-space: nowrap;
+
+		}
+
+		.yh-scroll li {
+			width: 150px;
+			height: 50px;
+			font-size: 26px;
+			line-height: 50px;
+			text-align: center;
+			margin-right: 14px;
+			box-sizing: border-box;
+			float: left;
+		}
+
+		.yh-scroll li.hover {
+			background: url('./index/images/btn.png') no-repeat;
+			background-size: 100% 100%;
+			border: 3px solid white;
+			/* margin: -3px; */
+			box-shadow: 0px 7px 6px rgba(0, 0, 0, .55);
+			border-radius: 15px;
+		}
+
+		.playIframe {
+			z-index: 999;
+			position: absolute;
+			left: -416px;
+			top: -218px;
+		}
+
+		.palytitle {
+			z-index: 999;
+			width: 463px;
+			height: 34px;
+			background: #0B5873;
+			margin-top: 268px;
+			margin-left: -1px;
+			border-radius: 0px 0px 22px 22px;
+			opacity: 0.9;
+			border-top: 1px solid #0B5873;
+			position: absolute;
+			left: -4px;
+			top: -5px;
+		}
+
+		.palytitle p {
+			font-size: 18px;
+			margin-left: 271px;
+			margin-top: 5px;
+		}
+
+		#nav_0,
+		#nav_1,
+		#nav_2,
+		#nav_3,
+		#nav_4,
+		#nav_5,
+		#nav_6,
+		#nav_7 {
+			display: inline-block;
+			*zoom: 1;
+			vertical-align: middle;
+			padding-bottom: 6px;
+			background: url('./index/images/custom.png') 0px 0px no-repeat;
+		}
+
+		#nav_0 {
+			width: 35px;
+			height: 35px;
+			background-position: 0 0;
+		}
+
+		#nav_1 {
+			width: 35px;
+			height: 35px;
+			background-position: -45px 0;
+		}
+
+		#nav_2 {
+			width: 36px;
+			height: 35px;
+			background-position: -90px 0;
+		}
+
+		#nav_3 {
+			width: 36px;
+			height: 35px;
+			background-position: 0 -45px;
+		}
+
+		#nav_4 {
+			width: 35px;
+			height: 35px;
+			background-position: -46px -45px;
+		}
+
+		#nav_5 {
+			width: 35px;
+			height: 35px;
+			background-position: -91px -45px;
+		}
+
+		#nav_6 {
+			width: 36px;
+			height: 35px;
+			background-position: 0 -90px;
+		}
+
+		#nav_7 {
+			width: 35px;
+			height: 35px;
+			background-position: -46px -90px;
+		}
+	</style>
+	<link href="./index/css/list.css" type="text/css" rel="stylesheet">
+	<link href="./index/css/Xqlist.css" type="text/css" rel="stylesheet">
+</head>
+
+<body bgcolor="transparent" style="background-image: url('index/images/categoryplay.png')">
+	<div class="app">
+		<div class="App-scolltop">
+			<ul class="top">
+				<li id="p0">搜索内容</li>
+				<li id="p1">观看记录</li>
+				<li id="p2">我的收藏</li>
+			</ul>
+			<ul class="yh-scroll">
+
+			</ul>
+		</div>
+		<div class="liveRecommendTop">
+			<div class="palytitle">
+				<p>「确定键」 全屏播放</p>
+			</div>
+			<div class="lt_2" id="lt_2">
+				<div class="playIframe">
+				</div>
+			</div>
+
+			<div class="lt_1">
+				<div class="lt_1_1">
+				</div>
+			</div>
+		</div>
+		<div class="common_top" style="display: none;">
+			<div class="common_right_img">
+				全部
+			</div>
+			<div class="common_right_news">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div class="liveHot" style="display: none;">
+			<h2></h2>
+			<ul class="fancy">
+
+			</ul>
+		</div>
+		<div class="yy-confirm" style="display: none;">
+			<div class="bg">
+			</div>
+			<div class="yy-container">
+				<div class="header">
+					<i class="iconfont icon-wenhao"></i><span>退出专区</span>
+				</div>
+				<div>
+					<div class="alertMsg">
+						<div>您确定要退出么？</div>
+					</div>
+					<div class="yy-footer">
+						<a class="yy-btn make-sure select-on">退出专区
+						</a>
+						<a class="yy-btn cancel">继续观看
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="marqueeS" id="marqueeS">
+			<div class="scrollText" id="scrollText">
+				<span id="scroll_span">按「下键」向下翻页!!</span>
+			</div>
+			<div class="tips"></div>
+		</div>
+		<ul class="scroll-lei">
+			<li class="changeColor"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script src="./index/js/jquery.min.js"></script>
+<script src="./index/js/common.js"></script>
+<script src='./index/js/lazyLoad.js'> </script>
+<script src="./index/js/jquery.cookie.js"></script>
+<script src="./index/js/mediaPlayer.js"></script>
+<script src="./index/js/index.js?12"></script>
+
+</html>

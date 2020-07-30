@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>无忧行分享</title>
+  <meta http-equiv="Cache-Control" content="max-age=180">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <link type="text/css" rel="stylesheet" href="./static/style.css?v0.1" />
+  <script>
+    (function flexible(window, document) {
+      var docEl = document.documentElement;
+      var tid;
+      var dpr = window.devicePixelRatio || 1;
+      docEl.setAttribute("data-dpr", dpr);
+
+      function setRemUnit() {
+        var width = docEl.getBoundingClientRect().width;
+        if (width > 750) {
+          // 设计稿的宽度是750px
+          docEl.style.fontSize = 100 + "px";
+        } else {
+          var rem = width / 7.5;
+          docEl.style.fontSize = rem + "px";
+        }
+      }
+      setRemUnit();
+
+      window.addEventListener(
+        "resize",
+        function () {
+          clearTimeout(tid);
+          tid = setTimeout(setRemUnit, 200);
+        },
+        false
+      );
+      window.addEventListener(
+        "pageshow",
+        function (e) {
+          if (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(setRemUnit, 200);
+          }
+        },
+        false
+      );
+    })(window, document);
+
+    window.addEventListener(
+      "load",
+      function () {
+        setTimeout(function () {
+          window.scrollTo(0, 0);
+        }, 0);
+      },
+      false
+    );
+  </script>
+</head>
+<body onload="init()">
+<!-- 分享内容 -->
+<div class="sharebox">
+  <!-- 播放器组件 -->
+  <div class="video-wrapper">
+    <div class='video-play'>
+      <video  
+        id="vod-player"
+        x5-video-player-type="h5-page" 
+        x-webkit-airplay="allow" 
+        preload="auto" 
+        playsinline="true"
+        webkit-playsinline="true"
+        x5-video-player-fullscreen="true"
+        x5-video-orientation="portraint"
+        style="object-fit:fill"
+      src=""></video>
+      <!-- http://223.121.14.241/source-vod/2019/10/15/a3ba417aa540459f867f722422f1be23.mp4 -->
+      <!--  -->
+    </div>
+  </div>
+  <!--  资产名称 -->
+  <div class="video-name">
+    <p id="video-title"></p>
+    <div id="moreText"><a id="present">更多介绍<i class="seeMore"></i></a></div>
+  </div>
+  <!-- 资产简介 -->
+  <div class="video-introduce">
+    <div id="introduce"></div>
+  </div>
+  <div class="line"></div>
+  <!-- 活动 -->
+
+  <!-- 广告 --> 
+  <div class="advertisement">
+    <div>
+      <div class="advertisement_top">
+        <div class="advertisement_left">
+          <div class="advertisement_left1">海量影视就在</div>
+          <div class="advertisement_left2">无忧行APP</div>
+        </div>
+        <div class="advertisement_right">现在登录APP观看视频，专属无忧币拿不停！会员优惠券、多国通话包等多重好礼等你来兑换！</div>
+      </div>
+      <div class="advertisement_down">
+        参与方式：
+        <br>
+        于无忧行APP观看视频，观看1分钟可获得1无忧币，观看2分钟可获得 2无忧币，观看5分钟可获得5无忧币，观看10分钟可获得10无忧币。
+      </div>
+    </div>
+  </div>  
+
+  <!-- 跳转到应用市场 -->
+  <div class="jumpAppStore">
+    <div class="linkToApp">点击进入无忧行APP</div>
+  </div>
+  <div id="loading" class="loading">
+    <img src="./images/loading.gif" title="加载中" alt="加载中" />
+  </div>
+
+  <!-- enter -->
+  <div class="notice">
+      <div class="notice_notes">
+        您已观看视频达一分钟，
+        现在登录无忧行APP 看视频就能领取多款无忧好礼
+      </div>
+      <div class="notice_explain">快来参加吧</div>
+  </div>
+  <div class="enter">点击进入无忧行APP</div>
+  <div class="black"></div>
+</div>
+</body>
+
+<script src="https://unpkg.com/larkplayer@latest/dist/larkplayer.js"></script>
+<script src="https://unpkg.com/larkplayer-ui@latest/dist/larkplayer-ui.js"></script>
+<script src="./static/jsonp.js"></script>
+<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<!-- <script src="./static/vconsole.min.js"></script> -->
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+<script type="text/javascript">
+  // var vConsole = new VConsole()
+  // 版权
+  var playArea, canPlay
+  var name = returnCitySN["cname"]
+  // var area = returnCitySN["cip"]
+  // console.log(area)
+  // var lat = area.substr(0, 6)
+  // var lon = area.substr(7, 13)
+  console.log(name)
+
+
+  var width = Math.min(document.body.clientWidth, 640)
+  var player = larkplayer('vod-player')
+  var url = location.search.substr(1)
+  var userId = url.split("userId=")[1]
+  console.log(url)
+  console.log(userId)
+
+  // file:///D:/yanhua/无忧行/share/index.html?http://223.121.14.235:81/?s=99&p=mAsset&k=1&v=1&c=1&a=852&i=2&assetId=1571043200968368005&from=singlemessage&isappinstalled=0
+  ajax({
+    url: url + '&l=zh_CN&returnType=jsonp',    // 请求地址
+    jsonp: 'jsonpCallback',  // 采用jsonp请求，且回调函数名为"jsonpCallbak"，可以设置为合法的字符串
+    success: function (res) {   // 请求成功的回调函数
+      console.log("获取详情页数据成功");
+      console.log(res);
+      playArea = res.data.detail.playArea
+      if(res.code === 200){
+        document.getElementById('video-title').innerHTML = res.data.detail.assetName;
+        document.getElementById('introduce').innerHTML = res.data.detail.description;
+        setTimeout(() => {
+          ajax({
+            url: res.data.item.list[0].jsonUrl+'&l=zh_CN&returnType=jsonp',    // 请求地址
+            jsonp: 'jsonpCallback',  
+            success: function (json) {
+              console.log('解析播放地址成功');
+              console.log(json);
+              if(json.code === 200){
+                // 给播放出串赋值
+                // document.getElementById('vod-player').src = json.data.vodList[0].playUrl;
+
+                if (playArea == '1') {
+                  console.log('港澳台版权')
+                  if (name.indexOf('香港') != -1 || name.indexOf('台湾') != -1 || name.indexOf('澳门') != -1 ) {
+                    canPlay = 1
+                    player.src(json.data.vodList[0].playUrl)
+                  } else {
+                    // $('.sharebox').eq(0).css('display', 'none')
+                    // player.on('ended', function () {
+                    //   console.log('ended')
+                    // })
+                    canPlay = 0
+                    player.pause()
+                    player.src('')
+                    alert('版权原因，无法播放！')
+                  }
+                } else if (playArea == '2') {
+                  console.log('大陆版权')
+                  if (name.indexOf('香港') != -1 || name.indexOf('台湾') != -1 || name.indexOf('澳门') != -1 ) {
+                    // $('.sharebox').eq(0).css('display', 'none')
+                    // player.on('ended', function () {
+                    //   console.log('ended')
+                    // })
+                    canPlay = 0
+                    player.pause()
+                    player.src('')
+                    alert('版权原因，无法播放！')
+                  } else {
+                    canPlay = 1
+                    player.src(json.data.vodList[0].playUrl)
+                  }
+                } else {
+                  console.log('全球版权')
+                  canPlay = 1
+                  player.src(json.data.vodList[0].playUrl)
+                }
+                console.log(canPlay)
+                
+                if (canPlay == 1) {
+                  setTimeout(() => {
+                    player.loop(true) // 循环视频播放
+                    console.log('1s播放')
+                    player.play()
+                  }, 1000)
+                } 
+
+                if (canPlay == 1) {
+                  setTimeout(() => {
+                    document.getElementsByClassName('enter')[0].style.display = 'block';
+                    document.getElementsByClassName('notice')[0].style.display = 'block';
+                    document.getElementsByClassName('black')[0].style.display = 'block';
+                  }, 60000)
+                }
+              }
+            }
+          })
+        }, 1000);
+      }
+    },
+    error: function (error) {
+      console.log("获取详情页数据失败"+error);
+    }   // 请求失败的回调函数
+  });
+  document.getElementById('moreText').onclick = function () {
+    // document.getElementById('introduce').className = 'hover'
+    if (document.getElementById('introduce').style.height != "100%") {
+      document.getElementById('introduce').style.height = '100%'
+      document.getElementById('present').innerHTML = '收起介绍<i class="seeMore"></i>'
+    } else {
+      document.getElementById('introduce').style.height = '1.2rem'
+      document.getElementById('present').innerHTML = '更多介绍<i class="seeMore"></i>'
+    }
+  }
+
+  function init(){
+    document.getElementById('loading').style.display = 'none';
+  }
+
+  document.getElementsByClassName('jumpAppStore')[0].onclick = function() {
+    window.location.href = 'http://hotapp.jegotrip.com.cn/23110272'
+  }
+
+  // 跳到app
+  document.getElementsByClassName('enter')[0].onclick = function() {
+    window.location.href = 'http://hotapp.jegotrip.com.cn/23110272'
+  }
+  document.getElementsByClassName('black')[0].onclick = function() {
+    document.getElementsByClassName('enter')[0].style.display = 'none';
+    document.getElementsByClassName('notice')[0].style.display = 'none';
+    document.getElementsByClassName('black')[0].style.display = 'none';
+  }
+  
+
+  // 计时
+  var data = {
+    userId: userId,
+    relateWatchTime: 0.1
+  }
+  setInterval(() => {
+    ajax({
+      url: 'http://223.121.14.236/uds/cloud/watch/update?version=1&userId=' + userId  + '&relateWatchTime=0.1&returnType=jsonp',    // 请求地址
+      jsonp: 'jsonpCallback',  
+      success: function (res) {
+        console.log('提交观看时长', res)
+      },
+      error: function(res) {
+        console.log(res)
+      }
+    })
+  }, 60000)
+  
+
+  player.on('play', function () {
+    if (canPlay == 0) {
+      player.pause()
+      player.src('')
+      alert('版权原因，无法播放！')
+    }
+  })
+</script>
+</html>

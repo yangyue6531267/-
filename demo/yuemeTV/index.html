@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+
+  <title>弹框</title>
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+  <div class="detail">
+    <div class="detail-box">
+      <div class="detail-header" id="detailHeader">公告</div>
+      <div class="detail-title" id="detailTitle">尊敬的用户：</div>
+      <div class="detail-text" id="detailText">
+        悦me支付系统将于XX月XX日进行升级，订购了连续包月服务的用户需重新确认签约关系，此操作不会对当月服务重新扣费。没有重新确认签约关系的用户，当月服务到期后，将无法享受会员服务，需重新订购。对此造成的不便，我们深表歉意。
+      </div>
+      <div class="detail-button" id="detailButton">跳过</div>
+      <div class="detail-checkbox">
+        <span id="detailCheckbox"></span>
+        <div>不再提示</div>
+      </div>
+
+      <!-- 二维码 -->
+      <div class="qrCode">
+        <div class="code-box">
+          <div class="pay-img" id="payImg"></div>
+          <div class="qrCode-imge" id="qrCodeImge"></div>
+        </div>
+        <div class="qrCode-text">XXX扫描上方二维码</div>
+        <div class="qrCode-text1">重新确认签约</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/qrcode.min.js"></script>
+
+<script src="./assets/js/common.js"></script>
+<script src="./assets/js/index.js"></script>
+
+</html>

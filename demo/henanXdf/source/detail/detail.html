@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1280*720">
+  <link rel="stylesheet" href="./detail.css">
+  <title>详情页</title>
+</head>
+
+<body>
+  <div class="seriesDetail" id="box-wrap">
+    <div class="scroll-box">
+      <div class="topContent">
+        <div id="imgBig">
+          <img src="./../public/images/play-bg.png" /></div>
+        <div class="introduction">
+          <p id="name"></p>
+          <p id="info"></p>
+          <p id="btnBox-1" class="moreDes"></p>
+        </div>
+        <div id="btnBox">
+          <div class="play" id="btnBox0">全屏播放<span></span></div>
+          <div id="btnBox1" class="noCollect">
+            <p id="collectWord">收藏</p><span></span>
+          </div>
+          <div class="order" id="btnBox2">会员订购 <span>VIP</span></div>
+        </div>
+        <div class="point"><span></span></div>
+        <div id="indexSingle" class="indexSingle">
+          <div class="scrollLeft slider1" id="slider1"></div>
+        </div>
+        <div id="indexTotal">
+          <div class="select"></div>
+          <div class="scrollLeft" id="slider2"></div>
+        </div>
+      </div>
+      <div class="descriptionBox" id="descriptionBox">
+        <div class="scrollBox" id="scrollBox">
+          <div class="contentBox">
+            <div class="wordScroll" id="wordScroll"></div>
+          </div>
+          <div class="topBox">
+            关闭
+          </div>
+        </div>
+      </div>
+      <div id="assetList">
+        <ul id="scrollContent">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bigScreen">
+    <div class="play_top" id="play-top">
+      <div><span id="play_name"></span></div>
+    </div>
+    <div id="play_center">
+      <div id="play_stop"></div>
+    </div>
+    <div class="play_center_left">
+      <!-- 选集条 -->
+      <div class="play_Choice">选集</div>
+      <div class="itemHover"></div>
+      <div class="wrap_box">
+        <ul class="inner_box">
+          <!-- <li class="item">民事裁决</li>
+          <li class="item">行政法（二）行政裁决</li>
+          <li class="item">行政法（三）工作裁决</li>
+          <li class="item">行政法（四）行政裁决</li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="play_bottom" id="play-bottom">
+      <div class="allLong"></div>
+      <p class="time" id="play_time"> 2:30:30</p>
+      <div id="allLongs">
+        <div class="icon" id="play_icon">1:30:43</div>
+      </div>
+    </div>
+  </div>
+  <div id="toast2">该课程已经下线，新东方更多名师课程等您学习,3秒后返回！</div>
+  <script src="../public/js/js.cookie.js"></script>
+  <script type="text/javascript" src="./../../source/gansu_payfor/assets/js/jquery.min.js"></script>
+  <script src="./../index/sha1.js"></script>
+  <script src="../public/js/util.js"></script>
+  <script src="./../index/play.js"></script>
+  <script src="../public/js/interface.js"></script>
+  <script src="../public/js/ajax.js"></script>
+  <script src="./../public/js/client.js"></script>
+  <script src="../public/js/logApi.js"></script>
+  <script src="./detail.js?12"></script>
+</body>
+</html>

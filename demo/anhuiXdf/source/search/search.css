@@ -1,0 +1,429 @@
+/** 通用css ***/
+* {
+    padding: 0px;
+    margin: 0px
+}
+
+
+/** 导航css ***/
+body {
+    overflow: hidden;
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    background-color: #1D5F5C;
+}
+
+.keyboard {
+    position: absolute;
+    top: 0px;
+    height: 720px;
+    width: 373px;
+    background-color: #3C7E7B;
+}
+
+.keyboard-header {
+    position: absolute;
+    top: 16px;
+    left: 60px;
+    height: 63px;
+    width: 240px;
+    font-size: 44px;
+    color: #A8C5C3;
+}
+
+.keyboard-connent {
+    position: absolute;
+    top: 170px;
+    left: 51px;
+    height: 276px;
+    width: 320px;
+    color: #629795;
+}
+
+.keycode-input {
+    position: absolute;
+    top: 170px;
+    left: 51px;
+    height: 42px;
+    width: 158px;
+    background-color: #264F4D;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 42px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.keycode-devare {
+    position: absolute;
+    top: 170px;
+    left: 227px;
+    height: 38px;
+    width: 67px;
+    line-height: 42px;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    background: #639895;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 2px solid transparent;
+}
+
+.keycode-connect {
+    position: relative;
+    top: 214px;
+    left: 51px;
+    height: 276px;
+    width: 276px;
+    color: #E8F0F0;
+    background-color: #629795;
+}
+
+.keycode-connect li {
+    position: absolute;
+    list-style: none;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.keyboard-footer::after {
+    display: block;
+    content: '';
+    border-width: 6px 8px 14px 8px;
+    border-style: solid;
+    border-color: transparent transparent #D36B6B transparent;
+    position: absolute;
+    left: 8%;
+    top: -16px;
+}
+
+.keyboard .hover {
+    background-color: #0098BC;
+    border: 2px solid #FFFFFF;
+    font-size: 25px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.keyboard-footer {
+    position: absolute;
+    top: 500.98px;
+    left: 55.5px;
+    margin-top: 5px;
+    height: 144.52px;
+    width: 268.26px;
+    border: 1px solid #95989A;
+    border-radius: 15px;
+    background-color: #D36B6B;
+}
+
+.sanjiaoxingP302 {
+    width: 16px;
+    height: 22px;
+    position: absolute;
+    top: 495px;
+    right: 258px;
+    background-image: url('../public/images/sanjiaoxing.png');
+    background-size: 16px 22px;
+}
+
+.keyboard-footer div {
+    position: absolute;
+    top: 33px;
+    left: 21.5px;
+    height: 93px;
+    width: 223px;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.keyA {
+    left: 0;
+    top: 0;
+}
+
+.keyB {
+    left: 46px;
+    top: 0;
+}
+
+.keyC {
+    left: 92px;
+    top: 0;
+}
+
+.keyD {
+    left: 138px;
+    top: 0;
+}
+
+.keyE {
+    left: 186px;
+    top: 0;
+}
+
+.keyF {
+    left: 232px;
+    top: 0;
+}
+
+.keyG {
+    left: 0;
+    top: 46px;
+}
+
+.keyH {
+    left: 46px;
+    top: 46px;
+}
+
+.keyI {
+    left: 92px;
+    top: 46px;
+}
+
+.keyJ {
+    left: 138px;
+    top: 46px;
+}
+
+.keyK {
+    left: 186px;
+    top: 46px;
+}
+
+.keyL {
+    left: 232px;
+    top: 46px;
+}
+
+.keyM {
+    left: 0;
+    top: 92px;
+}
+
+.keyN {
+    left: 46px;
+    top: 92px;
+}
+
+.keyO {
+    left: 92px;
+    top: 92px;
+}
+
+.keyP {
+    left: 138px;
+    top: 92px;
+}
+
+.keyQ {
+    left: 186px;
+    top: 92px;
+}
+
+.keyR {
+    left: 232px;
+    top: 92px;
+}
+
+.keyS {
+    left: 0;
+    top: 138px;
+}
+
+.keyT {
+    left: 46px;
+    top: 138px;
+}
+
+.keyU {
+    left: 92px;
+    top: 138px;
+}
+
+.keyV {
+    left: 138px;
+    top: 138px;
+}
+
+.keyW {
+    left: 186px;
+    top: 138px;
+}
+
+.keyX {
+    left: 232px;
+    top: 138px;
+}
+
+.keyY {
+    left: 0;
+    top: 186px;
+}
+
+.keyZ {
+    left: 46px;
+    top: 186px;
+}
+
+.key0 {
+    left: 92px;
+    top: 186px;
+}
+
+.key1 {
+    left: 138px;
+    top: 186px;
+}
+
+.key2 {
+    left: 186px;
+    top: 186px;
+}
+
+.key3 {
+    left: 232px;
+    top: 186px;
+}
+
+.key4 {
+    left: 0;
+    top: 232px;
+}
+
+.key5 {
+    left: 46px;
+    top: 232px;
+}
+
+.key6 {
+    left: 92px;
+    top: 232px;
+}
+
+.key7 {
+    left: 138px;
+    top: 232px;
+}
+
+.key8 {
+    left: 186px;
+    top: 232px;
+}
+
+.key9 {
+    left: 232px;
+    top: 232px;
+}
+
+/** 内容css ***/
+.search-connent {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    height: 720px;
+    width: 905px;
+}
+
+.top-c {
+    font-size: 24px;
+    margin: 50px 0px 60px 58px;
+    color: #E8F0E1;
+    display: none;
+    position: absolute;
+    top: 320px;
+    left: 190px;
+}
+
+.li-item0 {
+    left: 0;
+    top: 10px;
+}
+
+.li-item1 {
+    left: 203px;
+    top: 10px;
+}
+
+.li-item2 {
+    left: 406px;
+    top: 10px;
+}
+
+.li-item3 {
+    left: 609px;
+    top: 10px;
+}
+
+.li-item4 {
+    left: 0;
+    top: 319px;
+}
+
+.li-item5 {
+    left: 203px;
+    top: 319px;
+}
+
+.li-item6 {
+    left: 406px;
+    top: 319px;
+}
+
+.li-item7 {
+    left: 609px;
+    top: 319px;
+}
+
+/* .middle-box {position: relative;top: 56px;left: 35px;height: 608px;width: 819px;}
+.middle-box .middle-li {position: absolute;overflow: hidden; width: 178px;height: 309px;list-style: none;}
+.middle-box .middle-li img {
+  width: 172px;height: 249px;
+}
+.middle-box .hover .imgbox {border: 3px solid #ffffff;}
+.middle-box .hover .word {text-shadow: 0 3px 6px #ffffff;text-overflow:clip;}
+.middle-li .imgbox {width: 172px; height: 249px;border: 3px solid transparent;}
+.middle-li .score {position: absolute;z-index: 99;width: 60px;height: 60px;line-height: 40px;top: -1px; right: -1px; color: #df9720;background: url(../public/images/jiaobiao.png);}
+.middle-li .score span {padding-left: 30px;}
+.middle-li .word {position: absolute;display: inline-block;width: 100%;height: 49px;font-size: 20px; line-height: 40px;text-align: center;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;color: #FFFFFF;font-family: '苹方-港, Regular'} */
+.search-scroll {
+    position: absolute;
+    top: 68px;
+    width: 3px;
+    height: 543px;
+    right: 55px;
+    background-color: #769E9C;
+    display: none;
+}
+
+.search-bar {
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    right: -1px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.search-num {
+    position: absolute;
+    top: 626px;
+    right: 10px;
+    width: 100px;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    color: #FFFFFF;
+    font-size: 25px;
+}

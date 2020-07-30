@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport><title>视嘉TV•老年版</title><link href=/agedness/static/css/app.c4cc0a829ef39706dc1fe4662d622e75.css rel=stylesheet></head><style>*{padding: 0px;margin: 0px;}
+    body{position: absolute;height: 720px;width: 1280px;overflow: hidden}
+    ul li{list-style: none;}
+    .openImage .loadEffect{
+       width: 120px;
+       height: 120px;
+       position: relative;
+       margin: 0 auto;
+       margin-top:300px;
+       mask-image:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png');
+       -webkit-mask-image:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png');
+       background:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png'); 
+       line-height:0;
+       font-size:0;
+       text-align:center;
+       animation-name: load;
+       animation-duration: 3s;
+       animation-iteration-count: infinite;
+       animation-timing-function: linear;
+       -webkit-animation-name: load;
+       -webkit-animation-duration: 2s;
+       -webkit-animation-iteration-count: infinite;
+       -webkit-animation-timing-function: linear;
+       white-space: nowrap;
+       overflow: hidden;
+     }
+    @-webkit-keyframes load{
+      0%{
+        -webkit-transform: rotate(0deg);
+      }
+      100%{
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes load{
+       0%{
+        -webkit-transform: rotate(0deg);
+      }
+      100%{
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    .openImage {
+      position: absolute;
+      width: 1280px;
+      height: 720px;
+      z-index: 999;
+      background:linear-gradient(to left bottom, rgba(75,30,57,1) 10%, rgba(28, 44, 69, 1) 50%,rgba(28, 44, 69, 1) 60%,rgba(75,30,57, 1) 100%);
+    }</style><link rel=stylesheet href=https://aged-bs.yanhuamedia.tv/agedness/static/sweet-alert.css><script>var openTime = new Date().getTime();
+        var StartTime = new Date().getTime();
+        var httpRequestTime = 0;
+        var httpResponseTime = 0;
+        let DEFAULT_WIDTH = 1280;//默认屏宽
+        let deviceWidth = window.screen.width; // 设备的宽度
+        let devicePixelRatio = window.devicePixelRatio || 1; // 物理像素和设备独立像素的比例，默认为1
+        let INITIALSCALE = "1";
+        if (DEFAULT_WIDTH > deviceWidth) {
+          INITIALSCALE = (deviceWidth / DEFAULT_WIDTH);//设备的缩放比
+        } else {
+          INITIALSCALE = (DEFAULT_WIDTH / deviceWidth);
+        }
+        var oMeta = document.createElement('meta');
+        oMeta.charset = 'utf-8';
+        oMeta.name = 'viewport';
+        oMeta.setAttribute('content', "initial-scale=" + INITIALSCALE);
+        document.getElementsByTagName('head')[0].appendChild(oMeta);</script><body><div class=openImage id=openAd><div class=loadEffect></div></div><div id=app></div><script src=https://aged-bs.yanhuamedia.tv/agedness/static/sweet-alert.min.js></script><script type=text/javascript src=/agedness/static/js/manifest.db5974b3a7d04fee06c8.js></script><script type=text/javascript src=/agedness/static/js/vendor.4521de3d4990794646c6.js></script><script type=text/javascript src=/agedness/static/js/app.b4fa23ba26475a65fad2.js></script></body></html>

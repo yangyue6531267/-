@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+  <link rel="stylesheet" href="./myOrder.css">
+  <title>我的订单</title>
+</head>
+<script src="../../public/js/jquery.min.js?v=1"></script>
+<script src="./../../public/js/jquery.cookie.js?v=1"></script>
+<script src="../../public/js/common.js?v=1"></script> 
+<script src="./myOrder.js"></script>
+
+
+<body>
+    
+  <div class="myOrder">
+      <div class="myOrder_top">
+          <img src="./images/logo.png" alt="">
+          <p>账号信：672893612784628946</p>
+      </div>
+          <div class="myOrder_center">
+            <p>订单信息:</p>
+            <div class="shopList">
+              <div id="o_name"><div>订单名称</div></div>
+              <div id="o_price">价格</div>
+              <div id="o_pd">有效期</div>
+              <div id="o_state">状态</div>
+              <div id="o_handle">操作</div>
+              <div class="myOrder_bottom" >
+                <div class="actived" id="List">
+                    <div class="o_name_List"></div>  
+                    <div class="o_price_List"></div>
+                    <div class="o_pd_List"></div>
+                    <div class="o_state_List"></div>
+                    <div class="ipunt" id="input"></div>
+                </div>                
+                <!-- <div id="List2" class="actived">
+                    <div class="o_name_List2">包年</div>  
+                    <div class="o_price_List2">27元/月</div>
+                    <div class="o_pd_List2">2019/09/11-2020/09/11</div>
+                    <div class="o_state_List2">关闭</div>
+                    <div class="o_handle_List2" id="input2">取消包年</div>
+                </div>             
+                  <div class="actived" id="List3">
+                      <div class="o_name_List3">连续包月</div>  
+                      <div class="o_price_List3">27元/月</div>
+                      <div class="o_pd_List3">2019/09/11-2020/09/11</div>
+                      <div class="o_state_List3">关闭</div>
+                      <div class="o_handle_List3" id="input3">取消包月</div>
+                  </div> -->
+              </div>
+              <div class="tuidingBox" style="display:none">
+                <div class="scrollbox">
+                  <div class="text">
+                      <div class="text1">是否确认取消"连续包月"服务</div>
+                      <div class="text2">该操作下月生效</div> · 
+                  </div>
+                  <div class="no">我再考虑下</div> 
+                  <div class="yes">确认</div>            
+                </div>
+              </div>
+              <div class="message">您已退订连续包月服务</div>
+            </div>
+          </div>
+      </div>
+  </div>  
+ 
+</body>
+</html>

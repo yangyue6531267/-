@@ -1,0 +1,290 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.bevaBox{
+    width: 1280px;
+    height: 720px;
+    background-image: url("../public/images/beva/background-img.png");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+.beva{
+    width: 497px;
+    height: 89px;
+    background: #E6DDC3;
+    border-radius: 30px;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    line-height: 89px;
+    float: left;
+}
+.beva_logo{
+    margin: 16px 15px 0 27px;
+    float: left;
+}
+.bevaTan{
+    width: 192px;
+    height: 67px;
+    display: inline-block;
+    font-size: 48px;
+}
+.beva-vip{
+    position: absolute;
+    left: 316px;
+    top: 14px;
+}
+.beva_story{
+    width: 458px;
+    height: 50px;
+    background: #EEE8D5;
+    position: relative;
+    top: 50px;
+    right: 245px;
+    border-radius: 15px;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+}
+.beva_story div{
+    display: inline-block;
+    width: 112px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.beva_story div:nth-child(2){
+    margin: 0 40px;
+}
+.keyHover{
+    width:112px;
+    height:57px;
+    background:rgba(75,163,159,0.82);
+    border:1px solid rgba(102,237,231,1);
+    box-shadow:0px 10px 10px rgba(67,154,150,0.6);
+    opacity:1;
+    border-radius:15px;
+    color: #fff;
+}
+.Hover{
+    width: 159px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgba(75, 163, 159, 0.82);
+    box-shadow: 0px 10px 10px rgba(67, 154, 150, .4);
+    color: #fff;
+}
+ol{
+    position: relative;
+}
+ol li{
+    height: 48px;
+    border-radius: 30px;
+    line-height: 50px;
+    text-align: center;
+    padding-left: 16px;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+ol li:nth-child(1){
+    position: absolute;
+    top: 294px;
+    left: 136px;
+    width: 240px;
+}
+ol li:nth-child(2){
+    position: absolute;
+    top: 472px;
+    left: 549px;
+    width: 202px;
+}
+ol li:nth-child(3){
+    position: absolute;
+    top: 245px;
+    left: 1010px;
+    width: 180px;
+}
+ol li:nth-child(4){
+    position: absolute;
+    top: 345px;
+    left: 990px;
+    width: 161px;
+}
+ol li:nth-child(5){
+    position: absolute;
+    top: 417px;
+    left: 70px;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+ul{
+    position: relative;
+}
+ul li{
+    width: 60px;
+    height: 60px;
+}
+ul li:nth-child(1){
+    background-image: url("../public/images/beva/beva1.png");
+    width: 469px;
+    height: 466px;
+    position: absolute;
+    top: 85px;
+    left: 10px;
+}
+ul li:nth-child(2){
+    background-image: url("../public/images/beva/beva2.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 180px;
+    left: 415px;
+}
+ul li:nth-child(3){
+    background-image: url("../public/images/beva/beva3.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: -50px;
+    left: 875px;
+}
+ul li:nth-child(4){
+    background-image: url("../public/images/beva/beva4.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 294px;
+    left: 840px;
+}
+ul li:nth-child(5){
+    background-image: url("../public/images/beva/beva5.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 350px;
+    left: -40px;
+}
+.noact{
+    display: none;
+}
+#list .key-kin{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+/* .zIndex{
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+} */
+#list li:nth-child(1){
+    position: absolute;
+    width: 322px;
+    top: 410px;
+    left: 140px;
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+}
+#list li:nth-child(2){
+    position: absolute;
+    width: 283px;
+    top: 480px;
+    left: 550px;
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+}
+#list li:nth-child(3){
+    position: absolute;
+    top: 247px;
+    left: 1014px;
+    width: 251px;
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+}
+#list li:nth-child(4){
+    position: absolute;
+    top: 605px;
+    left: 1024px;
+    width: 230px;
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+}
+#list li:nth-child(5){
+    position: absolute;
+    top: 647px;
+    left: 85px;
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+    width: 244px;
+}
+.key-itemHover{
+    position: absolute;
+    top: 46px;
+    left: 597px;
+    width: 112px;
+    height: 57px;
+    background: rgba(0,170,170,0.8);
+    border: 1px solid rgba(102,237,231,1);
+    box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+    border-radius: 15px;
+    z-index: 1;
+    display: none;
+}
+#key-item1Hover{
+    left: 751px;
+}
+#key-item2Hover{
+    left: 902px;
+}
+.backBtn{
+    position: absolute;
+    top: 609px;
+    left: 445px;
+    width: 419px;
+    height: 111px;
+    background: url('../public/images/beva/backBtn.png') no-repeat 100% 100%;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+.backBtnHover{
+    background: url('../public/images/beva/backBtnHover.png') no-repeat 100% 100% !important;
+}
+.backBtn .backText{
+    font-size:35px;
+    font-family:Helvetica Neue;
+    font-weight:400;
+    line-height:41px;
+    color:rgba(67,67,67,1);
+    margin-top: 6px;
+    margin-left: 125px;
+}
+.backBtn .backTextHover{
+    color:rgba(255,255,255,1) !important;
+}
+.backBtn .backImg{
+    width: 135px;
+    height: 27px;
+    background: url('../public/images/beva/backBtn1.png') no-repeat 100% 100%;
+    margin-top: 15px;
+    margin-left: 127px;
+}
+.backBtn .backImgHover{
+    background: url('../public/images/beva/backBtnHover1.png') no-repeat 100% 100%;
+}

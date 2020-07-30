@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><title>精选版</title><style>*{margin:0; padding:0;outline:none;}
+      ul,li{list-style:none}
+      img{border:none;padding:0; border:0;margin:0;clear:both;}
+      body{background-color:#B09373;font-family:"Microsoft YaHei,Arial"; color:#fff;width:1280px;height: 720px;}
+      .openImage{position: absolute;width: 1280px;height: 720px;z-index: 999;}
+      .openImage .loadEffect{
+       width: 120px;
+       height: 120px;
+       position: relative;
+       margin: 0 auto;
+       margin-top:300px;
+       mask-image:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png');
+       -webkit-mask-image:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png');
+       background:url('https://aged-bs.yanhuamedia.tv/agedness/static/load.png'); 
+       line-height:0;
+       font-size:0;
+       text-align:center;
+       animation-name: load;
+       animation-duration: 3s;
+       animation-iteration-count: infinite;
+       animation-timing-function: linear;
+       -webkit-animation-name: load;
+       -webkit-animation-duration: 2s;
+       -webkit-animation-iteration-count: infinite;
+       -webkit-animation-timing-function: linear;
+       white-space: nowrap;
+       overflow: hidden;
+     }
+      @-webkit-keyframes load{
+        0%{
+          -webkit-transform: rotate(0deg);
+        }
+        100%{
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes load{
+        0%{
+          -webkit-transform: rotate(0deg);
+        }
+        100%{
+          -webkit-transform: rotate(360deg);
+        }
+      }</style><script>var openTime = new Date().getTime();
+        var StartTime = new Date().getTime();
+        var httpRequestTime = 0;
+        var httpResponseTime = 0;
+        console.log("StartTime:"+StartTime)
+        let DEFAULT_WIDTH = 1280;//默认屏宽
+        let deviceWidth = window.screen.width; // 设备的宽度
+        let devicePixelRatio = window.devicePixelRatio || 1; // 物理像素和设备独立像素的比例，默认为1
+        let INITIALSCALE = "1";
+        if (DEFAULT_WIDTH > deviceWidth) {
+            INITIALSCALE = (deviceWidth / DEFAULT_WIDTH);//设备的缩放比
+        } else {
+            INITIALSCALE = (DEFAULT_WIDTH / deviceWidth);
+        }
+        var oMeta = document.createElement('meta');
+        oMeta.charset = 'utf-8';
+        oMeta.name = 'viewport';
+        oMeta.setAttribute('content', "initial-scale=" + INITIALSCALE);
+        document.getElementsByTagName('head')[0].appendChild(oMeta);</script><link href=/category/static/css/app.967c94ea8800c201b6b239c4f82d3f74.css rel=stylesheet></head><body><div class=openImage style="display: none"><img width=100% src=https://winnow-bs.yanhuamedia.tv/category/static/splash.jpg></div><div class=openImage><div class=loadEffect></div></div><div id=app></div><script type=text/javascript src=/category/static/js/manifest.5db8a5599685e597096d.js></script><script type=text/javascript src=/category/static/js/vendor.036db5a94136cfe5f5f4.js></script><script type=text/javascript src=/category/static/js/app.54abe826926a3b107cfe.js></script></body></html>

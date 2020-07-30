@@ -1,0 +1,591 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(to right, #434646, #0D0806);
+    background-image: -webkit-linear-gradient(to right, #434646, #0D0806);
+    background-image: -o-linear-linear-gradient(to right, #434646, #0D0806);
+    background-image: -moz-linear-gradient(to right, #434646, #0D0806);
+    width: 1280px;
+    height: 720px;
+    color: #FFFFFF;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none
+}
+
+.tencent-body {
+    width: 961.13px;
+    height: 517.65px;
+    position: absolute;
+    top: 37px;
+    left: 150px;
+    /* background: url('./../images/body-background.png')no-repeat; */
+    background-size: 100% 100%;
+}
+
+.tencent-body .payIcon{
+    display: inline-flex;
+}
+
+.tencent-body .payIcon div{
+    margin-right: 130px;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+}
+
+.tencent-body .payIcon div p{
+    color:#C8A069;   
+}
+
+.payOne span:nth-child(1){
+    font-size:32px;
+    margin-right: 20px;
+    color: #FCCCA3;
+}
+
+.payOne{
+    position: absolute;
+    left: 20px;
+    top: 44px;
+}
+
+.payOne span:nth-child(2){
+    font-size:20px; 
+    line-height: 32px;
+    color: #FCCCA3;
+}
+
+.palyTwo{
+    position: absolute;
+    left: 20px;
+    top: 334px;
+
+}
+
+.palyTwo span:nth-child(1){
+    font-size:32px;
+    margin-right: 20px;
+    color: #FCCCA3;
+}
+
+.palyTwo span:nth-child(2){
+    font-size:20px; 
+    line-height: 32px;
+    color: #FCCCA3;
+}
+
+.playThere{
+    position: absolute;
+    top: 368px;
+    left: 376px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius:15px;
+}
+
+.playThere div{
+    width: 280px;
+    height: 54px;
+    text-align: center;
+    line-height: 54px;
+    /* background: rgba(255, 255, 255, 0.3) */
+}
+
+.playThere div span:nth-child(1){
+     background: url('./../images/payfor.png')no-repeat;
+     width: 25px;
+     height: 25px;
+}
+
+.playThere div.active{
+    background: #DE4C4CFF;
+    border-radius:15px;
+    border: 1px solid white;
+}
+
+.playThere div span:nth-child(2){
+    color:#ffffff;
+    font-size:22px;
+
+}
+
+.playThere div.hover{
+    background: #DE4C4C;
+}
+.paytext{
+    position: relative;
+    width: 600px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.48);
+    top: 430px;
+    left: 375px;
+    border-radius:5px; 
+}
+
+.Text-left{
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.Text-left p{
+    width: 140px;
+    height: 28px;
+    position: absolute;
+    left: 58px;
+    top: 170px;
+}
+
+.Text-left .payboder{
+    width: 181px;
+    height: 181px;
+    background: white;
+    border-radius: 27px;
+    position: absolute;
+    left: 32px;
+    top: 4px;
+
+}
+
+.Text-left .payboder #pay{
+    width: 150px;
+    height: 150px;
+    margin: 16px auto;
+    line-height: 150px;
+}
+
+.Text-right{
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.Text-right div:nth-child(1){
+    width: 290px;
+    position: absolute;
+    left: 265px;
+    top: 50px;
+}
+.Text-right div:nth-child(2){
+    width: 290px;
+    height: 94px;
+    position: absolute;
+    left: 265px;
+    top: 107px;
+}
+.Text-right div span:nth-child(1){
+    font-size:22px;
+    font-weight:bold;
+    margin-right:52px; 
+}
+.Text-right div span:nth-child(2){
+    font-size:25px;
+    font-weight:bold;
+    color: #E59A40
+}
+
+.paytext1{
+    width: 600px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 430px;
+    left: 375px;
+    display: none;
+}
+
+.paytext1 p{
+    width: 541px;
+    font-size:22px;
+    margin-left:30px; 
+}
+.paytext1 div{
+    width: 214px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left:372px;
+    top: 183px;
+    border-radius:15px; 
+}
+
+.paytext1 div.active{
+    background: #DE4C4CFF;
+    border: 1px solid white;
+}
+
+.tencent-body .payIcon div:nth-child(1){
+    background: url('./../images/1777.png')no-repeat;
+    position: relative;
+}
+
+.tencent-body .payIcon div:nth-child(1) p{
+    font-size: 19px;
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    left: 58px;
+    top: -9px;
+}
+
+.tencent-body .payIcon div:nth-child(2){
+    background: url('./../images/1777.png')no-repeat;
+    position: relative;
+}
+
+.tencent-body .payIcon div:nth-child(2) p{
+    font-size: 19px;
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    left: 58px;
+    top: -9px;
+}
+
+.tencent-body .payIcon div:nth-child(3){
+    background: url('./../images/1777.png')no-repeat;
+    position: relative;
+}
+
+.tencent-body .payIcon div:nth-child(3) p{
+    font-size: 19px;
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    left: 58px;
+    top: -9px;
+}
+
+.tencent-body .payIcon div:nth-child(4){
+    background: url('./../images/1777.png')no-repeat;
+    position: relative;
+}
+
+.tencent-body .payIcon div:nth-child(4) p{
+    font-size: 19px;
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    left: 58px;
+    top: -9px;
+}
+
+.tencent-body .payIcon div:nth-child(5){
+    background: url('./../images/1777.png')no-repeat;
+    position: relative;
+}
+
+.tencent-body .payIcon div:nth-child(5) p{
+    font-size: 19px;
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    left: 58px;
+    top: -9px;
+}
+
+.tencent-body .tencent-content {
+    margin: 111.65px 0 0 44px;
+}
+
+.tencent-content .head {
+    height: 33px;
+    font-size: 24px;
+}
+
+.tencent-content .content {
+    font-size: 22px;
+    margin-top: 26px;
+    height: 80px;
+}
+
+.tencent-body .tencent-card {
+    margin: 65px 0 0 0px;
+    position: relative;
+}
+
+.tencent-card .card:nth-of-type(0) {
+    margin-left: 0;
+}
+
+.pay_right{
+    width: 900px;
+    position: absolute;
+    left: 234px;
+    top: 0px;
+}
+
+.tencent-card .card {
+    height: 125px;
+    width: 180px;
+    float: left;
+    margin-left: 19px;
+    margin-top: 5px;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, #3F3F3E, #302E2D);
+    background-image: -webkit-linear-gradient(to right, #3F3F3E, #302E2D);
+    background-image: -o-linear-linear-gradient(to right, #3F3F3E, #302E2D);
+    background-image: -moz-linear-gradient(to right, #3F3F3E, #302E2D);
+    box-shadow: #000000 0 30px 40px;
+    -webkit-box-shadow: #000000 0 30px 40px;
+}
+
+.card .card-head {
+    height: 37px;
+    width: 100%;
+    font-size: 26px;
+    margin: 20px 0 9px 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card .card-price {
+    height: 42px;
+    width: 200px;
+    text-align: center;
+    font-size: 30px;
+    color: #E59A40;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tencent-card .card-hover {
+    
+    margin-top: 0px;
+    height: 135px;
+    width: 216px;
+    border: 2px solid #FFFFFF;
+    background: #DE4C4C;
+}
+
+/* keyboard */
+.input-pwd {
+    position: absolute;
+    width: 400px;
+    height: 457px;
+    top: 30px;
+    left: 350px;
+    background: url("./../images/keyboard_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.inputBox {
+    position: relative;
+    width: 292px;
+    height: 268px;
+    display: inline-block;
+    margin: 71px;
+}
+
+.input-title {
+    font-size: 18px;
+    height: 44px;
+    position: relative;
+    line-height: 41px;
+    text-align: center;
+}
+
+.input-content {
+    width: 101%;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-content div {
+    text-align: center;
+    width: 35px;
+    height: 42px;
+    background: #d5d5d5;
+    border-radius: 12px;
+    margin-right: 10px;
+    line-height: 42px;
+}
+
+.input-num ul {
+    height: 138px;
+    width: 194px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 49px;
+}
+
+.input-num ul li {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #403C98;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    margin: 5px;
+}
+
+.backNum {
+    background: url("./../images/back.png") no-repeat !important;
+    background-size: 100% 100%;
+    width: 80px !important;
+    height: 35px;
+}
+
+.inputOn {
+    border: 3px solid #4dcfff;
+    margin: -3px;
+}
+
+.input-num ul .hover {
+    border: 3px solid #e79f17;
+    margin: 3px 3px -2px 3px;
+}
+
+.input-submit {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.input-submit ul {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+}
+
+.input-submit ul li {
+    width: 62px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    margin-right: 20px;
+    line-height: 35px;
+    font-size: 13px;
+}
+
+.btnOn {
+    background: url("../../assets/pwdBtnOn.png") no-repeat !important;
+    background-size: 100% 100%;
+}
+
+.qc-code {
+    /* display: none; */
+    width: 466px;
+    position: relative;
+    top: 40%;
+    margin: 0 auto;
+    height: 250px;
+    border-radius: 8px;
+    background: #919191;
+}
+
+.qc-code .text {
+    float: left;
+    margin: 70px 0;
+}
+
+.qc-code .text div {
+    margin: 10px;
+}
+
+.qc-code p {
+    height: 190px;
+    width: 190px;
+    border-radius: 27px;
+    margin: 0;
+    background: #ffffff;
+    padding: 12px;
+    float: left;
+    margin: 18px;
+}
+
+.qc-code img {
+    padding: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    width: 1280px;
+    height: 720px;;
+    background: #000000;
+    z-index: 999;
+}
+
+
+.tip .connect {
+    position: absolute;
+    width: 529px;
+    height: 275px;
+    top: 218px;
+    left: 360px;
+    z-index: 999;
+    /* background: url("./../images/tip-connect.png") no-repeat 100%; */
+    background-image: url("./../images/tip-connect.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.tip .connect div {
+    display: inline-block;
+    float: left;
+    width: 165px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #7595A6;
+    border-radius: 20px;
+    margin: 100px 47px;
+    color: #F7F9FA;
+    font-size: 20px;
+}
+
+.tip .connect .hover {
+    border: 2px solid #ffffff;
+    background: #DE4C4C;
+}
+
+.firm{
+    width: 1280px;
+    height: 720px;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    background: url(./../images/1155.png) no-repeat;
+    background-size:100% 100%;
+    display: none;
+}
+.firm_center{
+    background: url(./../images/1180.png) no-repeat;
+    background-size:100% 100%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 703px;
+    height: 386px;
+}
+
+.firm_center p{
+    width: 500px;
+    text-align: center;
+    font-size: 35px;
+    margin: auto;
+  position: absolute;
+  top: 90px; left: 0; bottom: 0; right: 0;
+}

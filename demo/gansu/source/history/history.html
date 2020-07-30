@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="page-view-size" content="1280*720" />
+  <title>收藏历史页</title>
+  <link rel="stylesheet" href="../public/css/common.css">
+  <link rel="stylesheet" href="./history.css">
+</head>
+
+<body onload="init()">
+  <div id="contentBox" class='contentBox'>
+    <!-- 键盘 -->
+    <div class="nav">
+      <div class="nav-header">记录/收藏</div>
+      <div class="nav-connent" id="nav-connent">
+        <div class="change-bg"></div>
+      </div>
+      <ul class="keycode-connect" id="keycode-connect">
+        <li class="keycode-li-0">我的收藏</li>
+        <li class="keycode-li-1">我的记录</li>
+      </ul>
+      <div class="hover-sign"><span></span></div>
+    </div>
+    <!-- 内容数据 -->
+    <div class="history-connent">
+      <div class="top-c" id="top-c">还没有学习记录，快去学习吧</div>
+      <ul class="middle-box" id="history-connent">
+      </ul>
+    </div>
+    <div class="history-scroll" id="history-scroll">
+      <div class="history-bar" id="history-bar" style="top: 0px;"></div>
+    </div>
+    <div class="history-num" id="history-num"></div>
+  </div>
+</body>
+<script src="../public/js/js.cookie.js"></script>
+<script type="text/javascript" src="../public/js/util.js"></script>
+<script type="text/javascript" src="../public/js/ajax.js"></script>
+<script type="text/javascript" src="../public/js/interface.js"></script>
+<script type="text/javascript" src="../history/index.js"></script>
+<script type="text/javascript" src="../history/content_History.js"></script>
+<script src="../public/js/logApi.js"></script>
+
+</html>

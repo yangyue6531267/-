@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="page-view-size" content="1280*720" />
+  <title>新东方教育专区</title>
+  <link rel="stylesheet" href="./source/public/css/common.css">
+  <link rel="stylesheet" href="./source/index/index.css">
+</head>
+
+<body>
+  <div id='advert' class='advert'>
+    <div id="allTime" class="all-time">5 S后返回</div>
+    <div id="upgrade" class="upgrade">
+      <div class="login-name">全新升级</div>
+      <div class="login-text">亲爱的用户，您终于来啦！</div>
+      <div class="login-footer">检测到有最新版本</div>
+      <div class="login-footer">升级可以获得最好的体验</div>
+      <div class="buttom-footer hover" id='footerBar'>升级</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./source/public/js/js.cookie.js"></script>
+  <script type="text/javascript" src="./source/public/js/md5.min.js"></script>
+  <script type="text/javascript" src="./source/public/js/util.js"></script>
+  <script type="text/javascript" src="./source/public/js/client.js"></script>
+  <script type="text/javascript" src="./source/public/js/ajax.js"></script>
+  <script type="text/javascript" src="./source/public/js/interface.js"></script>
+  <!-- <script type="text/javascript" src="./source/index/index.js"></script> -->
+  <script type="text/javascript" src="./source/public/js/logApi.js"></script>
+</body>
+
+<script>
+  var page = 0;//用于轮询调用播放
+  var currCode = '';//当前版本号
+  var uploadCode = '';//最新版本号
+  var accountInfo = {};
+  var deviceInfo = {};
+  var apkParams = {
+    downloadProgress: -1
+  }//最新apk版本信息
+  // var apkMD5 = '8BBFD3861468AB0D971E0420FED33D78';
+  var initCallBack = 0;
+  // window.location.replace('./source/index/index.html');
+  // loading();
+  //获取信息
+  //升级
+  window.onload = function () {
+    submitPrompt('deviceInfo', { return: 'getDeviceInfo' });
+  }
+  var topContent = {
+    btnNum: 0, //按钮编号
+    up: function () {
+
+    },
+    down: function () {
+
+    },
+    left: function () {
+    },
+    right: function () {
+    },
+    enter: function () {
+      console.log('enter------------')
+      if (apkParams.downloadProgress == -1) { return }
+      downloadApk();
+    },
+    back: function () {
+      backApp();
+      cancelDownload();
+    }
+  }
+  var backContent = {
+    btnNum: 0, //按钮编号
+    up: function () {
+
+    },
+    down: function () {
+
+    },
+    left: function () {
+    },
+    right: function () {
+    },
+    enter: function () {
+
+    },
+    back: function () {
+      backApp();
+      cancelDownload();
+    }
+  }
+  //	获取设备基本参数
+  function getDeviceInfo(res) {
+    console.log('deviceInfo---------------------' + JSON.stringify(res));
+    deviceInfo = res;
+
+    // if (deviceInfo.softVName == '1.0.000') {//临时使用
+    //   deviceInfo.softVCode = 1;
+    // } else {
+    //   deviceInfo.softVCode = 2;
+    // }
+
+    submitPrompt('accountInfo', { return: 'getAccountInfo' });
+    //版本信息埋点
+    try {
+      var params = {
+        type: 87,
+        content: {
+          appName: '0',
+          // appName: deviceInfo.softVName || '0',
+          appVersionCode: deviceInfo.softVCode || '1',
+          versionTime: ''
+        }
+      }
+      stat(params);
+    } catch (error) {
+    }
+  }
+
+  // 获取账号鉴权信息
+  function getAccountInfo(res) {
+    console.log('accountInfo---------------------' + JSON.stringify(res))
+    accountInfo = res;
+    //检测升级，认证apk
+    setStorage('XDF-accountInfo', JSON.stringify(res));
+    accountInfo = getStorage('XDF-accountInfo') && JSON.parse(getStorage('XDF-accountInfo'));
+    console.log('XDF-accountInfo---' + getStorage('XDF-accountInfo'));
+    initApk();
+  }
+
+  // 用户鉴权/apk认证
+  function initApk() {
+    submitPrompt('auth', { jsonParam: '', return: 'initApkCallBack' });
+    // setTimeout(function () {
+    //   if (initCallBack == 0) {
+
+    //   }
+    // })
+  }
+
+  /**
+ * 未来认证ottlogin SDK对接
+ * 
+*/
+  //apk认证回调
+  function initApkCallBack(res) {
+    console.log('initApkCallBack-------' + JSON.stringify(res));
+    // var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    console.log(JSON.stringify('XDF-deviceInfo--' + deviceInfo));
+
+    deviceInfo.versionType = prompt('yanhua://epg/getValueByKey?key=EXT_VERSION_TYPE') || 0;
+    deviceInfo.versionCode = prompt('yanhua://epg/getValueByKey?key=EXT_VERSION_CODE') || 0;
+    setStorage('XDF-deviceInfo', JSON.stringify(deviceInfo));
+
+    // submitPrompt('getValueByKey', { key: 'versionCode', return: 'versionCodeBack' });
+    // submitPrompt('getValueByKey', { key: 'versionType', return: 'versionTypeBack' });
+
+    if (res.code == 1) {
+      //检测apk升级
+      setTimeout(function () { getUploadStatus(); }, 3000)
+      //认证成功日志
+      var params = {
+        type: 10,
+        content: {
+          type: 0,
+          versionType: deviceInfo.versionType,
+          versionCode: deviceInfo.versionCode
+        }
+      }
+      stat(params);
+    } else {
+      // loading('hidden');
+      //认证失败需退出应用，不允许继续播放媒体
+      if (res.code = 9999) {
+        res = { "code": "1765(28)-2444-3444", "message": "无线认证失败?b4:47:f5:61:8f:64" }
+      }
+      toast('认证失败----' + JSON.stringify(res) + '---mac:' + deviceInfo.eth0_mac + '-----------3秒后退出');
+      var params = {
+        type: 10,
+        content: {
+          type: 1,
+          versionType: deviceInfo.versionType,
+          versionCode: deviceInfo.versionCode,
+          errorCode: JSON.stringify(res)
+        }
+      }
+      stat(params);
+
+      setTimeout(function () {
+        backApp();
+        return
+      }, 3000);
+    }
+  }
+  function versionCodeBack(res) {
+    console.log('versionCodeBack----' + JSON.stringify(res));
+  }
+  function versionTypeBack(res) {
+    console.log('versionTypeBack----' + JSON.stringify(res));
+  }
+
+
+  //获取设备基本参数
+  // var deviceInfo = // {"androidV":"4.4.2","brand":"Skyworth",
+  // "eth0_mac":"3050fd59c8d9",
+  // "hardware":"amlogic",
+  // "incremental":"3.0.0",
+  // "manufacturer":"Skyworth",
+  // "model":"CM201-1-CW3_HI",
+  // "product":"p201_iptv",
+  // "softVCode":"1",
+  // "softVName":"1.0.006",
+  // "stbId":"005103FF0001004019153050FD59C8D9",
+  // "wifi_mac":"b447f5618f64"}"
+
+
+  //盒子获取参数
+  // var accountInfo = {"adUrl":"https://a158.api.adott.ottcn.com",
+  // "cityCode":"08980",
+  // "cpCode":"ICNTV",
+  // "mobileNo":"18217896035",
+  // "provinceNo":"22",
+  // "statisticsUrl":"loga158.cloud.ottcn.com:14630",
+  // "updateUrl":"https://bzoa158.cloud.ottcn.com",
+  // "userAuthUrl":"http://bngt.itv.cmvideo.cn:8095/scspProxy",
+  // "userName":"0102327570788553510",
+  // "userToken":"df3ba93241a97cc304481c72332a528b22vv"}"
+
+  /**
+  未来升级SDK对接
+  */
+  //升级检测
+  function getUploadStatus() {
+    var parames = {
+      appUpgradeAddress: accountInfo.updateUrl || '',//APP 升级服务器地址 
+      appKey: appId,//应用标识 
+      channelCode: channelCode,// 	应用渠道号 
+      versionCode: deviceInfo.softVCode || '1',//	APP 版本号 
+    }
+
+    parames = JSON.stringify(parames);
+    submitPrompt('updateCheck', { jsonParam: parames, return: 'uploadStatus' });
+  }
+  function uploadStatus(res) {
+    console.log('调用升级检测接口-----' + JSON.stringify(res));
+    // if (res.code == 0) {
+    if (false) {//海南局方对接人未搞清升级，暂时屏蔽升级
+      apkParams = JSON.parse(res.message);
+      // var res =
+      // { "code": "0", "message": "{\n  \"versionCode\" : \"2\",\n  \"versionName\" : \"1.0.001\",\n  \"versionDescription\" : \"版本：2.0\",\n  \"packageSize\" : 10133228,\n  \"packageAddr\" : \"http://apkfiles.cloud.ottcn.com/tiger/apps/WebTV_xdf_hnyd-release_2.0_63088140.apk\",\n  \"packageMD5\" : \"5b12de0ae7b13598b0e141b4aeae55ca\",\n  \"upgradeType\" : 1,\n  \"channelId\" : 190,\n  \"channelCode\" : \"2626046001\",\n  \"appKey\" : \"60adac342c13f6d6f08c3330ebe26ceb\",\n  \"imageUrl\" : \"\",\n  \"description\" : \"\",\n  \"lightSpot\" : \"\",\n  \"remainIssued\" : null\n}" };
+      try {
+        var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+        var uploadCode = String(apkParams.versionCode).replace(/[^\-?\d]/g, '') * 1;
+        console.log('uploadCode-------' + currCode + '-------------' + uploadCode)
+        if (currCode < uploadCode) {
+          //升级
+          // loading('hidden');
+          getId('upgrade').style.display = 'block';
+          areaObj = topContent;
+
+          // showadInfo();//暂时屏蔽升级，
+        } else {
+          showadInfo();
+        }
+      } catch (e) {
+        console.log(e);
+        showadInfo();
+      }
+    } else {
+      showadInfo();
+    }
+    //获取广告
+    var data = {
+      adType: 'open',
+      extend: ''
+    }
+    adInfoFunc(data);
+  }
+  //下载apk
+  function downloadApk() {
+    console.log('下载apk');
+    var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    submitPrompt('download', { url: apkParams.packageAddr, fileMd5: deviceInfo.signMD5, return: 'downloadApkCallkacb' });
+    //升级日志
+    try {
+      var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+      var uploadCode = String(apkParams.versionCode).replace(/[^\-?\d]/g, '') * 1;
+      var currTime = (new Date()).valueOf();
+      var params = {
+        type: 80,
+        content: {
+          upgradeStatus: 0,//0开始下载 1 下载成功 2 下载失败 3 开始安装 4 安装成功 5 安装失败 
+          oldVersion: currCode,//原版本号 
+          newVersion: uploadCode, //新版本号 
+          downloadedId: md5(deviceInfo.eth0_mac + currTime),//mac+operatetime md5 规则生成 
+          installId: md5(deviceInfo.eth0_mac + currTime),//mac+ operatetime md5规则生成
+        }
+      }
+      stat(params);
+    } catch (error) {
+    }
+  }
+  function downloadApkCallkacb(res) {
+    console.log('downloadApkCallkacb-----' + JSON.stringify(res));
+    if (res.code === 400) {
+      toast('升级失败，3秒后自动退出');
+      setTimeout(function () {
+        backApp();
+      }, 3000)
+      return
+    }
+    apkParams.fileSavePath = res.fileSavePath;//存储路径
+    apkParams.downloadProgress = res.downloadProgress; //默认0 具体下载进度值
+    var code = 0;
+    var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    removeClass(getId('footerBar'), 'hover');
+    getId('footerBar').innerHTML = '<span id="percentageBar"></span>';
+    getId('percentageBar').style.width = res.downloadProgress + '%';
+    console.log('downloading----' + res.tag)
+
+
+    if (res.downloadProgress == 100) {
+      getId('footerBar').innerHTML = '<span id="percentageBar">安装中..</span>';
+      getId('percentageBar').style.width = 100 + '%';
+      installApp();
+      return
+    }
+
+    if (res.tag = 'downloadFinish') {
+      //开始下载
+    } else if (res.tag = 'downloading') {
+      //正在下载
+    } else if (res.tag = 'downloadFinish') {
+      getId('percentageBar').style.width = 100 + '%';
+      // toast('下载成功');
+      getId('footerBar').innerHTML = '<span id="percentageBar">安装中..</span>';
+      installApp();
+      code = 1;
+      //升级日志
+    } else if (res.tag = 'downloadFail') {
+      toast('下载失败');
+      code = 2;
+    }
+    //升级日志
+    try {
+      var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+      var uploadCode = String(apkParams.versionCode).replace(/[^\-?\d]/g, '') * 1;
+      var currTime = (new Date()).valueOf();
+      var params = {
+        type: 80,
+        content: {
+          upgradeStatus: code,//开始下载 1 下载成功 2 下载失败 3 开始安装 4 安装成功 5 安装失败 
+          oldVersion: currCode,//原版本号 
+          newVersion: uploadCode, //新版本号 
+          downloadedId: md5(deviceInfo.eth0_mac + currTime),//mac+operatetime md5 规则生成 
+          installId: md5(deviceInfo.eth0_mac + currTime),//mac+ operatetime md5规则生成
+        }
+      }
+      stat(params);
+    } catch (error) {
+    }
+
+    res.tag = {}
+    // var res = {
+    //   "versionCode": "123456",
+    //   "versionName": "第二版",
+    //   "versionDescription": "微信的第二个版本",
+    //   "packageSize": 22222,
+    //   "packageAddr": "http://www.suibianxiede.com",
+    //   "packageMD5": "39deb1aa4294a0d200222ae10b1d9e83",
+    //   "upgradeType": 1,
+    //   "channelId": 1,
+    //   "channelCode": "105671",
+    //   "appKey": "894b4a5f3abdcaee3be27d7bf2d40064",
+    //   "imageUrl" : null,
+    //   "description" : null,
+    //    "lightSpot" : null,
+    //    "remainIssued" : null
+    // }
+  }
+
+  //安装apk
+  function installApp() {
+    console.log('installApp');
+    // var parames = {
+    // package: '',//应用的包名
+    // apkPath: apkParams.fileSavePath,//apk保存路径
+    // installType: 0,// 安装的类型 0-静默安装；1-普通安装
+    // }
+    // parames = JSON.stringify(parames);
+    submitPrompt('installApp', {
+      package: 'yanhua.xdftv.web',
+      apkPath: apkParams.fileSavePath,
+      installType: 1,
+      return: 'installAppCallBack'
+    });
+
+    //20秒后未安装成功，提示失败
+    setTimeout(function () {
+      toast('升级失败,3秒后自动退出');
+      setTimeout(function () {
+        backApp();
+      }, 3000)
+    }, 17000)
+    var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    //升级日志
+    try {
+      var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+      var uploadCode = String(apkParams.versionCode).replace(/[^\-?\d]/g, '') * 1;
+      var currTime = (new Date()).valueOf();
+      var params = {
+        type: 80,
+        content: {
+          upgradeStatus: 3,//开始下载 1 下载成功 2 下载失败 3 开始安装 4 安装成功 5 安装失败 
+          oldVersion: currCode,//原版本号 
+          newVersion: uploadCode, //新版本号 
+          downloadedId: md5(deviceInfo.eth0_mac + currTime),//mac+operatetime md5 规则生成 
+          installId: md5(deviceInfo.eth0_mac + currTime),//mac+ operatetime md5规则生成
+        }
+      }
+      stat(params);
+    } catch (error) {
+    }
+  }
+  function installAppCallBack(res) {
+    console.log('installAppCallBack-----' + JSON.stringify(res));
+    var code = 5
+    if (res.code == 200) {
+
+      code = 4;
+    } else {
+      setTimeout(function () {
+        toast('升级失败，3秒后自动退出');
+        backApp();
+      }, 3000)
+      return
+      console.log('安装失败');
+    }
+    var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    //升级日志
+    try {
+      var currCode = String(deviceInfo.softVCode).replace(/[^\-?\d]/g, '') * 1;
+      var uploadCode = String(apkParams.versionCode).replace(/[^\-?\d]/g, '') * 1;
+      var currTime = (new Date()).valueOf();
+      var params = {
+        type: 80,
+        content: {
+          upgradeStatus: code,//开始下载 1 下载成功 2 下载失败 3 开始安装 4 安装成功 5 安装失败 
+          oldVersion: currCode,//原版本号 
+          newVersion: uploadCode, //新版本号 
+          downloadedId: md5(deviceInfo.eth0_mac + currTime),//mac+operatetime md5 规则生成 
+          installId: md5(deviceInfo.eth0_mac + currTime),//mac+ operatetime md5规则生成
+        }
+      }
+      stat(params);
+    } catch (error) {
+    }
+  }
+
+  //取消下载apk
+  function cancelDownload() {
+    var parames = {
+      url: apkParams.packageAddr
+    }
+    parames = JSON.stringify(parames);
+    submitPrompt('cancelDownload', { url: apkParams.packageAddr });
+  }
+
+  /**
+  开机广告获取
+  */
+  function adInfoCallBack(res) {
+    var adInfo = {};
+    // res 是obj， res.message是json串
+    adInfo = JSON.parse(res.message);
+    if (adInfo && adInfo.adspaces.open.length > 0) {
+      setStorage('XDF-open', JSON.stringify(adInfo.adspaces.open));
+    } else {
+      setStorage('XDF-open', []);
+    }
+    console.log('adInfoCallBack----' + getStorage('XDF-open'))
+  }
+  //播放开机图
+  function showadInfo() {
+    // loading('hidden');
+    areaObj = backContent;
+    console.log('showadInfo------' + getStorage('XDF-open'));
+    var openXdf = getStorage('XDF-open') && JSON.parse(getStorage('XDF-open'));
+    if (openXdf && openXdf.length > 0) {
+
+      var item = '';
+      var time = 0;
+      for (var i = 0; i < openXdf.length; i++) {
+        item = openXdf[i];
+        time += Number(item.materials[0].play_time)
+      }
+      getId('allTime').style.visibility = 'visible';
+      getId('allTime').innerHTML = '广告剩余' + time + '秒';
+      var currTime = setInterval(function () {
+        console.log('adStat-----' + time)
+        if (time == 1) {
+          var data = {
+            mid: openXdf[0].mid,
+            aid: openXdf[0].aid,
+            mtid: openXdf[0].materials[0].id
+          }
+          console.log('adStat-----' + JSON.stringify(data))
+          adStat(data)
+          currTime && clearInterval(currTime);
+          // nextRouter();
+          // return
+        }
+        time--
+        getId('allTime').innerHTML = '广告剩余' + time + '秒';
+      }, 1000);
+      //轮询播放图片
+      checkPoster(openXdf)
+    } else {
+      //无广告
+      nextRouter();
+    }
+  }
+  function checkPoster(openXdf) {
+    // console.log(openXdf)
+    // console.log(openXdf[page].materials[0].play_time)
+    if (page < openXdf.length) {
+      getId('advert').style.backgroundImage = 'url(' + openXdf[page].materials[0].file_path + ')';
+      setTimeout(function () {
+        page++
+        checkPoster(openXdf);
+      }, openXdf[page].materials[0].play_time + '000');
+    } else {
+
+      nextRouter();
+    }
+  }
+
+  function nextRouter() {
+    //外链跳转专题页面
+    var biType = '';
+    var url = './source/index/index.html'
+    if (getParam('specialId')) {
+      biType = '0202';
+      url = './source/special/index.html';
+      var specialUrl = baseUrl + 'p=yhSpecialDetail&k=1&v=1&topicId=' + getParam("specialId") + '&c=15';
+      Cookies.set('detailUrl', specialUrl, { path: '/' })
+    } else if (getParam('assetId')) {
+      biType = '0201';
+      url = './source/detail/detail.html';
+      var assetIdUrl = baseUrl + 'p=yhAssetDetail&k=1&v=1&assetId=' + getParam("assetId") + '&c=15';
+      Cookies.set('detailUrl', assetIdUrl, { path: '/' })
+
+    } else {
+      url = './source/index/index.html';
+    }
+
+    try {
+      // 首页页面访问埋点
+      console.log('bi 首页页面访问埋点')
+      bi.start(biType);
+    } catch (error) {
+      console.log('埋点错误', error)
+    }
+
+    //避免异步埋点未发出
+    setTimeout(function () {
+      window.location.replace(url);
+    }, 200);
+    var deviceInfo = getStorage('XDF-deviceInfo') && JSON.parse(getStorage('XDF-deviceInfo'));
+    if (getStorage('XDF-accountInfo')) {
+      var params = {
+        type: 88,
+        content: {
+          type: 0,
+          varsion: deviceInfo.softVCode || '1'
+        }
+      }
+      stat(params);
+    }
+  }
+  onKeyPress = function (keyCode) {
+    switch (keyCode) {
+      case "up": //上边
+        areaObj.up();
+        break;
+      case "down": //下边
+        areaObj.down();
+        break;
+      case "left": //左边
+        areaObj.left();
+        break;
+      case "right": //右边
+        areaObj.right();
+        break;
+      case "back":
+        areaObj.back();
+        break;
+      case "enter":
+        areaObj.enter();
+        break;
+      case "home":
+        areaObj.home();
+        break;
+    }
+  };
+  //事件绑定
+  document.onkeydown = grepEvent;
+</script>
+
+</html>

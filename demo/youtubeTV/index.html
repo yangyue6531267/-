@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+  <title>详情页</title>
+  <style>
+    body {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      height: 720px;
+      width: 1280px;
+
+      background: #1D3A4B;
+      /* background: -webkit-linear-gradient(left, #1D3A4B, #4B4635); */
+      /* background: -o-linear-gradient(right, #1D3A4B, #4B4635); */
+      /* background: -moz-linear-gradient(right, #1D3A4B, #4B4635); */
+      /* background: linear-gradient(to bottom right, #1D3A4B, #4B4635); */
+    }
+
+    .toast2 {
+      position: absolute;
+      left: 275px;
+      top: 207px;
+      font-display: Arial;
+      font-size: 38px;
+      padding: 0 80px;
+      width: 570px;
+      height: 339px;
+      background: linear-gradient(to bottom left, #6A5AAD, #52B6AE);
+      opacity: 97%;
+      border-radius: 15px;
+      color: #ffffff;
+      visibility: hidden;
+    }
+
+    .toast-header {
+      margin-left: -20px;
+      position: relative;
+      top: 40px;
+      font-size: 30px;
+    }
+
+    .toast-header span {
+      width: 34px;
+      height: 30px;
+      display: inline-block;
+      background-image: url('./public/images/Tips.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+      top: 5px;
+    }
+
+    .toast2 .content {
+      margin-top: 75px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="Offline" class="toast2">
+    <div class='toast-header'><span></span> 遇到问题</div>
+    <div class="content">抱歉，该资产已下线</div>
+  </div>
+  <script src="./public/js/js.cookie.js"></script>
+  <script src="./public/js/util.js"></script>
+  <script src="./public/js/ajax.js"></script>
+</body>
+<script>
+
+  var url = decodeURIComponent(getParam('detailUrl'));
+  console.log(url);
+  ajax({
+    type: "GET",
+    url: url,
+    data: {},
+    dataType: "json",
+    success: function (response) {
+      var data = JSON.parse(response).data;
+
+      if (!data.detail) {
+        getId('Offline').style.visibility = "visible";
+        areaObj = topContent; //初始焦点赋值
+        console.log('资产已下线');
+        return
+      }
+      if (data.detail.assetType == 'Movie') {
+        //电影
+        window.location.href = './moveDetail/moveDetail.html?detailUrl=' + encodeURIComponent(url);
+      } else if (data.detail.assetType == 'Series') {
+        //电视剧
+        window.location.href = './seriesDetail/seriesDetail.html?detailUrl=' + encodeURIComponent(url);
+      } else if (data.detail.assetType == 'Column' || data.detail.assetType == 'News') {
+        //娱乐
+        window.location.href = './happyDetail/happyDetail.html?detailUrl=' + encodeURIComponent(url);
+      }
+    },
+    fail: function (error) {
+      getId('Offline').style.visibility = "visible";
+      areaObj = topContent; //初始焦点赋值
+      console.log('资产已下线');
+      return
+    }
+  })
+
+  var topContent = {
+    up: function () { },
+    down: function () { },
+    left: function () { },
+    right: function () { },
+    back: function () {
+      backApk();
+    },
+    enter: function () { },
+  }
+  onKeyPress = function (keyCode) {
+    switch (keyCode) {
+      case "up": //上边
+        areaObj.up();
+        break;
+      case "down": //下边
+        areaObj.down();
+        break;
+      case "left": //左边
+        areaObj.left();
+        break;
+      case "right": //右边
+        areaObj.right();
+        break;
+      case "back":
+        areaObj.back();
+        break;
+      case "enter":
+        areaObj.enter();
+        break;
+      case "home":
+        areaObj.home();
+        break;
+      case "menu":
+    }
+  };
+  document.onkeydown = grepEvent;
+</script>
+
+</html>

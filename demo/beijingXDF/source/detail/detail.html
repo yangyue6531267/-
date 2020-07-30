@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+  <link rel="stylesheet" href="../public/css/common.css">
+  <link rel="stylesheet" href="./detail.css">
+  <title>详情页</title>
+</head>
+
+<body>
+  <div class="seriesDetail" id="box-wrap">
+    <div class="scroll-box">
+      <div class="topContent">
+        <div id="imgBig">
+          <img src="./../public/images/play-bg.png" />
+        </div>
+        <div class="introduction">
+          <p id="name"></p>
+          <p id="info"></p>
+          <p id="btnBox-1" class="moreDes"></p>
+        </div>
+        <div id="btnBox">
+          <div class="play" id="btnBox0">全屏播放<span></span></div>
+          <div id="btnBox1" class="noCollect">
+            <p id="collectWord">收藏</p><span></span>
+          </div>
+          <div class="order" id="btnBox2">会员订购 <span>VIP</span></div>
+        </div>
+        <div class="point"><span></span></div>
+        <div id="indexSingle" class="indexSingle">
+          <div class="scrollLeft" id="slider1"></div>
+        </div>
+        <div id="indexTotal">
+          <div class="select"></div>
+          <div class="scrollLeft" id="slider2"></div>
+        </div>
+      </div>
+      <div class="descriptionBox" id="descriptionBox">
+        <div class="scrollBox" id="scrollBox">
+          <div class="contentBox">
+            <div class="wordScroll" id="wordScroll"></div>
+          </div>
+          <div class="topBox">
+            关闭
+          </div>
+        </div>
+      </div>
+      <div id="assetList">
+        <ul id="scrollContent">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 播放控件 -->
+  <div class="player-ui">
+    <div id="allTime" class="all-time">5 S后返回</div>
+    <div class="pause" id="pause"></div>
+    <div class="video-loading minLoading" id="playLoading"></div>
+    <div class="footer-player" id="footerPlayer">
+
+      <div class="curr-time" id="currTime">00:01</div>
+      <div class="progress-bar">
+        <div class="curr-box" id="currBox">10:00</div>
+        <div class="curr-bar" id="currBar"></div>
+      </div>
+      <div class="total-time" id="totalTime">120:00</div>
+    </div>
+  </div>
+  <div id="toast2">该课程已经下线，新东方更多名师课程等您学习,3秒后返回！</div>
+  <div id="blacklist">检测到你的账号异常，请联系客服！</div>
+  <script src="../public/js/js.cookie.js"></script>
+  <script src="../public/js/util.js"></script>
+  <script src="../public/js/interface.js"></script>
+  <script src="../public/js/ajax.js"></script>
+  <script src="../public/js/client.js"></script>
+  <script src="../public/js/logApi.js"></script>
+  <script src="./detail.js"></script>
+
+</body>
+
+</html>

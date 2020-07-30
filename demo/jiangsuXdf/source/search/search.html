@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720" />
+    <title>搜索页</title>
+    <link rel="stylesheet" href="./search.css">
+</head>
+<body onload="init()">
+    <div class="searchBox">
+        <div class="searchLeft">
+            <!-- 键盘区 -->
+            <div class="promptingLanguage">
+                输入首字母搜索相关电影、 电视剧、演员、导演
+            </div>
+            <div class="contentWrap">
+                <div class="inputBox" id="inputBox">
+                </div>
+                <div class="deleteBtn" id="deleteBtn">
+                    删除
+                </div>
+                <ul class="keycodeContent" id="keycodeContent">
+
+                </ul>
+            </div>
+        </div>
+        <div class="searchRight">
+            <!-- 内容区 -->
+            <div class="scrollbox" id="scrollbox">
+            </div>
+            <div id="searchContent">
+            </div>
+        </div>
+        <div class="searchTag"></div>
+    </div>
+</body>
+<script src="../public/js/logApi.js"></script>
+<script src="../public/js/js.cookie.js"></script>
+<script src="../public/js/util.js"></script>
+<script src="../public/js/ajax.js"></script>
+<script src="../public/js/interface.js"></script>
+<script src="./search.js"></script>
+</html>

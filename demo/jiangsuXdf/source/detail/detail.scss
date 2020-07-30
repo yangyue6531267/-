@@ -1,0 +1,302 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+#detail{
+  width:1280px;
+  height:720px;
+  background-color:rgba(232, 223, 195, 1);
+}
+
+.detail_left{
+  width:459px;
+  height:100%;  
+  float: left;
+  position: relative;
+  border-right:1px solid rgba(29,29,29,.1);
+  .detail_left_wraper{
+    overflow: hidden;
+    .detail_poster{
+      width:179px;
+      height:256px;
+      line-height:256px;
+      text-align:center;
+      background:rgba(255,255,255,0.5);
+      color:rgba(29,29,29,.75);
+      font-size:18px;
+      border-radius:15px;
+      margin-left:140px;
+      margin-top:89px;
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+    .detail_title{
+      width:300px;
+      height:42px;
+      line-height:42px;
+      text-align:center;
+      font-size:28px;
+      color:rgba(29,29,29,1);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      opacity:1;
+      margin: 20px auto;
+    }
+    .detail_btnbox{
+      width:380px;
+      margin:0 auto;
+      overflow: hidden;
+      height:75px;
+      >div {
+        float:left;
+      }
+      .detail_buynow{
+        width:173px;
+        height:60px;
+        margin-left:11px;
+        margin-right:11px;
+        line-height:60px;
+        font-size:18px;
+        border:1px solid transparent;
+        border-radius: 13px;
+        background:rgba(255,255,255,0.2);
+        .b{
+          margin-left:20px;
+        }
+        .detail_buynow_icon{
+          background-image:url('../public/images/detail/组 2836.png');
+          background-size:contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width:30px;
+          height:30px;
+          margin-top:16px;
+          margin-left:30px;
+          vertical-align: top;
+        }
+      }
+      .detail_addCollect{
+        width:173px;
+        height:60px;
+        line-height:60px;
+        text-align:center;
+        background:rgba(255,255,255,0.2);
+        border-radius:15px;
+        position: relative;
+        span{
+          display: inline-block;
+          transform: translate(-25px,0);
+          font-size:18px;
+          color:rgba(69,69,69,1);
+          margin-left:20px;
+        }
+        i{
+          background-image:url('../public/images/play/h.png');
+          background-size:contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width:30px;
+          height:30px;
+          margin-top:16px;
+          vertical-align: top;
+        }
+      }
+    }
+    .detail_info{
+      -webkit-line-clamp: 3;
+      width:340px;
+      margin:20px auto;
+      line-height:25px;
+      position: relative;
+      .detail_desc{
+        position: relative;
+        text-indent: 28px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+        overflow: hidden;
+        color:rgba(29,29,29,1);
+        font-weight: 400;
+        // &::after{
+        //   content:'...';
+        //   position:absolute;
+        //   bottom:3px;
+        //   width:19px;
+        //   right:1px;
+        //   z-index:1000;
+        //   background-color:transparent;
+        //   display: inline-block;
+        //   color:#000;
+        // }
+    }
+   }
+  }
+}
+
+.detail_right{
+  float: left;
+  width:820px;
+  height:100%;
+  position: relative;
+  .right_wrapper{
+    height:100%;
+    overflow: hidden;
+    .detail_scroll_wrapper{
+      height:635px;
+      overflow: hidden;
+      margin-top:85px;
+      margin-left:29px;
+      .detail_scroller{
+        overflow: hidden;
+        height:100%;
+        position: relative;
+        .detail_epoised{
+          padding: 10px 0 15px 5px;
+          transition:all .5s ease;
+          position: absolute;
+          left:0;
+          top:0;
+          .detail_list{
+            overflow: hidden;
+            padding: 0 0 0 5px;
+          .detail_list_item{
+            width:360px;
+            height:82px;
+            font-size: 20px;
+            line-height:82px;
+            background:rgba(255,255,255,0.5);
+            color:#000;
+            border-radius:15px;
+            border:1px solid transparent;
+            float: left;
+            margin: 0 10px 20px 0;
+            >div{
+              float: left;
+            }
+            .detail_item_num{
+              margin-right: 30px;
+              margin-left:36px;
+            } 
+            .detail_item_title{
+              width:235px;
+              height:100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+
+        }
+      }
+    }
+  }
+  .detail_scroll_Bar{
+    position: absolute;
+    right:28px;
+    top:56px;
+    .detail_scroll_page{
+      margin-bottom:10px;
+    }
+    .detail_scroll_Barer{
+      width:8px;
+      height:561px;
+      position: absolute;
+      right:0;
+      background:rgba(0,0,0,0.1);
+      border-radius:6px;
+      .detail_scroll_block{
+        width:8px;
+        height:5%;
+        position: absolute;
+        transition: all .5s ease;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,0.25);
+        opacity:1;
+        border-radius:6px;
+      }
+    }
+  }
+}
+
+.detail_left::after{
+  content:'';
+  display: block;
+  width:4px;
+  margin-left:10px;
+  height:72px;
+  background:rgba(7,7,7,1);
+  opacity:1;
+  right: 0;
+  position: absolute;
+  top:45%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.detail_left::before{
+  content:'';
+  display: block;
+  width:0px;
+  height:0px;
+  position:absolute;
+  top:50%;
+  right:2px;
+  transform: translate(0,-50%);
+  border:5px solid rgba(7,7,7,1);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+#detail{
+  .hasCollect{
+    i{
+      background:url('../public/images/detail/组 2832.png');
+      background-size: contain;
+    }
+  }
+  
+  .detail_hover.btn-1{
+    background: rgba(0,170,170,0.8);
+      border: 1px solid rgba(102,237,231,1);
+      box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+    i{
+      background:url('../public/images/detail/组 2827.png');
+      background-size: contain;
+    }
+    span{
+      color:#fff;
+    }
+  }
+  .hasCollect.detail_hover{
+    i{
+      background:url('../public/images/detail/组 2831.png');
+      background-size: contain;
+    }
+  }
+  .buy_hover{
+      background: rgba(0,170,170,0.8);
+      border: 1px solid rgba(102,237,231,1);
+      box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+      color:#fff;
+      .detail_buynow_icon{
+        background-image:url('../public/images/detail/组 2811.png');
+      }
+  }
+  .detail_pageHover {
+    .hover{
+      background: rgba(0,170,170,0.8);
+      border: 1px solid rgba(102,237,231,1);
+      box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+      color:#fff;
+    }
+  }
+}

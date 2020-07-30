@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>播放器</title>
+  <link rel="stylesheet" type="text/css" href="player.css?v=4">
+</head>
+
+<body>
+  <div class="tvbox">
+    <div class="tvhd">
+      <div class="fstname" id="fstname"></div>
+      <div class="subname" id="subname"></div>
+    </div>
+    <div class="volumnbox">
+      <div class="volumnbg">
+      </div>
+      <div class="volumnbar">
+        <div class="volumnin"></div>
+      </div>
+    </div>
+    <div class="quitbox">
+      <div class="mesg">是否退出当前播放 </div>
+      <div class="msgbtn">
+        <div class="btnok ">继续观看</div>
+        <div class="btnno focus">残忍离去</div>
+      </div>
+      <div class="bottombox">
+        <ul class="rList">
+          <!-- <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box0">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li>
+          <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box1">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li>
+          <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box2">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li>
+          <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box3">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li>
+          <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box4">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li>
+          <li>
+            <div class="imgbox"><img src="../index/images/img_loading_160x230.png"></div>
+            <div class="word word-box5">
+              <div class="text">加载中</div>
+              <div class="text-copy"></div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="PausePhoto" style="display: none;">
+      <img src='../index/images/play-quiet.png'/>
+    </div>
+    <div class="tvbt">
+      <div class="progressbar">
+        <div class="barleft">
+          <div class="picon"></div>
+          <div class="progress">
+            <div class="opratebar"></div>
+            <div class="playedbar"></div>
+          </div>
+        </div>
+        <div class="barright">="playedTime">00:00:00</span>/<span id="totalTime">00:00:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cacheimg">
+    <img src="../index/images/player_pause_button.png" />
+    <img src="../index/images/player_play_button.png" />
+    <img src="../index/images/dotbg.png" />
+  </div>
+</body>
+  <script src="../index/js/jquery.min.js"></script>
+  <script src="../index/js/jquery.cookie.js"></script>
+  <script src="../index/js/lazyLoad.js"></script>
+  <script src="../index/js/common.js"></script>
+  <script src="player.js?12333333"></script>
+</html>

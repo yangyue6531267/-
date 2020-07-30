@@ -1,0 +1,3 @@
+function init(){
+    Home.init()
+}

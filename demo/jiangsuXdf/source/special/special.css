@@ -1,0 +1,304 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.specialBox{
+    width: 1280px;
+    height: 720px;
+    background: url("../public/images/special/background-img.png") no-repeat 100% 100%;
+    overflow: hidden;
+    position: relative;
+}
+.special_Dona{
+    width: 497px;
+    height: 89px;
+    background: #E6DDC3;
+    border-radius: 30px;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    line-height: 89px;
+    float: left;
+}
+.special_logo{
+    margin: 16px 15px 0 27px;
+    float: left;
+}
+.Dona{
+    width: 192px;
+    height: 67px;
+    display: inline-block;
+    font-size: 48px;
+}
+.special_vip{
+    /* margin: 14px 22px 0 22px;
+    float: right; */
+    position: absolute;
+    left: 316px;
+    top: 14px;
+}
+.special_story{
+    width: 458px;
+    height: 50px;
+    position: relative;
+    top: 50px;
+    right: 245px;
+    border-radius: 15px;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+    background:rgba(238,232,213,1);
+    opacity:1;
+}
+.special_story div{
+    display: inline-block;
+    width: 112px;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.special_story div:nth-child(2){
+    margin: 0 40px;
+}
+.key-itemHover{
+    position: absolute;
+    top: 46px;
+    left: 597px;
+    width: 112px;
+    height: 57px;
+    background: rgba(0,170,170,0.8);
+    border: 1px solid rgba(102,237,231,1);
+    box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+    border-radius: 15px;
+    z-index: 1;
+    display: none;
+}
+#key-item1Hover{
+    left: 751px;
+}
+#key-item2Hover{
+    left: 902px;
+}
+.keyHover{
+    width:112px;
+    height:57px;
+    background:rgba(75,163,159,0.82);
+    border:1px solid rgba(102,237,231,1);
+    box-shadow:10px 10px 10px rgba(67,154,150,0.6);
+    opacity:1;
+    border-radius:15px;
+    color: #fff;
+}
+ul{
+    position: relative;
+}
+ul li{
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+ul li:nth-child(1){
+    background-image: url("../public/images/special/special2.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 130px;
+    left: 65px;
+}
+ul li:nth-child(2){
+    background-image: url("../public/images/special/special4.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 38px;
+    left: 270px;
+}
+ul li:nth-child(3){
+    background-image: url("../public/images/special/special78.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: -24px;
+    left: 525px;
+}
+ul li:nth-child(4){
+    background-image: url("../public/images/special/special10.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 110px;
+    left: 750px;
+}
+ul li:nth-child(5){
+    background-image: url("../public/images/special/special9.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 248px;
+    left: 650px;
+}
+ul li:nth-child(6){
+    background-image: url("../public/images/special/special12.png");
+    width: 466px;
+    height: 466px;
+    position: absolute;
+    top: 340px;
+    left: 250px;
+}
+.active{
+    display: none !important;
+}
+.noact{
+    display: none;
+}
+.Hover{
+    width: 159px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgba(75, 163, 159, 0.82);
+    box-shadow: 0px 10px 10px rgba(67, 154, 150, .4);
+    color: #fff;
+}
+ol{
+    position: relative;
+}
+ol li{
+    height: 48px;
+    border-radius: 30px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 38px;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display: none;
+}
+ol li:nth-child(1){
+    position: absolute;
+    top: 416px;
+    left: 167px;
+    width: 354px;
+}
+ol li:nth-child(2){
+    position: absolute;
+    top: 322px;
+    left: 394px;
+    width: 353px;
+}
+ol li:nth-child(3){
+    position: absolute;
+    top: 272px;
+    left: 596px;
+    width: 345px;
+}
+ol li:nth-child(4){
+    position: absolute;
+    top: 418px;
+    left: 848px;
+    width: 341px;
+}
+ol li:nth-child(5){
+    position: absolute;
+    top: 558px;
+    left: 745px;
+    width: 350px;
+}
+ol li:nth-child(6){
+    position: absolute;
+    top: 635px;
+    left: 390px;
+    width: 350px;
+}
+.zIndex{
+    z-index: 999;
+    color: #fff;
+    font-size: 30px;
+    display: block;
+}
+#textList{
+    position: relative;
+}
+#textList div{
+    position: absolute;
+    height:28px;
+    font-size:20px;
+    font-family:Helvetica Neue;
+    font-weight:400;
+    line-height:28px;
+    color:rgba(67,67,67,1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#textList #oll0{
+    top: 428px;
+    left: 220px;
+    width: 166px;
+}
+#textList #oll1{
+    top: 334px;
+    left: 450px;
+    width: 160px;
+}
+#textList #oll2{
+    top: 282px;
+    left: 650px;
+    width: 165px;
+}
+#textList #oll3{
+    top: 428px;
+    left: 904px;
+    width: 165px;
+
+}
+#textList #oll4{
+    top: 568px;
+    left: 803px;
+    width: 165px;
+}
+#textList #oll5{
+    top: 644px;
+    left: 410px;
+    width: 176px;
+}
+.backBtn{
+    position: absolute;
+    top: 537px;
+    left: -15px;
+    width: 375px;
+    height: 182px;
+    background: url('../public/images/special/backBtn.png') no-repeat 100% 100%;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+.backBtnHover{
+    background: url('../public/images/special/backBtnHover.png') no-repeat 100% 100% !important;
+}
+.backBtn .backText{
+    font-size:35px;
+    font-family:Helvetica Neue;
+    font-weight:400;
+    line-height:41px;
+    color:rgba(67,67,67,1);
+    margin-top: 6px;
+    margin-left: 80px;
+}
+.backBtn .backTextHover{
+    color:rgba(255,255,255,1) !important;
+}
+.backBtn .backImg{
+    width: 135px;
+    height: 27px;
+    background: url('../public/images/special/backBtn1.png') no-repeat 100% 100%;
+    margin-top: 81px;
+    margin-left: 82px;
+}
+.backBtn .backImgHover{
+    background: url('../public/images/special/backBtnHover1.png') no-repeat 100% 100%;
+}

@@ -1,0 +1,25 @@
+连接盒子  adb connect ip地址
+
+例：adb connect 192.168.123.58
+
+
+查看盒子上装的应用  adb shell pm list package | grep yanhua
+
+
+
+卸载应用  adb uninstall package Name
+
+例 adb uninstall com.yanhua.tv.yhweb
+
+
+
+添加应用  adb install apk地址
+
+
+
+打开监视器
+
+monitor
+
+
+清楚缓存adb shell pm clear com.yanhua.tv.yhweb

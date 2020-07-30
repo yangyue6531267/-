@@ -1,0 +1,300 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+#mine{
+  width:1280px;
+  height:720px;
+  background:rgba(232,223,195,1);
+  overflow: hidden;
+}
+
+.mine_content{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  position: relative;
+  .mine_wrapper{
+    position:absolute;
+    left:0;
+    top:0;
+    transition: all .5s ease;
+  }
+  
+}
+
+.nothing{
+  height:258px;
+  line-height:258px;
+  text-align:center;
+  font-size:54px;
+  color:rgba(67,67,67,1);
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.mine_header{
+  height:72px;
+  .mine_header_title{
+    float: left;
+    height:100%;
+    margin-left:60px;
+    >span{
+      display: inline-block;
+      width:72px;
+      line-height:72px;
+      height:100%;
+      color:rgba(89,86,76,.2);
+      font-size:72px; 
+    }
+    .first{
+    }
+    .secoend{
+
+    }
+    .third{
+
+    }
+    .fourth{
+
+    }
+  }
+  .mine_header_logo{
+    float:right;
+    margin-right:60px;
+    margin-top:28px;
+  }
+}
+
+.video_watchMore{
+  position: relative;
+  width:178px;
+  height:256px;
+  line-height:256px;
+  text-align:center;
+  background:rgba(255,255,255,0.5);
+  opacity:1;
+  border-radius:15px;
+  font-size:22px;
+  font-weight:600;
+  color:rgba(239,128,96,1);
+}
+
+.mine_tabbar{
+  width:1200px;
+  margin: 53px auto 0;
+  overflow: hidden;
+  >div{
+    float:left;
+  }
+  .mine_order{
+    width:600px;
+    height:219px;
+    background-image:url('../public/images/mine/1.png');
+    border:1px solid transparent;
+  }
+  .mine_Lottery{
+    width:570px;
+    height:174px;
+    margin-top:15px;
+    position: relative;
+    border:1px solid transparent;
+    .lott_bg{
+      width:100%;
+      height:100%;
+      background:rgba(219,209,188,1);
+      border-radius:15px;
+    }
+    .l_bg{
+      position: absolute;
+      top:-15px;
+      left:15px;
+      width:446px;
+      height:174px;
+      border-radius:15px;
+      background:rgba(247,233,203,1);
+    }
+    .s_bg{
+      position: absolute;
+      left:23px;
+      top: -7px;
+      width:427px;
+      height:157px;
+      background:rgba(255,255,255,0.5);
+      border-radius:15px;
+    }
+    .mine_present{
+      width:105px;
+      height:100%;
+      position: absolute;
+      right:5px;
+      top:0;
+      z-index:10;
+      background:rgba(219,209,188,1);
+      text-align:center;
+      .present_img{
+        width:101px;
+        height:98px;
+        background-image:url('../public/images/mine/pre.png');
+        margin:19px auto 0;
+      }
+      >span{
+        display: inline-block;
+        height:33px;
+        font-size:20px;
+        font-weight:600;
+        line-height:33px;
+        color:rgba(143,114,51,1);
+      }
+    }
+  }
+}
+
+
+#history{
+  width:1280px;
+  height:720px;
+  background:rgba(230,221,195,1);
+  overflow: hidden;
+}
+
+.history_header{
+  margin-left:60px;
+  >span{
+    width:69px;
+    height:70px;
+    display:inline-block;
+    font-size:70px;
+    line-height:60px;
+    opacity:0.1;
+  }
+}
+
+.history_wrapper{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  transition: all .5s ease;
+}
+
+.history_content{
+  margin-top:36px;
+  height:614px;
+  position: relative;
+}
+.history_none{
+  height:258px;
+  line-height:258px;
+  text-align:center;
+  font-size:54px;
+  color:rgba(67,67,67,1);
+}
+.yh_list{
+  width:1220px;
+  height:370px;
+  
+  .item_day{
+    position: relative;
+    margin-left:60px;
+    .arc{
+      position: absolute;
+      top:50%;
+      left:0;
+      transform:translate(0,-50%);
+      display:inline-block;
+      width:8px;
+      height:8px;
+      background:rgba(239,128,96,1);
+      border-radius:50%;
+      opacity:0.5;
+    }
+    .date{
+      height:42px;
+      font-size:26px;
+      font-weight:500;
+      line-height:42px;
+      color:rgba(239,128,96,1);
+      opacity:0.6;
+      display: inline-block;
+      margin-left:15px;
+    }
+  }
+  .yh_list_wrapper{
+    position: relative;
+    height:85%;
+    overflow: hidden;
+    .yh_list_scroller{
+      position: absolute;
+      padding-left:60px;
+      padding-top:10px;
+      left:0;
+      top:0;
+      width:10000px;
+      transition:all .5s ease;
+      .yh_list_item{
+        float:left;
+        margin-right:15px;
+        border:1px solid transparent;
+        .video_info{
+          position: relative;
+          width:178px;
+          height:258px;
+          background:rgba(255,255,255,0.5);
+          opacity:1;
+          border-radius:15px;
+          .video_score{
+            position:absolute;
+            left:3px;
+            top:2px;
+            width:44px;
+            height:32px;
+            background:linear-gradient(343deg,rgba(221,169,86,1) 0%,rgba(235,218,189,1) 100%);
+            border-radius:15px;
+            color:#fff;
+            text-align:center;
+            line-height:32px;
+            font-size:14px;
+          }
+          .video_img{
+            width:100%;
+            height:100%;
+            img{
+              width:100%;
+              height:100%;
+              border-radius: 10px;
+            }
+          }
+        }
+        .video_name{
+          margin-top:10px;
+          text-align:center;
+        }
+      }
+      .yh_list_item.hover{
+        .info_bg{
+          position: absolute;
+          left:-53px;
+          top:-33px;
+          width:285px;
+          height:335px;
+          background-image: url('../public/images/detail/4.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
+
+//订购栏按钮激活样式
+.btnhover {
+  border-radius:10px;
+  background-color: rgba(67, 154, 150, 1) !important;
+  box-shadow: 0px 0px 15px rgba(67, 154, 150, 1) !important;
+  
+}

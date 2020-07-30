@@ -1,0 +1,290 @@
+/* -------------------------------------------------------主页面公共样式 -------------------------------------------------------*/
+#HeaderBg {
+  widows: 1280px;
+  height: 720px;
+  overflow: hidden;
+  position: absolute;
+}
+#HeaderBg img {
+  width: 100%;
+  height: 100%;
+}
+#Headerlogo {
+  width: 199px;
+  height: 70px;
+  overflow: hidden;
+  position: absolute;
+  left: 73px;
+  top: 25px;
+}
+#Headerlogo img {
+  width: 100%;
+  height: 100%;
+}
+
+#HeaderMenu {
+  width: 519px;
+  height: 40px;
+  position: absolute;
+  left: 821px;
+  top: 5px;
+}
+#HeaderMenu .item {
+  position: relative;
+  width: 141px;
+  height: 40px;
+  float: left;
+  margin-right: -13px;
+}
+#HeaderMenu .item .icon {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 112px;
+  height: 29px;
+}
+
+
+#HeaderMenu .item .search {
+  width: 100px;
+  height: 35px;
+ 
+  background: url(search.png) no-repeat;
+}
+
+#HeaderMenu .item .record {
+ width: 100px;
+  height: 35px;
+  background: url(gkicon.png) no-repeat;
+}
+
+#HeaderMenu .item .order {
+    width: 140px;
+  height: 35px;
+  background: url(dg.png) no-repeat;
+}
+#HeaderMenu .item .ydg {
+    width: 140px;
+  height: 35px;
+  background: url(ydg.png) no-repeat;
+}
+
+#HeaderMenu .item .person {
+     width: 100px;
+  height: 35px;
+  background: url(person.png) no-repeat;
+}
+
+
+#HeaderMenu .item.focus .search {
+  width: 100px;
+  height: 35px;
+  background: url(searchX.png) no-repeat;
+}
+
+#HeaderMenu .item.focus .record {
+ width: 100px;
+  height: 35px;
+  background: url(gkiconX.png) no-repeat;
+}
+
+#HeaderMenu .item.focus .order {
+    width: 140px;
+  height: 35px;
+  background: url(xdg.png) no-repeat;
+}
+#HeaderMenu .item.focus .ydg {
+    width: 140px;
+  height: 35px;
+  background: url(xydg.png) no-repeat;
+}
+
+
+#HeaderMenu .item.focus .person {
+  width: 100px;
+  height: 35px;
+  background: url(personX.png) no-repeat;
+}
+
+#nav {
+  width: 915px;
+  height: 60px;
+  overflow: hidden;
+  position: absolute;
+  left: 287px;
+  top: 70px;
+}
+#nav .item {
+  width: 160px;
+  height:57px;
+  overflow: hidden;
+  float: left;
+  margin-right: -11px;
+ }
+#nav .item.focus  {
+  margin-left: 10px;
+   background: url(pic_frame.png) no-repeat;
+  background-size: 100% 100%;
+ 
+}
+#nav .item .txt {
+  text-align: center;
+ 
+  color: #d4d9dc;
+  font-size: 30px;
+  line-height: 56px;
+ }
+ 
+#nav .item.focus .txt {
+  /* font-weight: 550; */
+  color: #fff;
+ 
+}
+#nav .item.focus1 .txt {
+    font-weight: 550; 
+    font-size: 31px; 
+
+  color:  #ffae00;
+  border-bottom: 5px solid  #ffae00;
+  
+
+}
+ 
+/*二级页面样式*/
+#SecondPageLogo {
+  position: absolute;
+  left: 54px;
+  top: 15px;
+}
+#SecondPageLogo img {
+  width: 142px;
+  height: 105px;
+}
+.LeftNav {
+  position: absolute;
+  left: 32px;
+  top: 128px;
+}
+.LeftNav .item {
+  width: 184px;
+  height: 82px;
+  overflow: hidden;
+    position: relative;
+   cursor: pointer;
+}
+.LeftNav .item.focus {
+  background: url(SecondaryPages/iconFocus.png) no-repeat;
+  transform: scale(1.06); 
+  
+}
+  .LeftNav .item:after{
+   position: absolute;
+   left: -100%;              /*改变left的值，让其相对box影藏*/
+   top: 0;        
+   width: 30%;
+  height: 100%;
+  content: "";
+   background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+  background: -moz-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+  transform: skewX(-28deg);
+}
+.LeftNav .item.focus:after{
+  left: 110%;
+   transition: 0.8s ease;
+
+ }
+
+.LeftNav .item .txt {
+  text-align: center;
+  line-height: 82px;
+  color: #d4d9dc;
+  font-size: 30px;
+}
+.LeftNav .item.focus .txt{
+  background: url(SecondaryPages/iconFocus.png) no-repeat;
+  color: #fff000;
+}
+  
+/*-----------专题内容-----------*/
+.contentTPGames{
+   position: absolute;
+  left: 247px;
+  top: 81px;
+  overflow: hidden;
+
+}
+.contentGames{
+   
+  height: 620px;
+  overflow: hidden;
+  position: relative;
+}
+ 
+ 
+.SecondPageContBottom {
+ width: 970px;
+}
+.SecondPageContBottom .item {
+  width: 194px;
+  height: 262px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  margin-right: -2px;
+}
+.SecondPageContBottom .item.focus {
+  
+  transform: scale(1.05);
+ }
+
+.SecondPageContBottom .item{
+     position: relative;
+     overflow: hidden;
+     cursor: pointer;
+ }
+
+ .SecondPageContBottom .item:after{
+ 
+      position: absolute;
+      left: -100%;              /*改变left的值，让其相对box影藏*/
+      top: 0;        
+      width: 30%;
+      height: 100%;
+      content: "";
+      /* Safari 5.1 - 6.0 */
+      background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+      /* Opera 11.1 - 12.0 */
+      background: -o-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+      /* Firefox 3.6 - 15 */
+      background: -moz-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+      /* 标准的语法 */
+      background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 100%);
+        transform: skewX(-26deg);
+}
+.SecondPageContBottom .item.focus:after{
+  left: 160%;
+   transition: 1s ease;
+   z-index: 1003;
+ }
+.SecondPageContBottom .item img {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 176px;
+  height: 244px;
+  border-radius: 10px;
+}
+.SecondPageContBottom .item.focus img {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 176px;
+  height: 244px;
+  border:3px solid #fff;
+border-radius: 10px;
+box-shadow: 0 0 20px #00f, inset 0 0 20px #00f, 0 1px 0 #00f;
+}
+ 
+

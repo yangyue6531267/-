@@ -1,0 +1,436 @@
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
+ ul,
+ li {
+   list-style: none
+ }
+
+
+body {
+  font-family: 'Microsoft YaHei,Arial';
+  color: #fff;
+  width: 1280px;
+  height: 720px;
+}
+
+ .box {
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 1280px;
+   height: 720px;
+   overflow: hidden;
+   background-image: linear-gradient(109deg, #476E8E, #4D828E);;
+   color: #FFF
+ }
+
+ .box h2 {
+   position: absolute;
+   top: 25px;
+   left: 48px;
+   font-size: 44px;
+   line-height: 55px;
+   font-weight: 400;
+   font-family: Arial,
+     Microsoft YaHei,
+     sans-serif;
+ }
+
+ .searchList {
+   width: 864px;
+   height: 720px;
+   position: absolute;
+   left: 416px;
+ }
+
+ .keyboardBox {
+   position: relative;
+   box-sizing: border-box;
+   height: 720px;
+   width: 400px;
+   float: left;
+   box-shadow: 0 3px 20px hsla(0, 0%, 0%, .5);
+   padding-top: 150px;
+ }
+
+ .keyboardBox::after,
+ .searchList::after {
+   clear: both;
+   content: '.';
+   display: block;
+   width: 0;
+   height: 0;
+   visibility: hidden;
+ }
+
+ .k-input {
+   width: 260px;
+   height: 51px;
+   background-color: rgba(0, 0, 0, .37);
+   border: 2px solid rgba(255, 255, 255, .52);
+   line-height: 51px;
+   overflow: hidden;
+   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+   font-weight: 400;
+   font-size: 21px;
+   color: #ffffff;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   padding-left: 20px;
+   margin-left: 25px;
+   border-radius:15px 0px 0px 0px;
+ }
+
+ .k-do {
+   position: absolute;
+   top: 150px;
+   right: 31px;
+   width: 78px;
+   height: 48px;
+   line-height: 48px;
+   font-size: 22px;
+   text-align: center;
+   text-decoration: none;
+   background-color: rgba(0, 0, 0, .37);
+   border: 2px solid rgba(255, 255, 255, 0.5);
+   overflow: hidden;
+   color: #ffffff;
+   border-radius:0px 15px 0px 0px;
+ }
+
+
+ .k-do.hover {
+   border: 2px solid #fff;
+   background-color: #D57575;
+   -webkit-box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.55);
+   box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.55);
+   border-radius:0px 15px 0px 0px;
+ }
+
+ .k-code {
+   width: 344px;
+   height: 341px;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   margin-top: 2px;
+   margin-left: 25px;
+   background-color: rgba(255, 255, 255, .2);
+   border-radius:0px 0px 15px 15px;
+ }
+
+ .k-code ul {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+
+ .k-code li {
+   float: left;
+   height: 56px;
+   width: 57px;
+   color: #fff;
+   line-height: 58px;
+   text-align: center;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   font-size: 24px;
+   font-weight: 400;
+ }
+
+ .k-code li.active {
+   border: 2px solid #fff;
+   line-height: 49px;
+   background-color: #0098BC;
+   border-radius:15px;
+ }
+
+ .keyboardBox .info-bottom {
+   margin-left: 25px;
+   margin-top: 10px;
+   width:290px;
+   height:95px;
+   padding:43px 24px 19px 21px;
+   background:rgba(211,107,107,1);
+   border:1px solid rgba(149,152,154,1);
+   font-size:20px;
+   line-height:24px;
+   text-align: left;
+   border-radius:15px;
+ }
+ .keyboardBox .info-bottom .triangle-up {
+   position: relative;
+   bottom:80px;
+   left:30px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid #D36B6B;
+}
+
+ .middle-box {
+   position: absolute;
+   padding-left: 34px;
+   padding-top: 20px;
+   height: 538px;
+   width: 800px;
+   overflow: hidden;
+   z-index: 999;
+ }
+ 
+ .yyss{
+   position: absolute;
+   top:260px;
+   left:20px;
+   background: #4B7A8E;
+   width:800px;
+   height:300px;
+   z-index:1000;
+ }
+ .yyss .sousuo-logo{
+   position: relative;
+   left:20px;
+   top:76px;
+  width:74px;
+  height:56px;
+  border:4px solid #fff;
+  border-radius: 50%;
+  background:linear-gradient(315deg,rgba(250,48,196,1) 0%,rgba(104,27,193,1) 100%);
+  text-align:center; 
+  padding-top:18px;
+}
+ .sousuo-logo img{
+   width:40px;
+   height:40px;
+ }
+ .yyss .right{
+  position: absolute;
+  left:130px;
+ }
+ .yyss .right_1{
+  height:38px;
+  font-size:27px;
+  font-family:Helvetica Neue;
+  font-weight:400;
+  line-height:33px;
+ }
+ .yyss .right_2{
+  font-size:20px;
+  line-height:24px;
+  color:rgba(245,221,33,1);
+ }
+.yyss .right .voice{
+  position: relative;
+  top:10px;
+  width:24px;
+  height:33px;
+  margin:0 10px;
+}
+
+ .number-num {
+   position: absolute;
+   right: 30px;
+   top: 80px;
+   font-size: 24px;
+ }
+
+ .search-scroll {
+   position: absolute;
+   right: 65px;
+   top: 140px;
+   width: 5px;
+   height: 540px;
+   background-color: rgba(255, 255, 255, 0.4);
+   visibility: hidden;
+ }
+
+ .square{
+   position: absolute;
+   top:129px;
+   left:230px;
+   width:75px;
+   height:75px;
+   border:3px solid rgba(255,255,255,1);
+ } 
+ .eye1{
+    position: absolute;
+    left:14px;
+    top:17px;
+    width:9px;
+    height:9px;
+    background:#fff;
+    border-radius:9px;
+ }
+ .eye2{
+  position: absolute;
+  left:49px;
+  top:17px;
+  width:9px;
+  height:9px;
+  background:#fff;
+  border-radius:9px;
+}
+.mouth{
+  position: absolute;
+  width:34px;
+  height:10px;
+  left:20px;
+  top:45px;
+  background:#fff;
+  border-radius: 50%;
+}
+ .search-no{
+   font-size:22px;
+   text-align: center;
+   margin-top: 120px;
+   font-family:PingFang SC;
+ }
+
+ .search-bar {
+   position: absolute;
+   right: -3px;
+   top: 0px;
+   width: 10px;
+   height: 140px;
+   background-color: rgba(255, 255, 255, 1);
+   border-radius: 5px;
+ }
+
+ .text-css {
+   text-shadow: 0px 0px 15px #DBC473;
+ }
+
+
+ .top-c {
+  width:150px;
+  height:42px;
+  font-size:30px;
+  font-family:Helvetica Neue;
+  font-weight:100;
+  line-height:36px;
+   margin: 90px 0px 0px 34px;
+   color: rgba(255, 255, 255, 0.7);
+   visibility: hidden;
+
+ }
+
+ .top .text {
+   float: left;
+   margin-right: 30px;
+   margin-bottom: 70px;
+   position: relative;
+ }
+
+ .top .isSelect {
+   color: #FFF;
+ }
+
+ .top .isSelect::before {
+   content: "";
+   position: absolute;
+   bottom: 32px;
+   left: -2px;
+   width: 100%;
+   height: 0px;
+   border: 2px solid rgba(255, 255, 255, 1);
+   box-shadow: 0 0 6px #FFFFFF;
+ }
+
+ .top .isSelect::after {
+   content: "";
+   position: absolute;
+   bottom: 25px;
+   left: 44%;
+   width: 0px;
+   height: 0px;
+   border: 4px solid transparent;
+   border-top: 4px solid rgba(255, 255, 255, 1);
+ }
+
+.middle-box .scroll-box {
+  position: absolute;
+  width: 800px;
+  height: 526px;
+}
+ 
+ .middle-box li {
+   position: relative;
+   float: left;
+   margin-right: 30px;
+   margin-bottom: 30px;
+   width: 160px;
+   height: 233px;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   overflow: hidden;
+   border-radius: 15px;
+ }
+
+ .middle-box li .imgbox {
+   width: 160px;
+   height: 233px;
+ }
+
+ h2 {
+   font-size: 22px;
+   color: hsla(0, 100%, 99%, .66);
+   margin: 20px 0;
+ }
+
+ img {
+   width: 100%;
+   height: 100%;
+ }
+
+ .score {
+     position: absolute;
+     z-index: 99;
+     width: 60px;
+     height: 60px;
+     line-height: 40px;
+     top: -4px;
+     right: -4px;
+     color: #df9720;
+     background: url("../public/images/jiaobiao.png");
+ }
+
+ .score span {
+   padding-left: 30px;
+ }
+
+ .word {
+   position: absolute;
+   display: inline-block;
+   z-index: 99;
+   width: 100%;
+   height: 26px;
+   line-height: 26px;
+   bottom: 0;
+   padding-top: 5px;
+   text-align: center;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   background-color: rgba(0, 0, 0, 0.6);
+ }
+
+ .wordColumn {
+   display: inline-block;
+   width: 100%;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+ }
+
+ .word div {
+   display: inline;
+ }
+
+ .middle-box li.active {
+   margin: -4px 34px 34px -4px;
+   border: 4px solid #fff;
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+ }

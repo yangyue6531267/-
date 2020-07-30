@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>IP直播</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-page-mode" content="no-title">
+  <script type="text/javascript">
+    var docEl = document.documentElement;
+    var dpr = window.devicePixelRatio || 1;
+    docEl.setAttribute("data-dpr", dpr);
+    var width = docEl.getBoundingClientRect().width;
+    if (width > 750) {
+      // 设计稿的宽度是750px
+      docEl.style.fontSize = 100 + "px";
+    } else {
+      var rem = width / 3.75; // 设计稿的宽度是750px
+      docEl.style.fontSize = rem + "px";
+    }
+  </script>
+</head>
+<link rel="stylesheet" href="./assets/css/index.css" />
+
+<body>
+  <div class="login-body" id="loginBody">
+    <div class="login-header">
+      <div>登陆</div>
+      <p>未注册手机验证后自动登录</p>
+    </div>
+    <div class="login-connect">
+      <div class="login-input">
+        <span class="header">+86</span>
+        <span class="star"></span>
+        <input type="text" value="" onkeyup="value=value.replace(/[^0-9]/g,'')" placeholder="输入手机号" id="phone">
+      </div>
+      <div class="login-password">
+        <input type="text" id="userCode" value="" onkeyup="value=value.replace(/[^0-9]/g,'')" placeholder="输入短信验证码">
+      </div>
+      <button class="code" id="msgCode" onclick="getCode()">获取验证</button>
+      <div onclick="getCode()" class="login-code"><span class="code-time" id="codeTime">30s后</span>重新获取验证码</div>
+      <button class="submit" id="submit" onclick="submit()">确认登录</button>
+    </div>
+  </div>
+</body>
+<script src="./assets/js/common.js"></script>
+<script src="./assets/js/index.js"></script>
+
+</html>

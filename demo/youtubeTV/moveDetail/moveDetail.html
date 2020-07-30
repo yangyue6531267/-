@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+  <link rel="stylesheet" href="../public/css/detail.css">
+  <title>详情页</title>
+</head>
+
+<body>
+  <div class="seriesDetail" id="box-wrap">
+    <div class="poster" id="loginImg">
+      <div class="video-loading"></div>
+    </div>
+    <div class="responsive-container">
+      <div id="imgBig" class="iframe-bg">
+        <!-- <span class="free-logo"></span> -->
+        <!-- <p class="play-time" id="playTime">試看將在 <span>2:37</span> 結束</p> -->
+        <!--  <img src="./../public/images/play-bg.png" /> -->
+      </div>
+    </div>
+
+    <!-- 播放控件 -->
+    <div class="player-ui">
+      <div class="pause" id="pause"></div>
+      <div class="footer-player" id="footerPlayer">
+
+        <div class="curr-time" id="currTime">10:00</div>
+        <div class="progress-bar">
+          <div class="curr-box" id="currBox">10:00</div>
+          <div class="curr-bar" id="currBar"></div>
+        </div>
+        <div class="total-time" id="totalTime">120:00</div>
+      </div>
+    </div>
+    <div class="scroll-box">
+      <div class="topContent">
+        <div class="introduction">
+          <p id="name"></p>
+          <p class="underline"></p>
+          <p id="btnBox2" class="collect"><span id="collect" class="noCollect"></span></p>
+          <p id="info"><span></span></p>
+          <p id="detail"> </p>
+        </div>
+        <p id="btnBox1" class="moreDes"></p>
+        <div id="btnBox" class="btn-box">
+          <div class="play" id="btnBox0">全屏播放<span></span></div>
+        </div>
+      </div>
+      <div class="subjects" id="subjects">
+        <ul id="subjectsList" class="subjects-list">
+        </ul>
+      </div>
+      <div class="recommend" id="recommend">
+        <div class="recommend-body">
+          <p class="header-name">為您推薦</p>
+          <ul class="recommend-list" id="recommendList">
+          </ul>
+        </div>
+      </div>
+
+      <div id="assetList" class="recommend">
+           <div class="recommend-body">
+        <ul id="scrollContent">
+          <!-- <li class="middle-li middle-li0" id="card-item0">
+            <div class="header-logo"></div>
+            <p class="name">王菲</p>
+            <p class="move1">- 我不是药神</p>
+            <p class="move2">- 泰囧</p>
+          </li> -->
+        </ul>
+      </div>
+      </div>
+      <div class="spoce-footer"></div>
+
+      <!-- 弹框 -->
+      <div class="descriptionBox" id="descriptionBox">
+        <div class="scrollBox" id="scrollBox">
+          <div class="contentBox">
+            <div class="wordScroll" id="wordScroll"></div>
+          </div>
+          <div class="topBox">
+            关闭
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="toast2">该课程已经下线，新东方更多名师课程等您学习,3秒后返回！</div> -->
+  <script src="../public/js/js.cookie.js"></script>
+  <script src="../public/js/util.js"></script>
+  <script src="../public/js/play.js"></script>
+  <script src="../public/js/ajax.js"></script>
+  <script src="./moveDetail.js"></script>
+</body>
+
+</html>

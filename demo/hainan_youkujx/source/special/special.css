@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+
+.box {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1280px;
+    height: 720px;
+    height: 720px;
+    overflow: hidden;
+    background-color:rgb(46,116,136);
+}
+
+.box .box-header {
+    height: 310px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 55px 0 0 55px;
+}
+
+.box .collection,
+.box .header-name {
+    font-weight: 600;
+    font-family: PingFangSC-Regular;
+    font-size: 19px;
+    padding: 0 15px;
+    background: hsla(0, 0%, 5%, .3);
+    color: #fff;
+    text-align: center;
+    float: left;
+    line-height: 58px;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box .hover {
+    background: #a36363;
+    border: 4px solid #fff;
+    margin-top: -4px;
+}
+
+.box .collection {
+    width: 100px;
+    margin-left: 5px;
+}
+
+.box .middle-box {
+    width: 1280px;
+    min-height: 720px;
+    position: absolute;
+    top: 0px;
+    background-color: #307488;
+}
+
+.scroll-box .active {
+    margin: 34px 34px -4px -4px;
+    border: 4px solid #fff;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.scroll-box {
+    width: 1140px;
+    min-height: 526px;
+    position: absolute;
+    top: 0;
+    margin: 82px 0 0 85px;
+}
+
+.scroll-box li {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+    width: 160px;
+    height: 233px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imgbox {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.score {
+    position: absolute;
+    z-index: 99;
+    width: 60px;
+    height: 60px;
+    line-height: 40px;
+    top: -4px;
+    right: -4px;
+    color: #df9720;
+    background: url("../../source/public/images/jiaobiao.png");
+}
+
+.score span {
+    padding-left: 30px;
+}
+
+.word {
+    position: absolute;
+    display: inline-block;
+    z-index: 99;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    bottom: 0;
+    padding-top: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: hsla(0, 0%, 0%, .5);
+}
+
+.word div {
+    display: inline;
+}
+
+.msg {
+    position: absolute;
+    left: 65px;
+    top: 30px;
+    min-width: 460px;
+    max-width: 960px;
+    word-wrap: break-word;
+    padding: 0 30px;
+    height: 92px;
+    line-height: 92px;
+    font-size: 32px;
+    font-family: Helvetica, Neue, Thin;
+    background-color: #080808;
+    border-radius: 15px;
+    border: 1px solid #C9C9C9;
+    opacity: .84;
+    z-index: 2;
+}
+
+.number {
+    position: absolute;
+    left: 90px;
+    top: 340px;
+    font-size: 26px;
+    line-height: 37px;
+}
+
+.text-css {
+    text-shadow: 0px 0px 15px #DBC473;
+}

@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  width: 1280px;
+  height: 720px;
+  color: #fff;
+}
+
+.box {
+  width: 1230px;
+  height: 310px;
+  padding-left: 50px;
+  padding-top: 410px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1280px;
+  height: 720px;
+  background-size: 100% 100%;
+  z-index: -2
+}
+
+.clist-box {
+  width: 1200px;
+  z-index: 999;
+}
+
+.msg {
+  position: absolute;
+  left: 65px;
+  top: 30px;
+  min-width: 460px;
+  max-width: 960px;
+  word-wrap: break-word;
+  padding: 0 30px;
+  height: 92px;
+  line-height: 92px;
+  font-size: 32px;
+  font-family: Helvetica, Neue, Thin;
+  background-color: #080808;
+  border-radius: 15px;
+  border: 1px solid #C9C9C9;
+  opacity: .84;
+  z-index: 2;
+}
+
+.middle-box {
+  height: 263px;
+  overflow: hidden;
+}
+
+
+.middle-box li {
+  width: 168px;
+  height: 222px;
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 88px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  position: relative;
+}
+
+.middle-box li .jiaobiao {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  visibility: hidden;
+}
+
+.middle-box li .imgbox {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.middle-box li .imgbox img {
+  width: 100%;
+  height: 100%;
+}
+
+.middle-box li .word {
+  width: 164px;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.middle-box li .word div {
+  display: inline;
+}
+
+.middle-box .scroll-box li.active {
+  border: 3px solid #fff;
+  text-shadow: 0 0 15px #dbc473;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .55)
+}
+
+
+.number {
+  position: absolute;
+  left: 90px;
+  top: 340px;
+  font-size: 26px;
+  line-height: 37px;
+}
+
+
+.btn {
+  position: absolute;
+  left: 130px;
+  top: 335px;
+}
+
+.btn div {
+  width: 90px;
+  height: 42px;
+  float: left;
+  margin-left: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 38px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+}
+
+.btn div.hover {
+  background: url('../index/images/btn.png') no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  border: 3px solid #fff;
+  /* margin: -3px; */
+}
+
+.btn #btn-up {
+  margin-bottom: 39px;
+}
+
+.text-css {
+  text-shadow: 0px 0px 15px #DBC473;
+}

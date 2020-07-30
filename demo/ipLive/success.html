@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>IP直播</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-page-mode" content="no-title">
+  <script type="text/javascript">
+    var docEl = document.documentElement;
+    var dpr = window.devicePixelRatio || 1;
+    docEl.setAttribute("data-dpr", dpr);
+    var width = docEl.getBoundingClientRect().width;
+    if (width > 750) {
+      // 设计稿的宽度是750px
+      docEl.style.fontSize = 100 + "px";
+    } else {
+      var rem = width / 3.75;
+      docEl.style.fontSize = rem + "px";
+    }
+  </script>
+</head>
+<link rel="stylesheet" href="./assets/css/index.css" />
+
+<body>
+  <!-- 登陆成功 -->
+  <div class="login-success" id="loginSuccess">
+    <div class="login-header">
+      <div>登录成功</div>
+    </div>
+    <div class="login-connect">
+    </div>
+    <button class="submit" id="closeBtn" onclick="clickClose()">关闭页面</button>
+  </div>
+</body>
+<script src="./assets/js/common.js"></script>
+<!-- <script src="./assets/js/index.js"></script>
+ -->
+<script>
+  function clickClose() {
+    window.opener = null;
+    window.open('', '_self');
+    // window.location.replace("about:blank")
+    window.location.href = "about:blank";
+    window.close();
+    WeixinJSBridge.call('closeWindow');
+  }
+</script>
+
+</html>

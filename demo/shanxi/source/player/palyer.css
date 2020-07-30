@@ -1,0 +1,88 @@
+.play_top{
+    width: 1280px;
+    height:80px;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.play_top div span{
+    color: white;
+    line-height: 80px;
+
+}
+*{padding: 0px;margin: 0px}
+html{background-color: transparent;position: absolute;width: 1280px;height: 720px;}
+body{position: absolute;width: 1280px;height: 720px;}
+.play_top div span:nth-child(1){
+    margin-left: 98px;
+    font-size: 25px;
+}
+.play_top div span:nth-child(2){
+    margin-left: 25px; 
+    font-size: 20px;
+}
+#play_center{
+    width: 1280px;
+    height: 720px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.1);
+    display: none;
+    /* display: none; */
+}
+#play_center #play_stop{
+    width: 191px;
+    height: 169px;
+    background: url(./../public/images/stop.png) no-repeat;
+    background-size: 100% 100%; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: -100px;
+}
+.play_bottom{
+    width: 1280px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.allLong{
+    width: 993px;
+    height: 7px;
+    background: #174B5D;
+    position: absolute;
+    left: 110px;
+    bottom: 37px;
+}
+.time{
+    font-size:18px;
+    position: absolute;
+    right: 100px;
+    bottom: 28px;
+    font-family: PingFang SC;
+    color: white;
+}
+#allLongs{
+    width: 0%;
+    height: 7px;
+    background: #0098BC;
+    position: absolute;
+    left: 110px;
+    bottom: 37px;
+}
+#allLongs .icon{
+    width: 84px;
+    height: 35px;
+    background: #0098BC;
+    line-height: 35px;
+    font-size: 18px;
+    font-family: PingFang SC;
+    position: absolute;
+    left: 0px;
+    bottom: -14px;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,459 @@
+$whiteColor:#fff;
+
+body{
+  margin:0;
+  padding:0;
+}
+
+#videoPlayer{
+  width:1280px;
+  height:720px;
+  background:rgba(255,255,255,0);
+  position: relative;
+  .videoPlayer_wraper{
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:1000;
+    width:100%;
+    height:100%;
+  }
+}
+//暂停按钮
+.video_stop{
+  width:101px;
+  height:79px;
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform: translate(-50%,-50%);
+  display: none;
+  .video_stop_btn{
+    width:100%;
+    height:100%;
+    background-image:url('../public/images/play/2316.png');
+  }
+}
+.video_stop.btnShow {
+  display: block;
+}
+
+//标题
+.videoPlay_name{
+  position: absolute;
+  left:83px;
+  top:57px;
+  width:227px;
+  height:42px;
+  font-size:25px;
+  font-weight:100;
+  line-height:42px;
+  color:rgba(0,0,0,.8);
+  z-index:10000;
+  visibility: hidden;
+  transition: all .2s ease;
+  opacity: 0;
+  span{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+.videoPlay_name.nameshow {
+  visibility: visible;
+  opacity: 0.62;
+}
+
+.video_leftContent{
+  width:360px;
+  height:720px;
+  position: absolute;
+  left:0;
+  top:0;
+  display: none;
+}
+
+.menu_Control {
+  width:100%;
+  height:100%;
+  background:rgba(232,223,195,1);
+  position: relative;
+  .menu_arrow{
+    &::after{
+      content: '';
+      display: block;
+      width: 4px;
+      margin-left: 10px;
+      height: 72px;
+      background: #070707;
+      opacity: 1;
+      right: 0;
+      position: absolute;
+      top: 45%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &::before{
+      content: '';
+      display: block;
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      transform: translate(0, -50%);
+      border: 5px solid #070707;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+ .menu_Content{
+   width:100%;
+   height:100%;
+   position:absolute;
+   left:65px;
+   top:147px;
+   width:304px;
+   overflow: hidden;
+   height:431px;
+   padding:0 25px;
+   
+   .menu_scroller{
+      background-color:rgba(17, 93, 90, .36);
+      border-radius:15px;
+     width:244px;
+     height:100%;
+     position: absolute;
+     left:18px;
+     top:0px;
+   }
+  .menu_scroll_wrapper{
+    position: absolute;
+    top:178px;
+    width:100%;
+    height:253px;
+    .menu_pointer{
+      height:68px;
+      width:268px;
+      position: absolute;
+      display: none;
+      top:0;
+      left:-13px;
+      background: rgba(0, 170, 170, 0.8);
+      border: 1px solid #66ede7;
+      box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+      border-radius:15px;
+      &::after{
+        content:'';
+          
+      }
+    }
+  .menu_list {
+    padding-left:5px;
+    line-height:68px;
+    text-align:center;
+    color:rgba(255, 255, 255, .63);
+    position: absolute;
+    top:0px;
+    left:-0px;
+    width:100%;
+    z-index:1000;
+    transition: all .3s ease;
+    .menu_item{
+      position: relative;
+      height:68px;
+      width:100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      .menu_item_icon{
+        
+      }
+    }
+   }
+  }
+ }
+}
+
+.video_rightContent{
+  width:1280px;
+  height:720px;
+  position: absolute;
+  top:0;
+  display: none;
+  background:url('../public/images/play/p.png') no-repeat;
+}
+
+.progress_Control{
+  position: absolute;
+  left:0px;
+  width:100%;
+  height:197px;
+  bottom:0px;
+  background:linear-gradient(180deg,rgba(211,198,157,0) 0%,rgba(216,200,155,1) 100%);
+  .video_Progress_SubContent{
+    height:88px;
+    margin-bottom:30px;
+    padding-left:80px;
+    .video_Progress_SubContentWrapper{
+      height:88px;
+      >div{
+        float:left;
+      }
+      //试看
+      .video_TryWatch_Tip{
+        margin-top:11px;
+        width:347px;
+        height:141px;
+        background-image: url('../public/images/play/9.png');
+        background-repeat: no-repeat;
+        border-radius: 40px;
+        opacity:1;
+        color:#fff;
+        position: relative;
+        .video_tryWatch_text{
+          width:211px;
+          height:56px;
+          color:rgba(255, 255, 255, .8);
+          margin:0 auto;
+          margin-top:35px;
+          font-size:17px;
+        }
+      }
+      //立即购买
+      .video_BuyNow{
+        width:173px;
+        height:60px;
+        margin-top:35px;
+        margin-left:11px;
+        margin-right:11px;
+        line-height:60px;
+        border-radius: 15px;
+        border:1px solid transparent;
+        background:rgba(255,255,255,0.3);
+        .b{
+          margin-left:20px;
+        }
+        .video_buynow_icon{
+          background-image:url('../public/images/detail/组\ 2836.png');
+          background-size:contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width:30px;
+          height:30px;
+          margin-top:16px;
+          margin-left:30px;
+          vertical-align: top;
+        }
+      }
+      //加入收藏
+      .video_addCollect{
+        width:173px;
+        height:60px;
+        margin-top:35px;
+        line-height:60px;
+        text-align:center;
+        background:rgba(255,255,255,0.2);
+        opacity:1;
+        border-radius:15px;
+        border:1px solid transparent;
+        position: relative;
+        span{
+          display: inline-block;
+          transform: translate(-25px,0);
+          font-size:18px;
+          color:rgba(69,69,69,1);
+          font-family:PingFang HK;
+          margin-right:10px;
+        }
+        i{
+          background-image:url('../public/images/detail/组 2828.png');
+          background-size:contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width:30px;
+          height:27px;
+          position: absolute;
+          top:28%;
+          // transform: translate(0,-50%);
+          right:19px;
+        }
+      }
+
+      .hasCollect{
+        i {
+          background-image: url('../public/images/detail/组 2832.png');
+          background-size: contain;
+        }
+      }
+    }
+  }
+  //进度条
+  .video_Progress{
+  padding-left:80px;
+  height:30px;
+    .video_Progress_Content{
+      height:30px;
+      >div{
+        float: left;
+      }
+      .video_Progress_BarBox{
+        width:995px;
+        height:15px;
+        margin:5px 15px 0 10px;
+        background:rgba(179,175,148,1);
+          border-radius: 10px;
+        .video_Progress_Bar{
+          height:100%;
+          position: relative;
+          background:rgba(230,221,195,1);
+          width:0%;
+          border-radius: 10px;
+          .video_Progress_block{
+            width:84px;
+            height:44px;
+            line-height:44px;
+            position: absolute;
+            display: none;
+            right:-84px;
+            top:-100%;
+            color:$whiteColor;
+            text-align:center;
+            background:rgba(75,163,159,0.82);
+            border:1px solid rgba(102,237,231,1);
+            box-shadow:0px 10px 10px rgba(67,154,150,0.6);
+            opacity:1;
+            border-radius:15px;  
+          }
+        }
+      }
+    }
+  }
+}
+
+//激活样式
+#videoPlayer .videopl{
+  // background: rgba(0, 170, 170, 0.8);
+  // border: 1px solid #66ede7;
+  // box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+  // border-radius:15px;
+  
+  .menu_item_icon{
+    display: block;
+    background-image: url('../public/images/play/2317.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width:30px;
+    height:30px;
+    left:5px;
+    top:18px;
+  }
+}
+#videoPlayer .videohover::after{
+  content:'';
+  display: block;
+  width:4px;
+  margin-left:10px;
+  height:72px;
+  background:rgba(7,7,7,1);
+  opacity:1;
+  right: -10px;
+  position: absolute;
+  top:0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#videoPlayer .videohover::before{
+  content:'';
+  display: block;
+  width:0px;
+  height:0px;
+  position:absolute;
+  top:50%;
+  right:-8px;
+  transform: translate(0,-50%);
+  border:5px solid rgba(7,7,7,1);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+
+
+#videoPlayer .video_BuyNow.progresshover{
+  background: rgba(0,170,170,0.8);
+    border: 1px solid rgba(102,237,231,1);
+    box-shadow: 0px 10px 10px rgba(67,154,150,0.6);
+  color:#fff; 
+  i{
+    background-image: url('../public/images/detail/组 2811.png')!important;
+  }
+}
+
+#videoPlayer .video_rightContent.thin{
+  width:920px;
+  left:360px;
+  .video_Progress_BarBox.shorter{
+    width:597px;
+  }
+}
+
+#videoPlayer .video_leftContent.show{
+  display: block;
+  
+}
+
+#videoPlayer .menu_Content.menu_hover {
+  .menu_pointer{
+    display: block;
+  }
+  .videohover{
+    color:$whiteColor;
+    position: relative;
+  }
+}
+
+#videoPlayer .video_rightContent.show{
+  display: block;
+}
+
+
+
+#videoPlayer .video_addCollect.progresshover{
+  background: rgba(0, 170, 170, 0.8);
+    border: 1px solid #66ede7;
+    box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+  
+  i {
+    background-image: url('../public/images/detail/组 2827.png')!important;
+  }
+  span{
+    color:#fff;
+  }
+}
+#videoPlayer .hasCollect.progresshover{
+  background: rgba(0, 170, 170, 0.8);
+  border: 1px solid #66ede7;
+  box-shadow: 0px 10px 10px rgba(67, 154, 150, 0.6);
+  color:#fff;
+i{
+  background-image: url('../public/images/detail/组 2831.png')!important;
+}
+}
+
+#videoPlayer .progressBlockHover{
+  display: block;
+  
+}
+
+#videoPlayer .progressBarHover.video_Progress_Bar {
+    background:rgba(0,170,170,0.8)!important;
+}

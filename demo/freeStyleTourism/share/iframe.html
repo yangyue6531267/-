@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>无忧行分享</title>
+        <meta http-equiv="Cache-Control" content="max-age=180">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+        <meta http-equiv="x-dns-prefetch-control" content="on" />
+        <link type="text/css" rel="stylesheet" href="./static/style.css" />
+        <script>
+          (function flexible(window, document) {
+            var docEl = document.documentElement;
+            var tid;
+            var dpr = window.devicePixelRatio || 1;
+            docEl.setAttribute("data-dpr", dpr);
+      
+            function setRemUnit() {
+              var width = docEl.getBoundingClientRect().width;
+              if (width > 750) {
+                // 设计稿的宽度是750px
+                docEl.style.fontSize = 100 + "px";
+              } else {
+                var rem = width / 7.5;
+                docEl.style.fontSize = rem + "px";
+              }
+            }
+            setRemUnit();
+      
+            window.addEventListener(
+              "resize",
+              function () {
+                clearTimeout(tid);
+                tid = setTimeout(setRemUnit, 200);
+              },
+              false
+            );
+            window.addEventListener(
+              "pageshow",
+              function (e) {
+                if (e.persisted) {
+                  clearTimeout(tid);
+                  tid = setTimeout(setRemUnit, 200);
+                }
+              },
+              false
+            );
+          })(window, document);
+      
+          window.addEventListener(
+            "load",
+            function () {
+              setTimeout(function () {
+                window.scrollTo(0, 0);
+              }, 0);
+            },
+            false
+          );
+        </script>
+      </head>
+<style>
+iframe {
+  width: 7.5rem;
+  height: 20rem;
+}
+</style>
+<body>
+  <h2 style="font-size: 40px;">返回</h2>
+  <iframe src="https://h5-veyron.iqiyi.com/" id="maps" -scrolling="no"></iframe>
+</body>
+<script>
+window.onload=function(){
+  map_width=document.body.clientWidth;//获取body宽度
+  map_height=document.documentElement.clientHeight;//获取页面可见高度
+  //alert(map_width);
+  //alert(map_height);
+  //下面两行最后的"px"必须加上,折腾了半天老是不显示添加的style,最后就是错在这了
+  // document.getElementById("maps").style.width=map_width+"px";
+  document.getElementById("maps").style.height=map_height+"px"; 
+}
+</script>
+</html>

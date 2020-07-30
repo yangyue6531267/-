@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="page-view-size" content="1280*720">
+  <title>详情页</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent no-repeat;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+    }
+
+    body .discountRule {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url('./rule.jpg')
+    }
+
+    .discount {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url('./activity.jpg')
+    }
+
+    body .discount-tipsP30 {
+      top: 35%;
+      left: 35%;
+    }
+
+    .discount-tips {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 999;
+      word-break: break-all;
+      word-wrap: break-word;
+      background: #000000;
+      opacity: 0.6;
+      /* background: rgba(1, 1, 1, 0.6); */
+      color: #fff;
+      padding: 20px;
+      min-width: 120px;
+      text-align: center;
+      font-size: 22px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="discount" id="discount">
+  </div>
+  <div class="discount-tips" id="discountTips"></div>
+  <script src="../video/js/getUrl.js"></script>
+  <script src="../public/js/js.cookie.js"></script>
+  <script src="../public/js/util.js"></script>
+  <script src="../public/js/interface.js"></script>
+  <!-- <script src="../video/js/PlayUtil.js"></script> -->
+  <script src="../public/js/ajax.js"></script>
+  <script src="../public/js/logApi.js"></script>
+  <script src="./discount.js"></script>
+</body>
+
+</html>

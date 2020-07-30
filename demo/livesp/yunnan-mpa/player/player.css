@@ -1,0 +1,326 @@
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+	background: transparent;
+}
+
+.tvbox {
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	font-family: Simhei;
+}
+
+.PausePhoto{
+	width: 1280px;
+	height: 720px;
+	text-align: center;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background:rgba(0,0,0,0.4);
+}
+
+.PausePhoto img{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 560px;
+	top: 300px;
+	overflow: hidden;
+}
+.orderbox {
+	width: 810px;
+	height: 470px;
+	background: url(../../images/order_main.png) no-repeat;
+	position: absolute;
+	left: 235px;
+	top: 125px;
+	display: none;
+}
+
+.btnbox {
+	position: absolute;
+	left: 50px;
+	top: 350px;
+	height: 40px;
+	width: 250px;
+	color: #fff;
+}
+
+.btnbox div {
+	height: 34px;
+	border-radius: 3px;
+	line-height: 34px;
+	width: 92px;
+	float: left;
+	text-align: center;
+	margin-right: 15px;
+	background: #222328;
+}
+
+
+.cacheimg {
+	display: none;
+}
+
+.quitbox {
+	height: 330px;
+	width: 1280px;
+	padding-top: 10px;
+	position: relative;
+	top:344px;
+	z-index:999;
+	display: none;
+}
+
+.quitbox .mesg {
+	float: left;
+	width: 221px;
+	border-radius: 15px;
+	background-color:rgba(255, 255, 255, 0.5);
+	color: #1F436E;
+	font-size: 22px;
+	line-height: 57px;
+	text-align: center;
+	margin-left: 113px;
+}
+.quitbox .mesg::before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		border-radius: 10px;
+		background-color: rgba(255, 255, 255, 0.5);
+		position: absolute;
+		top:70px;
+		left:143px;
+}
+
+.msgbtn {
+	float: left;
+}
+
+.msgbtn div {
+	float: left;
+	box-sizing: border-box;
+	width: 148px;
+	height: 50px;
+	margin-left: 10px;
+	padding-top: 10px;
+	font-size: 22px;
+	text-align:center;
+	color: #fff;
+	border-radius: 16px;
+	border: 2px solid #fff;
+	background: rgba(0,0,0,0.2);
+}
+
+.msgbtn div.focus {
+	background: #D57D4B;
+	border: 2px solid #fff;
+	color: #fff;
+}
+
+.quitbox .bottombox {
+	 height: 292px;
+	 width: 1280px;
+	 position: absolute;
+	 top: 84px;
+	 background: url(../index/images/mediabg.png) no-repeat;
+}
+.rList { 
+	 margin-left: 20px;
+	 margin-top: 30px;
+}
+  .rList li {
+	 list-style-type:none;
+	 float: left;
+	 margin-right: 28px;
+	 border-radius: 15px;
+	 box-sizing: border-box;
+	 color: #fff;
+ }
+.bottombox li .imgbox{
+	width: 168px;
+	height: 222px;
+	overflow: hidden;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+.bottombox li .imgbox img {
+	width: 100%;
+	height: 100%;
+}
+.bottombox li .word {
+	 width: 164px;
+	 font-size: 20px;
+	 line-height: 25px;
+	 text-align: center;
+	 overflow: hidden;
+	 white-space: nowrap;
+	 text-overflow: ellipsis;
+}
+.bottombox li .word div {
+	display: inline;
+}
+.bottombox li .imgbox.active {
+	margin-top: -1.5px;
+	border: 3px solid #fff;
+	text-shadow: 0 0 15px #dbc473;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+
+.bottombox li .jiaobiao {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	visibility: hidden;
+}
+
+.volumnbox {
+	height: 100px;
+	padding-top: 20px;
+	width: 260px;
+	background: rgba(1, 1, 1, 0.6);
+	border-radius: 8px;
+	position: absolute;
+	top: 60px;
+	left: 540px;
+	display: none;
+}
+
+.volumnbg {
+	width: 190px;
+	height: 60px;
+	font-size: 36px;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.volumnbg.change{
+	text-decoration:line-through;
+}
+.volumnbox .volumnbg .vilumntu{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 24px;
+	left: 150px;
+	background: url(../index/images/xiegang.png) no-repeat;
+	background-size: 100% 100%;
+	/* background: rebeccapurple; */
+	/* display: none; */
+}
+.volumnbar {
+	width: 190px;
+	margin: 0 auto;
+	height: 10px;
+	background: rgba(1, 1, 1, 0.8);
+	margin-top: 10px;
+	border-radius: 2px;
+}
+
+.volumnin {
+	height: 10px;
+	width: 10%;
+	background: #fff;
+	border-radius: 2px;
+}
+
+.tvhd {
+	position: absolute;
+	top: 0px;
+	height: 70px;
+	width: 1280px;
+	overflow: hidden;
+	color: #fff;
+	background: url(../index/images/dotbg.png);
+}
+
+.tvhd .fstname {
+	line-height: 70px;
+	padding-left: 30px;
+	color: #fff;
+	font-size: 26px;
+	float: left;
+}
+
+.tvhd .subname {
+	float: left;
+	line-height: 90px;
+	font-size: 20px;
+	padding-left: 20px;
+}
+
+.tvbt {
+	position: absolute;
+	bottom: 0px;
+	height: 55px;
+	width: 1220px;
+	padding: 25px 30px 0 30px;
+	color: #fff;
+	background: url(../index/images/dotbg.png);
+	display: none;
+}
+
+.tvbt .progressbar {
+	height: 35px;
+}
+
+.barleft {
+	width: 1060px;
+	height: 35px;
+	float: left;
+}
+
+.picon {
+	height: 35px;
+	width: 30px;
+	background: url(../index/images/player_pause_button.png) no-repeat;
+	float: left;
+	margin-right: 20px;
+}
+
+.pause {
+	background: url(../index/images/player_play_button.png) no-repeat;
+}
+
+.progress {
+	float: left;
+	width: 1000px;
+	height: 17px;
+	background: #eee;
+	margin-top: 9px;
+	position: relative;
+	border-radius: 3px;
+}
+
+.opratebar {
+	width: 0%;
+	height: 17px;
+	background: #229a2c;
+	position: absolute;
+	z-index: 5;
+	border-radius: 3px;
+}
+
+.playedbar {
+	height: 17px;
+	width: 0%;
+	background: #18320f;
+	position: absolute;
+	border-radius: 3px;
+}
+
+.barright {
+	float: right;
+	line-height: 35px;
+	width: 160px;
+	text-align: center;
+	font-size: 18px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width-device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no, minimal-ui">-->
+    <!-- <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> -->
+    <title>首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        ul,
+        li {
+            list-style: none
+        }
+
+        body {
+            font-family: "PingFang HK", "Medium";
+            color: #fff;
+            width: 1280px;
+            height: 720px;
+        }
+
+        .openImage {
+            position: absolute;
+            width: 1280px;
+            height: 720px;
+            z-index: 999;
+            display: none;
+        }
+
+        .openImage .loadEffect {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 300px;
+            mask-image: url('/static/load.png');
+            -webkit-mask-image: url('/static/load.png');
+            background: url('/static/load.png');
+            line-height: 0;
+            font-size: 0;
+            text-align: center;
+            animation-name: load;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            -webkit-animation-name: load;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #box {
+            color: white;
+            background: black;
+            width: 300px;
+            height: 300px;
+        }
+
+        .openImage img {
+            position: absolute;
+            top: 0px;
+        }
+
+        @-webkit-keyframes load {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes load {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        //        alert(navigator.userAgent);
+        // alert('该终端不支持此应用，按"确定"键返回。');
+        //          window.history.back();
+        //        if (navigator.userAgent == 'Sunniwell' ||navigator.userAgent =="webkit;Resolution(PAL,720P,1080P)") {
+        var lastURL = document.referrer;
+        var first = 1;
+        var cObj = "lastURL=" + lastURL + "; path=/";
+        document.cookie = cObj;
+        window.location.href = './yunnan-mpa/index.html?index=first&v=fa-rotate-18&c=1';
+        //        }
+    </script>
+</head>
+
+<body bgcolor="transparent">
+    <div id="app">
+    </div>
+</body>
+
+</html>

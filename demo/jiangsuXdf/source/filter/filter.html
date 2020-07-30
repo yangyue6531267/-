@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720" />
+		<link rel="stylesheet" href="./filter.css">
+    <title>筛选页</title>
+</head>
+<body>
+	<div class="filterWrap">
+		<div class="filterLeft" id="filterLeft">
+			<div class="liHoverEr" id="liHoverEr"></div>
+			<div class="filterCategory" id="filterCategory">
+				<div class="tempLiHoverEr"></div>
+				<ul class="erCategory" id="erCategory">
+				</ul>
+			</div>
+			<div class="sanCategory" id="sanCategory">
+				<div class="secondColumnLiHover"></div>
+				<div class="tempSecondColumnLiHover"></div>
+				<div class="firstColumnLiHover"></div>
+				<div class="tempFirstColumnLiHover"></div>
+				<div class="firstColumn" id="firstColumn">
+					<ul class="firstColumnInner" id="firstColumnInner">
+					</ul>
+				</div>
+				<div class="secondColumn" id="secondColumn">
+					<ul class="secondColumnInner" id="secondColumnInner">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="filterRight" id="filterRight">
+				<div class="scrollbox" id="scrollbox">
+						<!-- <div class="pageNum">1/14</div>
+						<div class="barWrap">
+							<div class="bar"></div>
+						</div> -->
+				</div>
+			<ul class="filterCtent" id="filterCtent">
+			</ul>
+		</div>
+		<div class="filterTag"></div>
+	</div>
+	<script src="../public/js/logApi.js"></script>
+	<script src="../public/js/js.cookie.js"></script>
+	<script src="../public/js/util.js"></script>
+	<script src="../public/js/ajax.js"></script>
+	<script src="../public/js/interface.js"></script>
+	<script src="./filter.js"></script>
+</body>
+</html>

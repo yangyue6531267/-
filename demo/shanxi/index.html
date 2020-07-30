@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>跳转页</title>
+  <meta name="page-view-size" content="1280*720">
+  <style>
+    @media (min-width: 1000px) {
+      body {
+        width: 1280px;
+        height: 720px;
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        width: 1280px;
+        height: 720px;
+        background-image: linear-gradient(109deg, #476E8E, #4D828E);
+        z-index: 9999;
+        visibility: visible;
+      }
+
+      .imgLoading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 300px;
+        background: url('./source/public/images/load.png');
+        line-height: 0;
+        font-size: 0;
+        text-align: center;
+        animation-name: load;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: load;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+        .start {
+          width: 1280px;
+        height: 720px;
+        background: url('./source/public/images/start.png');
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        }
+      .upgrade {
+        width: 780px;
+        height: 485px;
+        background-color: rgba(0, 0, 0, .8);
+        z-index: 10000;
+        position: fixed;
+        top: 118px;
+        left: 250px;
+        border-radius: 5px;
+      }
+      .tips {
+        width:112px;
+        height:40px;
+        font-size:28px;
+        font-family:PingFang SC;
+        font-weight:600;
+        line-height:40px;
+        color:rgba(255,253,253,0.66);
+        opacity:1;
+        margin: 30px 40px;
+      }
+      .title {
+        width:205px;
+        height:42px;
+        font-size:30px;
+        font-family:Helvetica Neue;
+        font-weight:400;
+        line-height:36px;
+        color:rgba(255,255,255,1);
+        opacity:1;
+        margin: 36px 287.5px;
+      }
+      .update {
+        width:168px;
+        height:60px;
+        line-height: 60px;
+        background:rgba(163,99,99,1);
+        border:1px solid rgba(246,246,246,1);
+        opacity:1;
+        position: absolute;
+        left: 174px;
+        bottom: 76px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: Regular;
+        font-family: PingFang SC;
+        color: #FFFFFF;
+      }
+      .update i {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: url('./source/public/images/update.png');
+        background-size: cover;
+        margin-right: 6px;
+        position: relative;
+        top: 10px;
+      }
+      .cancel {
+        width:168px;
+        height:60px;
+        line-height: 60px;
+        background:rgba(255,255,255,0.3);
+        opacity:1;
+        position: absolute;
+        right: 174px;
+        bottom: 76px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: Regular;
+        font-family: PingFang SC;
+        color: #FFFFFF;
+      }
+      .cancel i {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: url('./source/public/images/cancel.png');
+        background-size: cover;
+        margin-right: 5px;
+        position: relative;
+        top: 10px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      body {
+        width: 644px;
+        /* height: 534px; */
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        width: 644px;
+        /* height: 534px; */
+        background-image: linear-gradient(109deg, #476E8E, #4D828E);
+        z-index: 9999;
+        visibility: visible;
+      }
+
+      .imgLoading {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 200px;
+        background: url('./source/public/images/load.png') no-repeat;
+        line-height: 0;
+        font-size: 0;
+        text-align: center;
+        animation-name: load;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-name: load;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    @-webkit-keyframes load {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes load {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <div class="imgLoading"></div>
+
+    <div id="upgrade" class="upgrade">
+      <div class="tips">升级提示</div>
+      <div class="title">监测到新版本</div>
+      <div class="update"><i></i>升级</div>
+      <div class="cancel"><i></i>取消</div>
+    </div>
+  </div> 
+
+  <div class="start"></div>
+</body>
+<script src="./source/public/js/jquery.min.js"></script>
+<script>
+  var deviceWidth = window.screen.width * 1;
+  if (deviceWidth < 1280) {
+    var meta = '<meta name="page-view-size" content="644*534">'
+  } else {
+    var
+      meta = '<meta name="page-view-size" content="1280*720">'
+  }
+  $("head").prepend(meta);
+</script>
+<script type="text/javascript">
+  document.write('<script src="./source/public/js/jquery.min.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/jquery.cookie.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/js.cookie.js?' + Math.random() + '"><\/script>')
+  document.write('<script src="./source/public/js/crypto-js.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/common.js?adv='+Math.random()+'"><\/script>')
+  document.write('<script src="./source/public/js/logApi.js?adv='+Math.random()+'"><\/script>')
+</script>
+<script>
+
+
+
+
+  var getValue = function () {
+    $.cookie("oredein", "1", {
+      path: '/'
+    })
+    if (window.location.search.length > 0) {
+      // //鉴权订购关系
+      // try {
+      //   var userID = Authentication.CTCGetConfig("UserID");
+      //   var userToken = Authentication.CTCGetConfig("UserToken");
+      //   var backUrl = Authentication.CTCGetConfig("EPGDomain")
+      // } catch (error) {}
+      // $.cookie("backUrl", backUrl, {
+      //   path: '/'
+      // })
+      // var spID = "spaj0104";
+      // var number = unity.uuid(18, 10);
+      // var transactionID = spID + unity.format("yyyyMMddHHmmss") + number;
+      // var text = 'userID=' + userID + '$userToken=' + userToken + '$timeStamp=' + unity.format("yyyyMMddHHmmss");
+      // var key = "pW0s6g8190g5C3cL9428864a";
+      // var authenticator = encodeURIComponent(unity.encryptByDES(text, key));
+      // var postUrl = "http://202.100.133.115:8296/OrderQuery?transactionID=" + transactionID + "&SPID=" + spID +
+      //   "&INFO=" + authenticator; // 测试
+      // $.ajax({ // 入口数据
+      //   type: "post",
+      //   url: postUrl,
+      //   success: function (res) {
+      //     var resData = res
+      //     if (resData.indexOf("productIDa3j0000000000000000") != -1) {
+      //       $.cookie('isOrder', 1, {
+      //         path: '/'
+      //       })
+      //     } else {
+      //       $.cookie('isOrder', 0, {
+      //         path: '/'
+      //       })
+      //     }
+      //     var jsonUrl = "http://116.62.93.251/?s=22|11&p=yhNavigationBar&k=1&v=1&catId=204005&c=11"
+      //     $.cookie('enterUrl', jsonUrl, {
+      //       path: '/'
+      //     })
+      //     var indexUrl = window.location.href
+      //     if (indexUrl.indexOf('assetId') != -1) { //首页推荐详情
+
+      //       try {
+      //         bi.start('0201'); // 数据埋点
+      //       } catch (e) {
+      //         console.log('埋点异常')
+      //       }
+      //       var assetId = unity.getVars("assetId");
+      //       var detailUrl = "http://202.100.133.115:10324/epg/?s=22|11&p=yhAssetDetail&k=1&v=1&assetId=" +
+      //         assetId + "&c=11"
+      //       $.cookie('detailUrl', detailUrl, {
+      //         path: "/"
+      //       })
+      //       $.cookie('fromEPG', 1, {
+      //         path: "/"
+      //       })
+      //       unity.jsonp(detailUrl, function (res) {
+      //           if (res.data.assetType == "Movie") {
+      //             window.location = "./source/detail/movieDetail.html"
+      //           } else {
+      //             window.location = "./source/detail/seriesDetail.html"
+      //           }
+      //         },
+      //         function (err) {})
+      //     } else if (indexUrl.indexOf('specialId') != -1) { // 首页推荐专题
+
+      //       try {
+              
+      //       bi.start('0202'); // 数据埋点
+      //       } catch (e) {
+      //       console.log('埋点异常')
+      //       }
+      //       var specialId = unity.getVars("specialId");
+      //       var specialUrl = "http://202.100.133.115:10324/epg/?s=22|11&p=yhSpecialDetail&k=1&v=1&specialId=" +
+      //         specialId + "&c=11&itemSort=1";
+      //       $.cookie('specialUrl', specialUrl, {
+      //         path: "/"
+      //       })
+      //       $.cookie('fromEPG', 1, {
+      //         path: "/"
+      //       })
+      //       window.location.href = "./source/special/special.html"
+
+      //     } else {
+      //       try {
+      //         bi.start('0101'); // 数据埋点
+      //       } catch (e) {
+      //         console.log('埋点异常')
+      //       }
+      //       $.cookie('fromEPG', 0, {
+      //         path: "/"
+      //       })
+      //       window.location = "./source/index/home.html"
+      //     }
+      //   },
+      //   error: function (res) {}
+      // });
+    } else {
+      try {
+        bi.start('0101'); // 数据埋点
+      } catch (e) {
+        console.log('埋点异常')
+      }
+      var jsonUrl = "http://112.17.251.186:10088/?s=43|27&p=yhSystemTheme&k=1&v=1"
+      $.cookie('enterUrl', jsonUrl, {
+        path: '/'
+      })
+      $.cookie('fromEPG', 0, {
+        path: "/"
+      })
+      window.location = "./source/index/home.html"
+    }
+  }
+
+  
+  // window.location = "./source/index/home.html"
+  setTimeout(function() {
+    getValue();
+  }, 1000);
+  
+  
+</script>
+
+</html>

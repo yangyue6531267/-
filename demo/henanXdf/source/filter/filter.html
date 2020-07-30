@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1280*720" />
+  <title>筛选页</title>
+  <link rel="stylesheet" href="../public/css/common.css">
+  <link rel="stylesheet" href="./filter.css">
+</head>
+
+<body onload="init()">
+  <div class="filter">
+    <div class="left-nav">
+      <!-- 左侧导航栏 -->
+      <div class="title">筛选</div>
+      <div id="single-row" class="single-row ul-hover">
+        <div id="single-row-hover" class="single-row-hover"></div>
+        <ul id="single-row-inner"></ul>
+      </div>
+      <div class="filter-0" id="filter-header-0">
+        <div class="filter-center filter-center-0" id="filter-center-0"></div>
+        <ul id="filter-0">
+        </ul>
+      </div>
+      <div class="filter-1" id="filter-header-1">
+        <div class="filter-center filter-center-1" id="filter-center-1"></div>
+        <ul id="filter-1">
+        </ul>
+      </div>
+      <div class="filter-2" id="filter-header-2">
+        <div class="filter-center filter-center-2" id="filter-center-2"></div>
+        <ul id="filter-2">
+        </ul>
+      </div>
+      <!-- 右侧焦点小样式 -->
+      <div class="hover-sign"><span></span></div>
+    </div>
+    <div class="filter-connent">
+      <div class="top-c" id="top-c">暂无筛选结果，去看看其他课程吧</div>
+      <ul class="middle-box" id="filter-connent"></ul>
+    </div>
+    <div class="filter-scroll" id="filter-scroll">
+      <div class="filter-bar" id="filter-bar" style="top: 0px;"></div>
+    </div>
+    <div class="filter-num" id="filter-num"></div>
+  </div>
+</body>
+<script src="../public/js/js.cookie.js"></script>
+<script src="../public/js/util.js"></script>
+<script src="../public/js/ajax.js"></script>
+<script src="../public/js/interface.js"></script>
+<script src="./filter.js"></script>
+<script src="./content_Filter.js"></script>
+<script src="../public/js/logApi.js"></script>
+
+</html>
